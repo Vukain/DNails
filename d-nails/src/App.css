@@ -1,0 +1,36 @@
+.App {
+  text-align: center;
+  width: 400vw;
+  height: 200vh;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    "header empty empty empty"
+    "div1 div2 div3 div4";
+}
+
+.header {
+  grid-area: header;
+  background-color: grey;
+}
+
+.div1 {
+  grid-area: div1;
+  background-color: rgb(107, 107, 107);
+}
+
+.div2 {
+  grid-area: div2;
+  background-color: rgb(85, 84, 84);
+}
+
+.div3 {
+  grid-area: div3;
+  background-color: rgb(68, 68, 68);
+}
+
+.div4 {
+  grid-area: div4;
+  background-color: rgb(51, 51, 51);
+}

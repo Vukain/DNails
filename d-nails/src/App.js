@@ -12,7 +12,6 @@ function App() {
   const headRef = useRef(null);
 
   useEffect(() => {
-
     document.addEventListener('wheel', scroller);
     document.addEventListener('keydown', keyer);
   }, []);
@@ -41,7 +40,7 @@ function App() {
   };
 
   const tester = (e) => {
-    console.log(e)
+    console.log(12444)
   }
 
   const scroller = (e) => {
@@ -53,11 +52,12 @@ function App() {
       if (e.deltaY > 0) {
         setTimeout(() => {
           sectionChanger('down');
-        }, 100);
+          console.log(123);
+        }, 600);
       } else {
         setTimeout(() => {
           sectionChanger('up');
-        }, 100);
+        }, 600);
       };
 
       setTimeout(() => {
@@ -71,7 +71,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className='section header' ref={headRef}></div>
+      <div className='section header' onClick={tester} ref={headRef}></div>
       <div className='section div1'></div>
       <div className='section div2'></div>
       <div className='section div3'></div>

@@ -1,19 +1,34 @@
 import { useEffect, useRef, useState } from 'react';
+
 import './App.css';
+
+import Navigation from './components/Navigation/Navigation';
 
 function App() {
 
 
   const [currentSection, setCurrentSection] = useState(0);
   const [isThrottled, setIsThrottled] = useState(false);
+  const [sections, setSections] = useState([]);
 
   const throttledRef = useRef(isThrottled);
   const sectionRef = useRef(currentSection);
   const headRef = useRef(null);
+  const div1Ref = useRef(null);
+  const div2Ref = useRef(null);
+  const div3Ref = useRef(null);
+  const div4Ref = useRef(null);
+
 
   useEffect(() => {
+    setSections([headRef.current, div1Ref.current, div2Ref.current, div3Ref.current, div4Ref.current]);
     document.addEventListener('wheel', scroller);
     document.addEventListener('keydown', keyer);
+    // div1Ref.current.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'start' });
+    // setTimeout(() => {
+    //   div4Ref.current.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'start' });
+    // }, 800);
+
   }, []);
 
   const keyer = (e) => {
@@ -29,7 +44,7 @@ function App() {
   }
 
   const sectionChanger = (direction) => {
-    const sections = document.querySelectorAll('.section');
+    const sections = [headRef.current, div1Ref.current, div2Ref.current, div3Ref.current, div4Ref.current];
 
     if (direction === 'up' && sectionRef.current > 0) {
       sectionRef.current -= 1
@@ -71,11 +86,13 @@ function App() {
 
   return (
     <div className="App">
+
+      <Navigation sections={sections} />
       <div className='section header' onClick={tester} ref={headRef}></div>
-      <div className='section div1'></div>
-      <div className='section div2'></div>
-      <div className='section div3'></div>
-      <div className='section div4'></div>
+      <div className='section div1' ref={div1Ref} ></div>
+      <div className='section div2' ref={div2Ref} ></div>
+      <div className='section div3' ref={div3Ref} ></div>
+      <div className='section div4' ref={div4Ref} ></div>
     </div>
   );
 }

@@ -1,19 +1,18 @@
 .App {
+  overflow: visible;
+  position: relative;
   text-align: center;
   width: 400vw;
   height: 200vh;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: 9fr 1fr 10fr;
   grid-template-areas:
     "header empty empty empty"
+    "nav empty empty empty"
     "div1 div2 div3 div4";
 }
 
-.header {
-  grid-area: header;
-  background-color: grey;
-}
 
 .div1 {
   grid-area: div1;

@@ -7,6 +7,9 @@ import AppProvider from './AppContext';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// const block = require('bem-css-modules');
+// block.default.setSettings({ modifierDelimiter: '--' })
+
 ReactDOM.render(
   <React.StrictMode>
     <AppProvider>

@@ -5,6 +5,7 @@
   width: 400vw;
   height: 200vh;
   display: grid;
+  background-color: grey;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 9fr 1fr 10fr;
   grid-template-areas:

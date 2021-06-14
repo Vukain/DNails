@@ -5,6 +5,9 @@ import { default as NavigationStyles } from './Navigation.module.sass';
 
 import { AppContext } from '../../AppContext';
 
+
+import stal from './Navigation.module.sass';
+
 const style = bemCssModules(NavigationStyles);
 
 const Navigation = (props) => {
@@ -29,17 +32,21 @@ const Navigation = (props) => {
             sections[1].scrollIntoView({ behavior: 'smooth', block: 'start' });
             setTimeout(() => {
                 sections[idx].scrollIntoView({ behavior: 'smooth', block: 'start' });
+
             }, 800);
         };
     };
 
+    const navStyle = currentLevel === 2 ? style({ lower: true }) : style();
+    const buttonStyle = currentLevel !== 2 ? style('button', { butter: true }) : style('button');
+
     return (
-        <nav className={style()}>
-            <button className={style('button')} onClick={() => { scroller(0, 1) }}>Home</button>
-            <button className={style('button')} onClick={() => { scroller(1, 2) }}>Div1</button>
-            <button className={style('button')} onClick={() => { scroller(2, 2) }}>Div2</button>
-            <button className={style('button')} onClick={() => { scroller(3, 2) }}>Div3</button>
-            <button className={style('button')} onClick={() => { scroller(4, 2) }}>Div4</button>
+        <nav className={navStyle}>
+            <button className={buttonStyle} onClick={() => { scroller(0, 1) }}>Home</button>
+            <button className={buttonStyle} onClick={() => { scroller(1, 2) }}>Div1</button>
+            <button className={buttonStyle} onClick={() => { scroller(2, 2) }}>Div2</button>
+            <button className={buttonStyle} onClick={() => { scroller(3, 2) }}>Div3</button>
+            <button className={buttonStyle} onClick={() => { scroller(4, 2) }}>Div4</button>
         </nav>
     )
 }

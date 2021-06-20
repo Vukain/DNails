@@ -17,10 +17,10 @@
         flex-basis: 15%
         border: none
         margin: 20px
-        border-radius: 10px
+        border-radius: 20px 0
         background-color: transparent
         cursor: pointer
-        transition: 2s
+        transition: 1.4s
         overflow: hidden
 
         &::before
@@ -44,11 +44,12 @@
             transform: translateX(-50%)
             width: 0%
             height: 0%
+
             border-radius: 50%
             content: ""
             display: block
-            transition: .8s
-            background: linear-gradient(45deg, #ad0b3c, #b4287f)
+            transition: .5s
+            background: linear-gradient(45deg, #ad0b2e 15%, #be1866 85%)
 
         &:hover::after
             height: 40vh
@@ -57,7 +58,7 @@
         &--butter
             flex-grow: 0
             &:hover
-                color: #b4287f
+                color: #f595d0
 
             &::after, &::before
                 opacity: 0

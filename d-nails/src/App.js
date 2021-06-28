@@ -15,6 +15,7 @@ function App() {
 
   const { currentSection, setCurrentSection } = useContext(AppContext);
   const { sections, setSections } = useContext(AppContext);
+  const { currentLevel, setCurrentLevel } = useContext(AppContext);
 
   const throttledRef = useRef(isThrottled);
   const sectionRef = useRef(currentSection);
@@ -39,17 +40,22 @@ function App() {
     } else {
       sectionChanger('up');
     }
+
   }
 
   const sectionChanger = (direction) => {
     const sections = [headRef.current, div1Ref.current, div2Ref.current, div3Ref.current, div4Ref.current];
 
     if (direction === 'up' && sectionRef.current > 0) {
-      sectionRef.current -= 1
-      setCurrentSection(currentSection - 1)
+      sectionRef.current -= 1;
+      setCurrentSection(sectionRef.current);
+      if (sectionRef.current === 0) {
+        setCurrentLevel(1);
+      };
     } else if (direction === 'down' && sectionRef.current < sections.length - 1) {
-      sectionRef.current += 1
-      setCurrentSection(currentSection + 1)
+      sectionRef.current += 1;
+      setCurrentSection(sectionRef.current)
+      setCurrentLevel(2);
     }
     sections[sectionRef.current].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'start' });
   };
@@ -83,16 +89,9 @@ function App() {
   return (
     <div className="App" onClick={tester} >
 
-      <nav className='navigation'>
-        <button >Home</button>
-        <button >Div1</button>
-        <button >Div2</button>
-        <button >Div3</button>
-        <button >Div4</button>
-      </nav>
-
       <Header refo={headRef} />
-      <Navigation />
+      <Navigation secto={sectionRef} />
+
       <div className='section div1' ref={div1Ref} ></div>
       <div className='section div2' ref={div2Ref} ></div>
       <div className='section div3' ref={div3Ref} ></div>

@@ -1,0 +1,101 @@
+.navigation_button
+    position: relative
+    flex-grow: 0
+    flex-basis: 15%
+    border: none
+    margin: 16px 30px
+    cursor: pointer
+    transition: 2s
+
+    &::before
+        opacity: 0
+        content: ""
+        display: block
+        position: absolute
+        border-radius: 20px 0
+        z-index: 1
+        top: 2px
+        bottom: 2px
+        left: 2px
+        right: 2px
+        background: linear-gradient(90deg, #ad0b2e, #be1866)
+        transition: .2s linear
+
+    &--active
+        &::before
+            opacity: 1
+            background: linear-gradient(90deg, #ad0b2e, #be1866)
+            top: -1px
+            bottom: -1px
+            left: -2px
+            right: -2px
+            transform: skew(4deg, 1.5deg)
+
+    &__button
+        position: absolute
+        padding: 0
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+        color: white
+        font-size: 3vh
+        border: none
+        background-color: transparent
+        border-radius: 20px 0
+        cursor: pointer
+        overflow: hidden
+
+        &::before
+            position: absolute
+            top: 0
+            left: 0
+            z-index: 2
+            width: 120%
+            height: 120%
+            content: ""
+            display: block
+            transition: .2s linear
+            background: linear-gradient(90deg, rgb(62, 62, 62), rgb(62, 62, 62))
+
+        &::after
+            position: absolute
+            z-index: 3
+            // transform: rotate(-45deg)
+            top: -20vh
+            left: 50%
+            transform: translateX(-50%)
+            width: 0%
+            height: 0%
+            border-radius: 50%
+            content: ""
+            display: block
+            transition: .5s
+            background: linear-gradient(90deg, #ad0b2e 15%, #be1866 85%)
+
+        &_text
+            position: absolute
+            display: block
+            z-index: 30
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+            background-attachment: fixed
+            background-image: linear-gradient(90deg, #ad0b2e, #be1866)
+            background-clip: text
+            color: transparent
+            transition: .5s
+
+        &:hover
+            span
+                color: white
+            &::after
+                height: 40vh
+                width: 40vh
+
+        &--butter
+            flex-grow: 0
+            &:hover
+                color: #f595d0
+            &::after, &::before
+                opacity: 0

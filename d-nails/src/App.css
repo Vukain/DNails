@@ -7,7 +7,7 @@
   display: grid;
   background-color: grey;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 9fr 1fr 10fr;
+  grid-template-rows: 92fr 8fr 100fr;
   grid-template-areas:
     "header empty empty empty"
     "nav empty empty empty"

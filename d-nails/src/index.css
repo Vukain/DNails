@@ -6,6 +6,10 @@ html {
   overflow: hidden;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 #root {
   height: 100%;
   width: 100%;

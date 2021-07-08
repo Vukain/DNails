@@ -5,6 +5,7 @@ import './App.css';
 import { AppContext } from './AppContext';
 import Header from './components/Header/Header';
 import Navigation from './components/Navigation/Navigation';
+import Gallery from './components/Gallery/Gallery';
 
 // import Test from './components/Test/Test';
 
@@ -95,7 +96,9 @@ function App() {
       <div className='section div1' ref={div1Ref} ></div>
       <div className='section div2' ref={div2Ref} ></div>
       <div className='section div3' ref={div3Ref} ></div>
-      <div className='section div4' ref={div4Ref} ></div>
+      <div className='section div4' ref={div4Ref} >
+        <Gallery />
+      </div>
       {/* <Test /> */}
     </div>
   );

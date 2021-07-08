@@ -10,8 +10,8 @@ const style = bemCssModules(NavigationButtonStyles);
 const NavigationButton = (props) => {
 
     const { sectionNames } = useContext(AppContext);
-    const { currentSection, setCurrentSection } = useContext(AppContext);
-    const { currentLevel, setCurrentLevel } = useContext(AppContext);
+    const { currentSection } = useContext(AppContext);
+    const { currentLevel } = useContext(AppContext);
 
     const buttonStyle = currentLevel !== 2 ? style('button', { butter: true }) : style('button');
     const overalStyle = sectionNames[currentSection] === props.name && currentLevel === 2 ? style({ active: true }) : style();

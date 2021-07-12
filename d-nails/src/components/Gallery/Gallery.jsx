@@ -9,9 +9,9 @@ const style = bemCssModules(GalleryStyles);
 
 const Gallery = (props) => {
 
-    const imageNames = ['placeholder', 'placeholder', 'placeholder', 'placeholder', 'placeholder'];
+    const imageNames = ['placeholder', 'placeholder', 'placeholder', 'placeholder', 'placeholder', 'placeholder', 'placeholder', 'placeholder', 'placeholder', 'placeholder', 'placeholder', 'placeholder', 'placeholder', 'placeholder'];
 
-    const images = imageNames.map(el => <GalleryImage key={el} image={el} />)
+    const images = imageNames.map((el, idx) => <GalleryImage key={el + idx} image={el} />)
 
     return (
         <div className={style()}>

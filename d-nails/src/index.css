@@ -11,6 +11,9 @@ html {
 }
 
 #root {
+  --mainColor1: #ad0b2e;
+  --mainColor2: #be1866;
+
   height: 100%;
   width: 100%;
   overflow: hidden;

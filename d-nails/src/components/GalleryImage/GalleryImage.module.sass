@@ -1,6 +1,21 @@
 .gallery_image
-    width: 16%
-    aspect-ratio: 1 / 1
+    // width: 16%
+    // width: 100%
+    // aspect-ratio: 1 / 1
+    grid-row: span 2
+    grid-column: span 2
+    &:nth-child(1)
+        grid-row: span 4
+        grid-column: span 4
+
+    &:nth-child(5)
+        grid-row: span 2
+        grid-column: span 4
+
+    &:nth-child(8)
+        grid-row: span 4
+        grid-column: span 4
+
     // width: 20vh
     // height: 20vh
 

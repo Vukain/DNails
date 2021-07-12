@@ -1,8 +1,16 @@
 .gallery
     position: absolute
-    width: 100vw
-    height: 100vh
-    padding: 14vh 10vw
-    display: flex
-    align-items: flex-start
-    justify-content: space-around
+    width: calc(100vw - 16vh)
+    height: 76vh
+    margin: 16vh 8vh 8vh 8vh
+    padding: 10px
+    border-radius: 10px
+    // display: flex
+    // align-items: flex-start
+    // justify-content: space-around
+    // background: linear-gradient(90deg, #ad0b2e, #be1866)
+    display: grid
+    // grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))
+    grid-template-columns: repeat(14, 1fr)
+    grid-template-rows: repeat(6, 1fr)
+    grid-gap: 10px

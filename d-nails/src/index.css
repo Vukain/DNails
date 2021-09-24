@@ -6,13 +6,16 @@ html {
   overflow: hidden;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 #root {
   --mainColor1: #ad0b2e;
-  --mainColor2: #be1866;
+  --mainColor2: #9c2b60;
+  --mainColor3: #d14e3b;
 
   height: 100%;
   width: 100%;

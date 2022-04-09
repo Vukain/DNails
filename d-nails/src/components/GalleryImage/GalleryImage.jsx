@@ -9,7 +9,7 @@ const GalleryImage = (props) => {
 
     return (
         <div className={style()}>
-            <img src={`/images/${props.image}.jpeg`} className={style('imag')} alt="" />
+            <img src={props.image} className={style('imag')} alt="" />
         </div>);
 }
 

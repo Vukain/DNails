@@ -20,12 +20,12 @@
 
 .div1 {
   grid-area: div1;
-  background-image: var(--background-plain);
+  background-image: var(--background-gradient);
 }
 
 .div2 {
   grid-area: div2;
-  background-image: var(--background-plain);
+  background-image: var(--background-gradient);
 }
 
 .div3 {

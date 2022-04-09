@@ -14,7 +14,9 @@ const NavigationButton = (props) => {
     const { currentLevel } = useContext(AppContext);
 
     const buttonStyle = currentLevel !== 2 ? style('button', { butter: true }) : style('button');
-    const overalStyle = sectionNames[currentSection] === props.name && currentLevel === 2 ? style({ active: true }) : style();
+    const stajl = { active: true };
+    stajl[props.position] = true;
+    const overalStyle = sectionNames[currentSection] === props.name && currentLevel === 2 ? style(stajl) : style();
 
 
     return (

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,OAAO,AAAC,CACJ,SAAS,CAAE,MAAM,CACjB,gBAAgB,CAAE,IAAI,CAYxB",
+    "sources": [
+        "../d-nails/src/components/Header/Header.module.sass"
+    ],
+    "names": [],
+    "file": "Header.module.min.css"
+}

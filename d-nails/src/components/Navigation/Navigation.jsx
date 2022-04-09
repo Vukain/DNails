@@ -41,11 +41,11 @@ const Navigation = (props) => {
 
     return (
         <nav className={navStyle}>
-            <NavigationButton scrolla={scroller} name='Home' section={0} level={1} />
-            <NavigationButton scrolla={scroller} name='Div1' section={1} level={2} />
-            <NavigationButton scrolla={scroller} name='Div2' section={2} level={2} />
-            <NavigationButton scrolla={scroller} name='Div3' section={3} level={2} />
-            <NavigationButton scrolla={scroller} name='Div4' section={4} level={2} />
+            <NavigationButton scrolla={scroller} name='Home' position='first' section={0} level={1} />
+            <NavigationButton scrolla={scroller} name='Div1' position='second' section={1} level={2} />
+            <NavigationButton scrolla={scroller} name='Div2' position='third' section={2} level={2} />
+            <NavigationButton scrolla={scroller} name='Div3' position='fourth' section={3} level={2} />
+            <NavigationButton scrolla={scroller} name='Div4' position='fifth' section={4} level={2} />
         </nav>
     )
 }

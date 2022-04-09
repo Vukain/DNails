@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/DNails/static/css/main.c62426d7.chunk.css",
+    "main.js": "/DNails/static/js/main.4feee92f.chunk.js",
+    "main.js.map": "/DNails/static/js/main.4feee92f.chunk.js.map",
+    "runtime-main.js": "/DNails/static/js/runtime-main.660e73bb.js",
+    "runtime-main.js.map": "/DNails/static/js/runtime-main.660e73bb.js.map",
+    "static/js/2.21727dfd.chunk.js": "/DNails/static/js/2.21727dfd.chunk.js",
+    "static/js/2.21727dfd.chunk.js.map": "/DNails/static/js/2.21727dfd.chunk.js.map",
+    "static/js/3.9f35d7e9.chunk.js": "/DNails/static/js/3.9f35d7e9.chunk.js",
+    "static/js/3.9f35d7e9.chunk.js.map": "/DNails/static/js/3.9f35d7e9.chunk.js.map",
+    "index.html": "/DNails/index.html",
+    "static/css/main.c62426d7.chunk.css.map": "/DNails/static/css/main.c62426d7.chunk.css.map",
+    "static/js/2.21727dfd.chunk.js.LICENSE.txt": "/DNails/static/js/2.21727dfd.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.660e73bb.js",
+    "static/js/2.21727dfd.chunk.js",
+    "static/css/main.c62426d7.chunk.css",
+    "static/js/main.4feee92f.chunk.js"
+  ]
+}

@@ -7,12 +7,9 @@ import GalleryImage from '../GalleryImage/GalleryImage';
 const style = bemCssModules(GalleryStyles);
 
 
-
-
 const Gallery = (props) => {
 
-    const imageNames = [placeholder, placeholder, placeholder, placeholder, placeholder, placeholder, placeholder, placeholder, placeholder, placeholder, placeholder, placeholder, placeholder, placeholder];
-
+    const imageNames = new Array(14).fill(placeholder)
     const images = imageNames.map((el, idx) => <GalleryImage key={el + idx} image={el} />)
 
     return (

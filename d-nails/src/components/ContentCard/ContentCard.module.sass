@@ -1,3 +1,11 @@
+@keyframes bgc
+    0%
+        background-position: 0% 0%
+    50%
+        background-position: 100% 0%
+    100%
+        background-position: 0% 0%
+
 .wrapper
     position: absolute
     width: calc(100vw - 16vh)
@@ -8,14 +16,16 @@
     // display: flex
     // align-items: flex-start
     // justify-content: space-around
-    background: linear-gradient(45deg, var(--mainColor1) 10%, var(--mainColor2), var(--mainColor3) 90% )
-    background-attachment: fixed
+    background: linear-gradient(45deg, var(--mainColor1), var(--mainColor2), var(--mainColor3), var(--mainColor2), var(--mainColor1) )
+    background-size: 200% 100%
+    background-position: 0% 0%
     display: grid
     // grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))
     grid-template-columns: repeat(14, 1fr)
     grid-template-rows: repeat(6, 1fr)
     grid-gap: 10px
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.6)
+    animation: bgc 8s infinite ease-in
     &::after
         content: ""
         display: block

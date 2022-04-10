@@ -45,7 +45,7 @@ const Navigation = (props) => {
             <NavigationButton scrolla={scroller} name='Div1' position='second' section={1} level={2} />
             <NavigationButton scrolla={scroller} name='Div2' position='third' section={2} level={2} />
             <NavigationButton scrolla={scroller} name='Div3' position='fourth' section={3} level={2} />
-            <NavigationButton scrolla={scroller} name='Div4' position='fifth' section={4} level={2} />
+            <NavigationButton scrolla={scroller} name='Div4' position='fifth' section={4} level={2} />;
         </nav>
     )
 }

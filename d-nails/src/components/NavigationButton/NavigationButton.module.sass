@@ -111,12 +111,24 @@
             top: 50%
             left: 50%
             transform: translate(-50%, -50%)
-
-            background-image: linear-gradient(90deg, var(--mainColor1), var(--mainColor2))
+            background-image: linear-gradient(90deg, var(--mainColor1), var(--mainColor2), var(--mainColor3))
+            background-size: 100vw 100%
+            background-position-x: -400%
 
             background-clip: text
             color: transparent
             transition: .5s
+
+            &--first
+                background-position-x: 0%
+            &--second
+                background-position-x: 25%
+            &--third
+                background-position-x: 50%
+            &--fourth
+                background-position-x: 75%
+            &--fifth
+                background-position-x: 100%
 
         &:hover
             span

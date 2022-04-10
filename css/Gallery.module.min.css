@@ -1,2 +1,2 @@
-.gallery{position:absolute;width:calc(100vw - 16vh);height:76vh;margin:16vh 8vh 8vh 8vh;padding:16px;border-radius:16px;background:linear-gradient(45deg, var(--mainColor1) 10%, var(--mainColor2), var(--mainColor3) 90%);display:-ms-grid;display:grid;-ms-grid-columns:(1fr)[14];grid-template-columns:repeat(14, 1fr);-ms-grid-rows:(1fr)[6];grid-template-rows:repeat(6, 1fr);grid-gap:16px}
+.gallery{position:absolute;width:100%;height:100%;padding:32px;border-radius:16px;display:-ms-grid;display:grid;-ms-grid-columns:(1fr)[14];grid-template-columns:repeat(14, 1fr);-ms-grid-rows:(1fr)[6];grid-template-rows:repeat(6, 1fr);grid-gap:16px;z-index:99}
 /*# sourceMappingURL=Gallery.module.min.css.map */

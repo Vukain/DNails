@@ -13,16 +13,20 @@ const NavigationButton = (props) => {
     const { currentSection } = useContext(AppContext);
     const { currentLevel } = useContext(AppContext);
 
-    const buttonStyle = currentLevel !== 2 ? style('button', { butter: true }) : style('button');
+    const butstajl = { butter: true };
+    butstajl[props.position] = true;
+    const buttonStyle = currentLevel !== 2 ? style('button', butstajl) : style('button');
     const stajl = { active: true };
     stajl[props.position] = true;
     const overalStyle = sectionNames[currentSection] === props.name && currentLevel === 2 ? style(stajl) : style();
+    const txtstajl = {};
+    txtstajl[props.position] = true;
 
 
     return (
         <div className={overalStyle}>
             <button className={buttonStyle} onClick={() => { props.scrolla(props.section, props.level) }}>
-                <span className={style('button_text')}>{props.name}</span>
+                <span className={style('button_text', txtstajl)}>{props.name}</span>
             </button>
         </div>
     );

@@ -6,7 +6,7 @@ import { AppContext } from './AppContext';
 import Header from './components/Header/Header';
 import Navigation from './components/Navigation/Navigation';
 import Gallery from './components/Gallery/Gallery';
-import ContentWrapper from './components/ContentWrapper/ContentWrapper';
+import ContentCard from './components/ContentCard/ContentCard';
 
 // import Test from './components/Test/Test';
 
@@ -95,16 +95,18 @@ function App() {
       <Navigation secto={sectionRef} />
 
       <div className='section div1' ref={div1Ref} >
-        <ContentWrapper />
+        <ContentCard />
       </div>
       <div className='section div2' ref={div2Ref} >
-        <ContentWrapper />
+        <ContentCard />
       </div>
       <div className='section div3' ref={div3Ref} >
-        <ContentWrapper />
+        <ContentCard />
       </div>
       <div className='section div4' ref={div4Ref} >
-        <Gallery />
+        <ContentCard>
+          <Gallery />
+        </ContentCard>
       </div>
       {/* <Test /> */}
     </div>

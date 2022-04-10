@@ -41,21 +41,21 @@
     &--second
 
         &::before
-            background-position-x: -90%
+            background-position-x: 25%
     &--third
 
         &::before
-            background-position-x: -190%
+            background-position-x: 50%
 
     &--fourth
 
         &::before
-            background-position-x: -290%
+            background-position-x: 75%
 
     &--fifth
 
         &::before
-            background-position-x: -390%
+            background-position-x: 100%
 
     &__button
         position: absolute
@@ -102,7 +102,29 @@
             content: ""
             display: block
             transition: .5s
-            background-image: linear-gradient(90deg, var(--mainColor1) 15%, var(--mainColor2) 85%)
+            // background-image: linear-gradient(90deg, var(--mainColor1) 15%, var(--mainColor2) 85%)
+            background-image: linear-gradient(90deg, var(--mainColor1), var(--mainColor2), var(--mainColor3))
+            background-size: 100vw 100%
+
+        &--first
+            &::after
+                background-position-x: 0%
+
+        &--second
+            &::after
+                background-position-x: 25%
+
+        &--third
+            &::after
+                background-position-x: 50%
+
+        &--fourth
+            &::after
+                background-position-x: 75%
+
+        &--fifth
+            &::after
+                background-position-x: 100%
 
         &_text
             position: absolute

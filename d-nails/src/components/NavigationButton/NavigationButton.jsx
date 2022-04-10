@@ -13,12 +13,15 @@ const NavigationButton = (props) => {
     const { currentSection } = useContext(AppContext);
     const { currentLevel } = useContext(AppContext);
 
-    const butstajl = { butter: true };
+    const butstajl = currentLevel !== 2 ? { butter: true } : {};
     butstajl[props.position] = true;
-    const buttonStyle = currentLevel !== 2 ? style('button', butstajl) : style('button');
+    console.log(butstajl);
+    const buttonStyle = style('button', butstajl);
+
     const stajl = { active: true };
     stajl[props.position] = true;
     const overalStyle = sectionNames[currentSection] === props.name && currentLevel === 2 ? style(stajl) : style();
+
     const txtstajl = {};
     txtstajl[props.position] = true;
 

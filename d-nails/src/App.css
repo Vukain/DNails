@@ -8,7 +8,7 @@
   width: 400vw;
   height: 200vh;
   display: grid;
-  background-color: grey;
+  background-color: #414141;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 92fr 8fr 100fr;
   grid-template-areas:

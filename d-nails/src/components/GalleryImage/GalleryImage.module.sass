@@ -4,20 +4,27 @@
     // aspect-ratio: 1 / 1
     grid-row: span 2
     grid-column: span 2
-    &:nth-child(1)
-        grid-row: span 4
-        grid-column: span 4
 
-    &:nth-child(5)
-        grid-row: span 2
-        grid-column: span 4
+    &--normal
+        &:nth-child(1)
+            grid-row: span 4
+            grid-column: span 4
 
-    &:nth-child(8)
-        grid-row: span 4
-        grid-column: span 4
+        &:nth-child(5)
+            grid-row: span 2
+            grid-column: span 4
 
-    // width: 20vh
-    // height: 20vh
+        &:nth-child(8)
+            grid-row: span 4
+            grid-column: span 4
+
+    &--miniature
+        grid-row: span 1
+        grid-column: span 1
+
+    &--enlarged
+        grid-row: 1 / span 6
+        grid-column: 1 / span 8
 
     &__imag
         width: 100%
@@ -32,3 +39,8 @@
             z-index: 99999
             filter: grayscale(0%)
             transform: scale(1.1)
+
+        &--active
+            filter: grayscale(0%)
+            &:hover
+                transform: scale(1)

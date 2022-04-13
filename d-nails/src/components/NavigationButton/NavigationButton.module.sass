@@ -6,6 +6,7 @@
     margin: 16px 30px
     cursor: pointer
     transition: 2s
+    overflow: visible
 
     &::before
         opacity: 0
@@ -22,6 +23,7 @@
         background-size: 100vw 100%
         background-position-x: -400%
         transition: .3s linear
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1)
 
     &--active
 
@@ -29,9 +31,9 @@
             opacity: 1
             top: -1px
             bottom: -1px
-            left: -2px
-            right: -2px
-            transform: skew(4deg, 1.5deg)
+            left: -1px
+            right: -1px
+            transform: skew(4deg, 1.6deg)
 
     &--first
 
@@ -68,7 +70,7 @@
         font-size: 3vh
         border: none
         background-color: transparent
-        border-radius: 20px 0
+        border-radius: 18px 0
         cursor: pointer
         overflow: hidden
 
@@ -82,11 +84,12 @@
             content: ""
             display: block
             transition: .2s linear
-            border-radius: 20px 0
+            border-radius: 18px 0
             // background: linear-gradient(90deg, rgb(62, 62, 62), rgb(62, 62, 62))
             background-image: radial-gradient(#414141, #353535)
             background-clip: padding-box
             border: 1px solid transparent
+
             // box-shadow: inset 0 0 1em #333333
 
         &::after

@@ -17,6 +17,11 @@ html {
   --mainColor2: #b11335;
   --mainColor3: #d75641;
 
+  --almostWhite: #f9f9f9;
+  --lightestGray: #6B6B6B;
+  --lightGray: #414141;
+  --darkGray: #292929;
+
   height: 100%;
   width: 100%;
   overflow: hidden;

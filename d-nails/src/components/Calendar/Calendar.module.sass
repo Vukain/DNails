@@ -1,21 +1,42 @@
 .calendar
-    background-color: #fff
     width: 100%
     height: 100%
-    border-radius: 10px
+    border-radius: 20px
     display: flex
     flex-direction: column
+    overflow: hidden
     &__month
-        background-color: #dbdada
-        flex-grow: 2
-    &__week
-        background-color: #bdbcbc
         flex-grow: 1
+        display: grid
+        grid-template-rows: 1fr
+        grid-template-columns: 1fr 1fr
+
+    &__chosen_month
+        background-image: linear-gradient(45deg, var(--mainColor1), var(--mainColor2), var(--mainColor3))
+        background-size: 200% 100%
+        background-position: 0%
         display: flex
+        justify-content: center
         align-items: center
-    &__weekday
+        font-size: 32px
+        font-weight: bold
+        color: var(--almostWhite)
+        // filter: grayscale(100%)
+        &:nth-of-type(2)
+            background-position: 100%
+        &--inactive_month
+            filter: grayscale(100%)
+    &__week
+        background-color: var(--almostWhite)
+        color: var(--darkGray)
         flex-grow: 1
-        flex-shrink: 0
+        display: grid
+        grid-template-rows: 1fr
+        grid-template-columns: repeat(7, 1fr)
+    &__weekday
+        display: flex
+        justify-content: center
+        align-items: center
         font-size: 32px
         font-weight: bold
         margin: 0
@@ -23,5 +44,17 @@
         text-align: center
 
     &__days
-        background-color: #8f8e8e
-        flex-grow: 5
+        background-color: var(--lightestGray)
+        flex-grow: 8
+        display: grid
+        grid-auto-rows: 1fr
+        grid-template-columns: repeat(7, 1fr)
+
+    &__day
+        display: flex
+        justify-content: center
+        align-items: center
+        font-size: 32px
+        font-weight: bold
+        // border: 1px solid #3d3d3d
+        color: var(--darkGray)

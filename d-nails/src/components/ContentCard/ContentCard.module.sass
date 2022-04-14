@@ -17,17 +17,21 @@
         content: ""
         display: block
         position: absolute
-        top: 10px
-        bottom: 10px
-        left: 10px
-        right: 10px
+        top: 0px
+        bottom: 0px
+        left: 0px
+        right: 0px
         box-shadow: 0 0 40px rgba(0, 0, 0, 0.6)
-        background: linear-gradient(45deg, var(--mainColor1), var(--mainColor2), var(--mainColor3), var(--mainColor2), var(--mainColor1) )
+        background: linear-gradient(45deg, var(--darkGray) 10%, var(--mainColor1), var(--mainColor2), var(--mainColor3), var(--mainColor2), var(--mainColor1), var(--darkGray) 90%)
         background-size: 200% 100%
         background-position: 0% 0%
         animation: bgc 8s infinite ease-in
-        border-radius: 20px
-        transform: skew(1.1deg, 0.5deg)
+        border-radius: 16px 0
+        // top: 10px
+        // bottom: 10px
+        // left: 10px
+        // right: 10px
+        // transform: skew(1.1deg, 0.5deg)
     &::after
         content: ""
         display: block
@@ -37,4 +41,4 @@
         left: 16px
         right: 16px
         background: var(--darkGray)
-        border-radius: 10px
+        border-radius: 12px 0

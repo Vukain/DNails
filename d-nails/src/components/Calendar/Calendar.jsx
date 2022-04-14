@@ -7,7 +7,7 @@ const style = bemCssModules(CalendarStyles);
 
 const Calendar = () => {
 
-    const days = Array.from(Array(31), (_, i) => <div className={style('day', { not_empty: true })}>{i + 1}</div>);
+    const days = Array.from(Array(31), (_, i) => <div className={style('day', { not_empty: true, today: i === 7, passed: i < 7, busy: i % 3 == 0, unavailable: i % 5 == 0, })}>{i + 1}</div>);
     const emptyDays = Array(2).fill(<div className={style('day', { not_empty: false })}></div>);
     const daaaaays = [...emptyDays, ...days]
 

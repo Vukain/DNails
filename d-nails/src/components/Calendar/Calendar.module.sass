@@ -9,15 +9,17 @@
     height: 100%
     border-radius: 10px
     display: flex
+    margin: auto
     flex-direction: column
     // overflow: hidden
     &__month
-        flex-grow: 1
+        // flex-grow: 1
+        height: 9%
         display: grid
         grid-template-rows: 1fr
         grid-template-columns: 1fr 1fr
         cursor: pointer
-        margin: 8px
+        margin-bottom: 8px
         box-shadow: 0 0 30px rgba(0, 0, 0, 0.4)
 
     &__chosen_month
@@ -31,6 +33,7 @@
         font-size: 32px
         font-weight: bold
         color: var(--almostWhite)
+        transition: .4s
         // filter: grayscale(100%)
         &:hover
             animation: bgc 2s infinite ease-in alternate
@@ -45,18 +48,18 @@
     &__week
         background-color: var(--almostWhite)
         color: var(--darkGray)
-        flex-grow: 1
+        height: 9%
         display: grid
         grid-template-rows: 1fr
         grid-template-columns: repeat(7, 1fr)
         border-radius: 0px
-        margin: 8px
+        margin-bottom: 8px
         box-shadow: 0 0 30px rgba(0, 0, 0, 0.4)
     &__weekday
         display: flex
         justify-content: center
         align-items: center
-        font-size: 32px
+        font-size: 28px
         font-weight: bold
         border-radius: 10px
         margin: 0
@@ -65,14 +68,13 @@
 
     &__days
         background-color: var(--lightestGray)
-        flex-grow: 8
+        flex-grow: 1
         display: grid
         grid-auto-rows: 1fr
         grid-template-columns: repeat(7, 1fr)
         z-index: 1
         border-radius: 0 0 10px 10px
         // overflow: hidden
-        margin: 8px
         box-shadow: 0 0 30px rgba(0, 0, 0, 0.4)
         // box-shadow: 0 0 30px rgba(214,85,64, 0.6)
 

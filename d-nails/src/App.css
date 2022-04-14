@@ -8,6 +8,7 @@
   width: 400vw;
   height: 200vh;
   display: grid;
+  font-family: 'Roboto', sans-serif;
   background-color: #414141;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 92fr 8fr 100fr;

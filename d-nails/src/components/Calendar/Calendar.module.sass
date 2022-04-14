@@ -1,3 +1,9 @@
+@keyframes bgc
+    0%
+        background-position: 0% 0%
+    100%
+        background-position: 100% 0%
+
 .calendar
     width: 100%
     height: 100%
@@ -26,9 +32,14 @@
         font-weight: bold
         color: var(--almostWhite)
         // filter: grayscale(100%)
+        &:hover
+            animation: bgc 2s infinite ease-in alternate
         &:nth-of-type(2)
             background-position: 100%
             border-radius: 0 10px 0px 0
+            &:hover
+                animation-direction: alternate-reverse
+
         &--inactive_month
             filter: grayscale(100%)
     &__week
@@ -77,11 +88,10 @@
         border-radius: 10px
         overflow: visible
         margin: 10px
-        cursor: pointer
         z-index: 3
         &--not_empty
+            cursor: pointer
             &::before
-                cursor: pointer
                 display: block
                 content: ""
                 width: calc(100% - 12px)
@@ -92,6 +102,7 @@
                 z-index: -2
                 border-radius: 14px
                 box-shadow: 0 0 15px rgba(0, 0, 0, 0.08)
+                transition: .5s
             &::after
                 cursor: pointer
                 display: block
@@ -109,9 +120,16 @@
                 // border-width: 5px
                 // border-image-source: linear-gradient(45deg, var(--mainColor1), var(--mainColor2), var(--mainColor3))
                 // border-style: solid
+            &:hover
+                &::before
+                    background-image: linear-gradient(45deg, var(--mainColor1) 10%, var(--mainColor2), var(--mainColor3) 90%)
         &--today
             &::before
                 background-image: linear-gradient(45deg, var(--mainColor1) 10%, var(--mainColor2), var(--mainColor3) 90%)
+                filter: grayscale(1)
+            &:hover
+                &::before
+                    filter: grayscale(0)
 
         &--busy
             color: var(--almostWhite)
@@ -125,6 +143,11 @@
                 background-color: var(--mainColor2)
 
         &--passed
+            cursor: default
             color: #777
             &::after
                 background-color: unset
+                cursor: default
+            &:hover
+                &::before
+                    background-image: none

@@ -23,6 +23,7 @@
         left: 64px
         width: calc(100% - 128px)
         height: calc(100% - 128px)
+        cursor: crosshair
 
     &__color_picker
         // flex-grow: 1
@@ -31,4 +32,11 @@
         height: 100%
         background-color: #acacac
         background-clip: content-box
+        display: grid
+        grid-template-columns: repeat(5, 1fr)
+        grid-template-rows: repeat(5, 1fr)
         // flex-shrink: 0
+    &__color_select
+        border-radius: 10px
+        margin: 10px
+        cursor: pointer

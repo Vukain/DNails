@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import bemCssModules from 'bem-css-modules';
 
 import { default as NailPainterStyles } from './NailPainter.module.sass';
@@ -15,7 +15,10 @@ const NailPainter = () => {
     const [canvasContext, setCanvasContext] = useState(null);
     const [mouseX, setMouseX] = useState(0);
     const [mouseY, setMouseY] = useState(0);
-    const [pickedColor, setPickedColor] = useState('#341232')
+
+    const colors = ["#95285b", "#b11335", "#d75641", '#8ab9d7', '#d9f6a6'];
+    const squaries = colors.map((e, i) => <div key={i} className={style('color_select')} style={{ backgroundColor: e }} onClick={() => onColorChange(e)}></div>)
+
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -23,36 +26,46 @@ const NailPainter = () => {
         canvas.height = wrapperRef.current.offsetHeight - 128;
 
         const context = canvas.getContext('2d');
+        context.fillStyle = '#d75641';
         setCanvasContext(context);
-
-        overlayRef.current.addEventListener("mousemove", e => {
-            setMouseX(e.offsetX);
-            setMouseY(e.offsetY);
-        })
-        console.log()
     }, [])
 
-    const onClickTest = () => {
-        canvasContext.fillStyle = pickedColor;
-        canvasContext.fillRect(mouseX, mouseY, 50, 50);
-        // console.log(wrapperRef.current.offsetHeight)
+    const onColorChange = (color) => {
+        canvasContext.fillStyle = color;
     }
 
-    const onColorChange = () => {
-        setPickedColor('#321fcf')
+    const paintHandlerListener = (e) => {
+        // setMouseX(e.offsetX);
+        // setMouseY(e.offsetY);
+        canvasContext.beginPath();
+        canvasContext.arc(e.offsetX, e.offsetY, 16, 0, 2 * Math.PI, false)
+        canvasContext.fill();
     }
 
+    const onMouseDownHandler = (e) => {
+        const cursorX = canvasRef.current.getBoundingClientRect().left;
+        const cursorY = canvasRef.current.getBoundingClientRect().top;
+        canvasContext.beginPath();
+        canvasContext.arc(e.clientX - cursorX, e.clientY - cursorY, 16, 0, 2 * Math.PI, false)
+        canvasContext.fill();
+        overlayRef.current.addEventListener("mousemove", paintHandlerListener);
+    }
+
+    const onMouseUpHandler = () => {
+        overlayRef.current.removeEventListener("mousemove", paintHandlerListener)
+    }
 
     return (
         <div className={style()}>
-
+            <div ></div>
             <div className={style('canvas_wrapper')} ref={wrapperRef}>
-                <canvas ref={canvasRef} onClick={onClickTest}>
+                <canvas ref={canvasRef}>
                 </canvas>
-                <div ref={overlayRef} className={style('test')} onClick={onClickTest}></div>
+                <div ref={overlayRef} className={style('test')} onMouseDown={onMouseDownHandler} onMouseUp={onMouseUpHandler}></div>
             </div>
 
-            <div className={style('color_picker')} onClick={onColorChange}>
+            <div className={style('color_picker')}  >
+                {squaries}
             </div>
         </div>
     );

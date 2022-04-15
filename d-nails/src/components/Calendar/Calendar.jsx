@@ -17,7 +17,7 @@ const Calendar = () => {
     const startDayCurrent = currentMonth.startOf("month").format("d");
     const startDayNext = nextMonth.startOf("month").format("d");
 
-    console.log(moment(), currentMonth)
+    // console.log(moment(), currentMonth)
 
     const daysCurrent = Array.from(Array(currentMonth.daysInMonth()), (_, i) => <div key={i} className={style('day', { not_empty: true, today: i + 1 === moment().date(), passed: i + 1 < moment().date(), busy: i % 3 == 0, unavailable: i % 5 == 0, })
     }> {i + 1}</div >);

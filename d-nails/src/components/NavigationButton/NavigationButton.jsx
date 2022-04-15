@@ -15,7 +15,7 @@ const NavigationButton = (props) => {
 
     const butstajl = currentLevel !== 2 ? { butter: true } : {};
     butstajl[props.position] = true;
-    console.log(butstajl);
+    // console.log(butstajl);
     const buttonStyle = style('button', butstajl);
 
     const stajl = { active: true };

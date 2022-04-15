@@ -8,6 +8,7 @@ import Navigation from './components/Navigation/Navigation';
 import Gallery from './components/Gallery/Gallery';
 import ContentCard from './components/ContentCard/ContentCard';
 import Appointment from './components/Appointment/Appointment';
+import NailPainter from './components/NailPainter/NailPainter';
 
 // import Test from './components/Test/Test';
 
@@ -70,27 +71,25 @@ function App() {
   // }
 
   const scroller = (e) => {
-
     const { deltaY } = e;
     if (!throtle) {
       throtle = true;
-
-
       if (e.deltaY > 0) {
         setTimeout(() => {
           sectionChanger('down');
-        }, 600);
+        }, 800);
       } else {
         setTimeout(() => {
           sectionChanger('up');
-        }, 600);
+        }, 800);
       };
 
       setTimeout(() => {
         throtle = false;
-      }, 600);
+      }, 800);
     }
   };
+
 
   return (
     <div className="App">
@@ -101,19 +100,25 @@ function App() {
       <div className='section div1' ref={div1Ref} >
         <ContentCard />
       </div>
+
       <div className='section div2' ref={div2Ref} >
-        <ContentCard />
+        <ContentCard>
+          <NailPainter />
+        </ContentCard>
       </div>
+
       <div className='section div3' ref={div3Ref} >
         <ContentCard>
           <Appointment />
         </ContentCard>
       </div>
+
       <div className='section div4' ref={div4Ref} >
         <ContentCard>
           <Gallery />
         </ContentCard>
       </div>
+      
       {/* <Test /> */}
     </div>
   );

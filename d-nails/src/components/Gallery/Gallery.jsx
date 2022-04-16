@@ -15,13 +15,24 @@ const Gallery = (props) => {
     const imageNames = new Array(14).fill(placeholder)
     const images = imageNames.map((el, idx) => <GalleryImage key={el + idx} image={el} index={idx} enlarge={false} active={currentlyEnlarged} changeActive={setCurrentlyEnlarged} />)
 
-    const mode = currentlyEnlarged === null ? style() : style({ enlarged: true });
 
-    return (
-        <div className={mode}>
-            {currentlyEnlarged !== null ? <GalleryImage image={imageNames[currentlyEnlarged]} index={currentlyEnlarged} enlarge={true} active={currentlyEnlarged} changeActive={setCurrentlyEnlarged} /> : null}
+    const enlargedImage = (
+        <div className={style({ enlarged: currentlyEnlarged !== null })}>
+            <GalleryImage image={imageNames[currentlyEnlarged]} index={currentlyEnlarged} enlarge={true} active={currentlyEnlarged} changeActive={setCurrentlyEnlarged} />
+            <div className={style('miniatures')}>
+                {images}
+            </div>
+        </div>
+    )
+
+    const normalImages = (
+        <div className={style({ enlarged: currentlyEnlarged !== null })}>
             {images}
         </div>
+    )
+
+    return (
+        currentlyEnlarged !== null ? enlargedImage : normalImages
     );
 }
 

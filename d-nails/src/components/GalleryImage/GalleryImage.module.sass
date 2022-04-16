@@ -19,14 +19,23 @@
             grid-column: span 4
 
     &--miniature
+        position: relative
+        grid-row: span 1
+        grid-column: span 1
+        padding-top: 100%
+        // &::before
+        //     content: ""
+        //     display: block
+        //     padding-top: 100%
+
+    &--enlarged
         grid-row: span 1
         grid-column: span 1
 
-    &--enlarged
-        grid-row: 1 / span 6
-        grid-column: 1 / span 8
-
     &__imag
+        position: absolute
+        top: 0
+        left: 0
         width: 100%
         height: 100%
         object-fit: cover

@@ -13,10 +13,12 @@
     &--enlarged
         grid-template-columns: 6fr 4fr
         grid-template-rows: 1fr
-        grid-gap: 0
+        // grid-gap: 16px
 
     &__miniatures
-        margin-left: 16px
+        align-self: start
         display: grid
-        grid-template-columns: repeat(auto-fill, minmax(10%, 1fr))
+        grid-template-columns: repeat(auto-fill, minmax(15%, 1fr))
+        // grid-template-columns: repeat(4, 1fr)
+        // grid-template-rows: repeat(4, 1fr)
         grid-gap: 16px

@@ -19,7 +19,6 @@ const NailPainter = () => {
     const colors = ["#95285b", "#b11335", "#d75641", '#8ab9d7', '#d9f6a6', '#845EC2', '#D65DB1', '#FF6F91', '#FF9671', '#FFC75F', '#F9F871', '#DD2E5D', '#BA3A80', '#894990', '#58518B', '#354F75', '#2F4858'];
     const squaries = colors.map((e, i) => <div key={i} className={style('color_select')} style={{ backgroundColor: e }} onClick={() => onColorChange(e)}></div>)
 
-
     useEffect(() => {
         const canvas = canvasRef.current;
         canvas.width = wrapperRef.current.offsetWidth - 128;

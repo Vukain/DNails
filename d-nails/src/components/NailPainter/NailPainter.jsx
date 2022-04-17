@@ -64,7 +64,16 @@ const NailPainter = () => {
             </div>
 
             <div className={style('color_picker')}  >
-                {squaries}
+                <div className={style('color_filter')}>
+                    <div className={style('color_filter_title')}>DOSTĘPNE KOLORY</div>
+                    <div className={style('color_filter_option', { active: true })}>MATOWE</div>
+                    <div className={style('color_filter_option')}>POŁYSK</div>
+                    <div className={style('color_filter_option')}>PERŁOWE</div>
+                </div>
+                <div className={style('color_selector')}>
+                    {squaries}
+                </div>
+
             </div>
         </div>
     );

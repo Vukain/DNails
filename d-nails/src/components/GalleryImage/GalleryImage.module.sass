@@ -4,6 +4,7 @@
     // aspect-ratio: 1 / 1
     grid-row: span 2
     grid-column: span 2
+    position: relative
 
     &--normal
         &:nth-child(1)
@@ -22,7 +23,7 @@
         position: relative
         grid-row: span 1
         grid-column: span 1
-        aspect-ratio: 1/1
+        // aspect-ratio: 1 / 1
         // &::before
         //     content: ""
         //     display: block
@@ -33,6 +34,9 @@
         grid-column: span 1
 
     &__imag
+        position: absolute
+        top: 0
+        left: 0
         width: 100%
         height: 100%
         object-fit: cover
@@ -41,7 +45,6 @@
         cursor: pointer
         transition: 0.4s
         &:hover
-            position: relative
             z-index: 99999
             filter: grayscale(0%)
             transform: scale(1.1)

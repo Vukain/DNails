@@ -26,18 +26,81 @@
         cursor: crosshair
 
     &__color_picker
-        // flex-grow: 1
         padding: 64px
         width: 50%
-        // height: 100%
-        align-self: flex-start
-        background-color: #acacac
-        background-clip: content-box
-        display: grid
-        grid-template-columns: repeat(auto-fit, minmax(10%, 1fr))
+        height: 100%
 
-        // flex-shrink: 0
+        background-clip: content-box
+        display: flex
+        flex-direction: column
+        gap: 10px
+
+        // display: grid
+        // align-content: start
+        // grid-template-columns: repeat(auto-fill, minmax(10%, 1fr))
+        // grid-template-rows: repeat(auto-fit, minmax(10%, 1fr))
+
+        // display: flex
+        // flex-wrap: wrap
+        // align-items: flex-start
+        // align-content: flex-start
+        // justify-content: center
+
+    &__color_filter
+        position: relative
+        height: 18%
+        // background-color: var(--lightGray)
+        border-radius: 10px 10px 0 0
+        font-size: 28px
+        font-weight: bold
+        // background-image: linear-gradient(45deg, var(--mainColor1) 25%, var(--mainColor2), var(--mainColor3) 75%)
+        color: var(--almostWhite)
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        grid-template-rows: 3fr 2fr
+        align-items: stretch
+        align-content: center
+        grid-gap: 10px
+
+    &__color_filter_title
+        border-radius: 10px 10px 0 0
+        font-size: 28px
+        font-weight: bold
+        display: flex
+        justify-content: center
+        align-items: center
+        background-image: linear-gradient(45deg, var(--mainColor1) 25%, var(--mainColor2), var(--mainColor3) 75%)
+        grid-column-start: span 3
+        grid-row-start: span 1
+
+    &__color_filter_option
+        cursor: pointer
+        display: flex
+        justify-content: center
+        align-items: center
+        font-size: 24px
+        font-weight: bold
+        background: var(--lightGray)
+        transition: .5s
+        &:hover, &--active
+            &:nth-child(2)
+                background: var(--mainColor1)
+            &:nth-child(3)
+                background: var(--mainColor2)
+            &:nth-child(4)
+                background: var(--mainColor3)
+
+    &__color_selector
+        background-color: var(--lightGray)
+        border-radius: 0 0 10px 10px
+        // flex-grow: 1
+        display: grid
+        align-content: start
+        grid-template-columns: repeat(auto-fill, minmax(10%, 1fr))
+
     &__color_select
+        // width: 50px
+        // height: 50px
         border-radius: 10px
         margin: 10px
         cursor: pointer

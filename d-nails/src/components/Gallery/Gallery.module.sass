@@ -16,9 +16,12 @@
         // grid-gap: 16px
 
     &__miniatures
-        align-self: start
+        height: 100%
+        width: 100%
         display: grid
-        grid-template-columns: repeat(auto-fill, minmax(15%, 1fr))
-        // grid-template-columns: repeat(4, 1fr)
-        // grid-template-rows: repeat(4, 1fr)
+        // align-content: center
+        // grid-auto-flow: column
+        // grid-template-rows: repeat(auto-fit, minmax(15%, 1fr))
+        grid-template-columns: repeat(4, 1fr)
+        // grid-template-columns: repeat(auto-fit, minmax(20%, 1fr))
         grid-gap: 16px

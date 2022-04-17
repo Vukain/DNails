@@ -17,11 +17,21 @@ html {
   --mainColor2: #b11335;
   --mainColor3: #d75641;
 
-  --almostWhite: #f9f9f9;
+  --almostWhite: #f3f3f3;
   --lightestGray: #c4c1c1;
   --anotherGray: #d1d0d0;
   --lightGray: #414141;
+  --darkerGray: #3f3f3f;
   --darkGray: #292929;
+
+  --lighterGray: #666666;
+  /* --lightGray: #575757;
+  --darkGray: #2F2F2F; */
+  --buttonGray: #524f4f;
+
+  /* --lighterGray: #666666;
+  --lightGray: #48484F;
+  --darkGray: #2d2e33; */
 
   height: 100%;
   width: 100%;

@@ -13,8 +13,6 @@
         padding: 64px
         width: 50%
         height: 100%
-        background-color: #acacac
-        background-clip: content-box
         position: relative
 
     &__test
@@ -23,7 +21,18 @@
         left: 64px
         width: calc(100% - 128px)
         height: calc(100% - 128px)
+        border-radius: 10px
         cursor: crosshair
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.3)
+        &::before
+            position: absolute
+            content: ""
+            display: block
+            width: 100%
+            height: 100%
+            background-color: var(--lightGray)
+            border-radius: 10px
+            z-index: -99
 
     &__color_picker
         padding: 64px
@@ -72,6 +81,7 @@
         background-image: linear-gradient(45deg, var(--mainColor1) 25%, var(--mainColor2), var(--mainColor3) 75%)
         grid-column-start: span 3
         grid-row-start: span 1
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.3)
 
     &__color_filter_option
         cursor: pointer
@@ -82,6 +92,7 @@
         font-weight: bold
         background: var(--lightGray)
         transition: .5s
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.2)
         &:hover, &--active
             &:nth-child(2)
                 background: var(--mainColor1)
@@ -91,12 +102,13 @@
                 background: var(--mainColor3)
 
     &__color_selector
-        background-color: var(--lightGray)
+        background-color: var(--lightestGray)
         border-radius: 0 0 10px 10px
         // flex-grow: 1
         display: grid
         align-content: start
         grid-template-columns: repeat(auto-fill, minmax(10%, 1fr))
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.3)
 
     &__color_select
         // width: 50px

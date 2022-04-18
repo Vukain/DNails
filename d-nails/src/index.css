@@ -37,3 +37,12 @@ html {
   width: 100%;
   overflow: hidden;
 }
+
+svg {
+height: 100%;
+position: absolute;
+top: 64px;
+left: 64px;
+width: calc(100% - 128px);
+height: calc(100% - 128px);
+}

@@ -3,6 +3,8 @@ import bemCssModules from 'bem-css-modules';
 
 import { default as NailPainterStyles } from './NailPainter.module.sass';
 
+import { ReactComponent as NailsImage } from '../../media/test.svg';
+
 // import NailPainterfrom '../NailPainterForm/NailPainter';
 
 const style = bemCssModules(NailPainterStyles);
@@ -60,7 +62,9 @@ const NailPainter = () => {
             <div className={style('canvas_wrapper')} ref={wrapperRef}>
                 <canvas ref={canvasRef}>
                 </canvas>
-                <div ref={overlayRef} className={style('test')} onMouseDown={onMouseDownHandler} onMouseUp={onMouseUpHandler}></div>
+                <NailsImage />
+                <div ref={overlayRef} className={style('test')} onMouseDown={onMouseDownHandler} onMouseUp={onMouseUpHandler}>
+                </div>
             </div>
 
             <div className={style('color_picker')}  >

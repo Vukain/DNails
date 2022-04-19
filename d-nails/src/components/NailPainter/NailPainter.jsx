@@ -62,7 +62,7 @@ const NailPainter = () => {
             <div className={style('canvas_wrapper')} ref={wrapperRef}>
                 <canvas ref={canvasRef}>
                 </canvas>
-                <NailsImage />
+                <NailsImage className={style('nails_image')} />
                 <div ref={overlayRef} className={style('test')} onMouseDown={onMouseDownHandler} onMouseUp={onMouseUpHandler}>
                 </div>
             </div>

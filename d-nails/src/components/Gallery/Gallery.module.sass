@@ -10,21 +10,20 @@
     grid-gap: 16px
     z-index: 99
 
-    &--enlarged
+    &--enlarged_mode
         grid-template-columns: 6fr 4fr
         grid-template-rows: 1fr
-        // grid-gap: 16px
 
     &__miniatures
         height: 100%
         width: 100%
         display: grid
+        grid-template-columns: repeat(4, 1fr)
+        grid-gap: 16px
         // align-content: center
         // grid-auto-flow: column
         // grid-template-rows: repeat(auto-fit, minmax(15%, 1fr))
-        grid-template-columns: repeat(4, 1fr)
         // grid-template-columns: repeat(auto-fit, minmax(20%, 1fr))
-        grid-gap: 16px
 
     &__enlarged_image
         position: relative
@@ -32,23 +31,81 @@
         grid-column: span 1
 
     &__next_image, &__previous_image, &__close_image
-        height: 5vh
-        width: 5vh
-        background-color: #fff
+        height: 4.6vh
+        width: 4.6vh
         position: absolute
         z-index: 999
         cursor: pointer
+        filter: grayscale(1)
+        transition: .3s
 
     &__next_image
-        right: 5%
+        right: 2%
         top: 50%
-        transform: translateY(-50%)
+        transform: translateY(-50%) rotate(135deg)
+        &:hover
+            transform: translateY(-50%) rotate(135deg) scale(1.2)
+            filter: grayscale(0)
 
     &__previous_image
-        left: 5%
+        left: 2%
         top: 50%
-        transform: translateY(-50%)
+        transform: translateY(-50%) rotate(-45deg)
+        &:hover
+            transform: translateY(-50%) rotate(-45deg) scale(1.2)
+            filter: grayscale(0)
 
     &__close_image
-        right: 5%
-        top: 5%
+        right: 1%
+        top: 1%
+        height: 6vh
+        width: 6vh
+        transform-origin: 50% 50%
+        transform: translateY(0%) scale(1)
+        &:hover
+            transform: translateY(0%) scale(1.2)
+            filter: grayscale(0)
+
+    &__arrow_first
+        position: absolute
+        top: 0
+        left: 0
+        background-image: linear-gradient(90deg, var(--mainColor1), var(--mainColor2), var(--mainColor3))
+        width: 100%
+        height: 25%
+        transform: unset
+        border-radius: 5px 5px 0 0
+        // box-shadow: 0 0 10px rgba(0, 0, 0, 0.6)
+
+    &__arrow_second
+        position: absolute
+        top: 0
+        left: 0
+        background-image: linear-gradient(180deg, var(--mainColor1), var(--mainColor2), var(--mainColor3))
+        width: 25%
+        height: 100%
+        transform: unset
+        border-radius: 5px 0 0 5px
+        // box-shadow: 0 0 10px rgba(0, 0, 0, 0.6)
+
+    &__cancel_first
+        position: absolute
+        top: 50%
+        left: 0
+        background-image: linear-gradient(90deg, var(--mainColor3), var(--mainColor2), var(--mainColor1), var(--mainColor2), var(--mainColor3))
+        width: 100%
+        height: 19%
+        transform: unset
+        border-radius: 0 5px 0 5px
+        transform: translateY(-50%) rotate(-45deg)
+
+    &__cancel_second
+        position: absolute
+        top: 50%
+        left: 0
+        background-image: linear-gradient(90deg, var(--mainColor3), var(--mainColor2), var(--mainColor1), var(--mainColor2), var(--mainColor3))
+        width: 100%
+        height: 19%
+        transform: unset
+        border-radius: 5px 0 5px 0
+        transform: translateY(-50%) rotate(45deg)

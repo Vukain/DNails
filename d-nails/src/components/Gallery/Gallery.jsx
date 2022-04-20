@@ -2,14 +2,15 @@ import React, { useState, useEffect } from 'react';
 import bemCssModules from 'bem-css-modules';
 
 import { default as GalleryStyles } from './Gallery.module.sass';
-import placeholder from '../../media/placeholder.jpeg';
-import GalleryImage from '../GalleryImage/GalleryImage';
-const style = bemCssModules(GalleryStyles);
 
+import placeholder from '../../media/placeholder.jpeg';
+
+import GalleryImage from '../GalleryImage/GalleryImage';
+
+const style = bemCssModules(GalleryStyles);
 
 const Gallery = (props) => {
 
-    // const [galleryMode, setGalleryMode] = useState('masonry');
     const [currentlyEnlarged, setCurrentlyEnlarged] = useState(null);
 
     const imageSwitcher = (action) => {
@@ -36,31 +37,38 @@ const Gallery = (props) => {
     const imageNames = new Array(14).fill(placeholder)
     const images = imageNames.map((el, idx) => <GalleryImage key={el + idx} image={el} index={idx} enlarge={false} active={currentlyEnlarged} changeActive={imageSwitcher} />)
 
-
-
     const enlargedImage = (
-        <div className={style({ enlarged: currentlyEnlarged !== null })}>
+        <div className={style({ enlarged_mode: currentlyEnlarged !== null })}>
             <div className={style('enlarged_image')}>
                 <GalleryImage image={imageNames[currentlyEnlarged]} index={currentlyEnlarged} enlarge={true} active={currentlyEnlarged} changeActive={imageSwitcher} />
-                <div className={style('next_image')} onClick={() => { imageSwitcher('forward') }}></div>
-                <div className={style('previous_image')} onClick={() => { imageSwitcher('backward') }}></div>
-                <div className={style('close_image')} onClick={() => { imageSwitcher('close') }}></div>
+                <div className={style('next_image')} onClick={() => { imageSwitcher('forward') }}>
+                    <div className={style('arrow_first')}></div>
+                    <div className={style('arrow_second')}></div>
+                </div>
+                <div className={style('previous_image')} onClick={() => { imageSwitcher('backward') }}>
+                    <div className={style('arrow_first')}></div>
+                    <div className={style('arrow_second')}></div>
+                </div>
+                <div className={style('close_image')} onClick={() => { imageSwitcher('close') }}>
+                    <div className={style('cancel_first')}></div>
+                    <div className={style('cancel_second')}></div>
+                </div>
             </div>
             <div className={style('miniatures')}>
                 {images}
             </div>
         </div>
-    )
+    );
 
     const normalImages = (
         <div className={style({ enlarged: currentlyEnlarged !== null })}>
             {images}
         </div>
-    )
+    );
 
     return (
         currentlyEnlarged !== null ? enlargedImage : normalImages
     );
-}
+};
 
 export default Gallery;

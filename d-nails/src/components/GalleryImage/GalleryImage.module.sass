@@ -1,7 +1,4 @@
 .gallery_image
-    // width: 16%
-    // width: 100%
-    // aspect-ratio: 1 / 1
     grid-row: span 2
     grid-column: span 2
     position: relative
@@ -20,7 +17,6 @@
             grid-column: span 4
 
     &--miniature
-        position: relative
         grid-row: span 1
         grid-column: span 1
         // aspect-ratio: 1 / 1
@@ -44,6 +40,8 @@
         filter: grayscale(100%) brightness(80%) contrast(110%)
         cursor: pointer
         transition: 0.4s
+        transform: scale(1)
+
         &:hover
             z-index: 99
             filter: grayscale(0%)
@@ -51,5 +49,6 @@
 
         &--active
             filter: grayscale(0%)
+            cursor: default
             &:hover
                 transform: scale(1)

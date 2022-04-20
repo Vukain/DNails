@@ -15,13 +15,12 @@ const GalleryImage = (props) => {
         } else {
             props.changeActive(props.index)
         }
-
-    }
+    };
 
     return (
-        <div className={imageGridStyle} onClick={onClickHandler}>
+        <div className={imageGridStyle} onClick={() => { props.changeActive(props.index) }}>
             <img src={props.image} className={style('imag', { active: props.active === props.index })} alt="" />
         </div>);
-}
+};
 
 export default GalleryImage;

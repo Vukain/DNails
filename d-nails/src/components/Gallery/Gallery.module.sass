@@ -25,3 +25,30 @@
         grid-template-columns: repeat(4, 1fr)
         // grid-template-columns: repeat(auto-fit, minmax(20%, 1fr))
         grid-gap: 16px
+
+    &__enlarged_image
+        position: relative
+        grid-row: span 1
+        grid-column: span 1
+
+    &__next_image, &__previous_image, &__close_image
+        height: 5vh
+        width: 5vh
+        background-color: #fff
+        position: absolute
+        z-index: 999
+        cursor: pointer
+
+    &__next_image
+        right: 5%
+        top: 50%
+        transform: translateY(-50%)
+
+    &__previous_image
+        left: 5%
+        top: 50%
+        transform: translateY(-50%)
+
+    &__close_image
+        right: 5%
+        top: 5%

@@ -40,13 +40,11 @@ function App() {
   }, []);
 
   const keyer = (e) => {
-    if (e.key === 'ArrowDown') {
+    if (e.key === 'ArrowDown') { 
       sectionChanger('down');
-    } else if (e.key === 'y') {
-      headRef.current.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'start' });
-    } else {
+    } else if (e.key === 'ArrowUp') {
       sectionChanger('up');
-    }
+    } 
   }
 
   const sectionChanger = (direction) => {

@@ -12,10 +12,10 @@ const AppointmentForm = () => {
 
                 <input className={style('input')} type="text" placeholder='IMIĘ' />
                 <input className={style('input')} type="text" placeholder='NAZWISKO' />
-                <input className={style('input')} type="text" placeholder='IMIĘ' />
-                <input className={style('input')} type="text" placeholder='IMIĘ' />
-                <input className={style('input')} type="text" placeholder='IMIĘ' />
-                <input className={style('input')} type="text" placeholder='IMIĘ' />
+                <input className={style('input')} type="email" placeholder='EMAIL' />
+                <input className={style('input')} type="datetime-local" placeholder='DATA' />
+                <textarea className={style('message')} name="" id="" cols="30" rows="10"></textarea>
+                <button className={style('button')}>wyślij</button>
             </form>
         </div>
     );

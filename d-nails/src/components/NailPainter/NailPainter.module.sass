@@ -118,10 +118,15 @@
         cursor: pointer
         position: relative
         aspect-ratio: 1 / 1
+        transition: .1s
+        border: 5px solid transparent
         // &::before
         //     content: ""
         //     display: block
         //     padding-top: 100%
+
+        &--selected
+            border: 5px solid var(--darkGray)
 
     &__nails_image
         position: absolute
@@ -129,3 +134,4 @@
         left: 64px
         width: calc(100% - 128px)
         height: calc(100% - 128px)
+        border-radius: 10px

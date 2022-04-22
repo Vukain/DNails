@@ -11,6 +11,7 @@
     display: flex
     margin: auto
     flex-direction: column
+    row-gap: 16px
     // overflow: hidden
     &__month
         // flex-grow: 1
@@ -19,7 +20,7 @@
         grid-template-rows: 1fr
         grid-template-columns: 1fr 1fr
         cursor: pointer
-        margin-bottom: 8px
+
         box-shadow: 0 0 30px rgba(0, 0, 0, 0.3)
 
     &__chosen_month
@@ -53,7 +54,6 @@
         grid-template-rows: 1fr
         grid-template-columns: repeat(7, 1fr)
         border-radius: 0px
-        margin-bottom: 8px
         box-shadow: 0 0 30px rgba(0, 0, 0, 0.3)
     &__weekday
         display: flex
@@ -74,9 +74,7 @@
         grid-template-columns: repeat(7, 1fr)
         z-index: 1
         border-radius: 0 0 10px 10px
-        // overflow: hidden
         box-shadow: 0 0 30px rgba(0, 0, 0, 0.3)
-        // box-shadow: 0 0 30px rgba(214,85,64, 0.6)
 
     &__day
         display: flex

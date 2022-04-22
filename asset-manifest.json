@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/DNails/static/css/main.5248e00d.chunk.css",
-    "main.js": "/DNails/static/js/main.7f39c6bb.chunk.js",
-    "main.js.map": "/DNails/static/js/main.7f39c6bb.chunk.js.map",
-    "runtime-main.js": "/DNails/static/js/runtime-main.85c9d10f.js",
-    "runtime-main.js.map": "/DNails/static/js/runtime-main.85c9d10f.js.map",
+    "main.css": "/DNails/static/css/main.c4280203.chunk.css",
+    "main.js": "/DNails/static/js/main.9c55fe96.chunk.js",
+    "main.js.map": "/DNails/static/js/main.9c55fe96.chunk.js.map",
+    "runtime-main.js": "/DNails/static/js/runtime-main.f484749e.js",
+    "runtime-main.js.map": "/DNails/static/js/runtime-main.f484749e.js.map",
     "static/css/2.679831fc.chunk.css": "/DNails/static/css/2.679831fc.chunk.css",
-    "static/js/2.fd3d170f.chunk.js": "/DNails/static/js/2.fd3d170f.chunk.js",
-    "static/js/2.fd3d170f.chunk.js.map": "/DNails/static/js/2.fd3d170f.chunk.js.map",
-    "static/js/3.5fb0fe24.chunk.js": "/DNails/static/js/3.5fb0fe24.chunk.js",
-    "static/js/3.5fb0fe24.chunk.js.map": "/DNails/static/js/3.5fb0fe24.chunk.js.map",
+    "static/js/2.25a4c481.chunk.js": "/DNails/static/js/2.25a4c481.chunk.js",
+    "static/js/2.25a4c481.chunk.js.map": "/DNails/static/js/2.25a4c481.chunk.js.map",
+    "static/js/3.5d02b48b.chunk.js": "/DNails/static/js/3.5d02b48b.chunk.js",
+    "static/js/3.5d02b48b.chunk.js.map": "/DNails/static/js/3.5d02b48b.chunk.js.map",
     "index.html": "/DNails/index.html",
     "static/css/2.679831fc.chunk.css.map": "/DNails/static/css/2.679831fc.chunk.css.map",
-    "static/css/main.5248e00d.chunk.css.map": "/DNails/static/css/main.5248e00d.chunk.css.map",
-    "static/js/2.fd3d170f.chunk.js.LICENSE.txt": "/DNails/static/js/2.fd3d170f.chunk.js.LICENSE.txt",
+    "static/css/main.c4280203.chunk.css.map": "/DNails/static/css/main.c4280203.chunk.css.map",
+    "static/js/2.25a4c481.chunk.js.LICENSE.txt": "/DNails/static/js/2.25a4c481.chunk.js.LICENSE.txt",
     "static/media/header_test.54374e49.svg": "/DNails/static/media/header_test.54374e49.svg",
     "static/media/placeholder.c57f741f.jpeg": "/DNails/static/media/placeholder.c57f741f.jpeg",
     "static/media/test.cbae6f58.svg": "/DNails/static/media/test.cbae6f58.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.85c9d10f.js",
+    "static/js/runtime-main.f484749e.js",
     "static/css/2.679831fc.chunk.css",
-    "static/js/2.fd3d170f.chunk.js",
-    "static/css/main.5248e00d.chunk.css",
-    "static/js/main.7f39c6bb.chunk.js"
+    "static/js/2.25a4c481.chunk.js",
+    "static/css/main.c4280203.chunk.css",
+    "static/js/main.9c55fe96.chunk.js"
   ]
 }

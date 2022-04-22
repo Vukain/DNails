@@ -2,6 +2,7 @@ import React from 'react';
 import bemCssModules from 'bem-css-modules';
 
 import { default as AppointmentFormStyles } from './AppointmentForm.module.sass';
+import Button from '../Button/Button';
 
 const style = bemCssModules(AppointmentFormStyles);
 
@@ -15,7 +16,7 @@ const AppointmentForm = () => {
                 <input className={style('input', { inner: true })} type="email" placeholder='EMAIL' />
                 <input className={style('input', { inner: true })} type="datetime-local" placeholder='DATA' />
                 <textarea className={style('message')} name="" id="" cols="30" rows="10"></textarea>
-                <button className={style('button')}>wyślij</button>
+                <Button name='wyślij' />
             </form>
         </div>
     );

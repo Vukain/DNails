@@ -28,7 +28,7 @@ const NavigationButton = (props) => {
                 <span className={style('button_text', textStyle)}>{props.name}</span>
             </button>
         </div>
-    );
+    )
 }
 
 export default NavigationButton;

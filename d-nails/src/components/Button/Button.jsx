@@ -9,7 +9,7 @@ const Button = (props) => {
 
     return (
         <div className={style()}>
-            <button className={style('button', { normal: true })} onClick={(e) => { e.preventDefault() }}>
+            <button className={style('button')} onClick={props.clicker}>
                 <span className={style('button_text')}>{props.name}</span>
             </button>
         </div>

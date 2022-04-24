@@ -1,40 +1,36 @@
 .App {
-
-  --background-plain: radial-gradient(circle at center center, #4d4848, #292525);
-  --background-gradient: radial-gradient(circle at center center, rgba(33, 33, 33, 0), rgb(33, 33, 33)), repeating-linear-gradient(135deg, rgb(33, 33, 33) 0px, rgb(33, 33, 33) 1px, transparent 1px, transparent 4px), repeating-linear-gradient(45deg, rgb(56, 56, 56) 0px, rgb(56, 56, 56) 5px, transparent 5px, transparent 6px), linear-gradient(90deg, rgb(33, 33, 33), rgb(33, 33, 33));
-  overflow: visible;
   position: relative;
-  text-align: center;
   width: 400vw;
   height: 200vh;
-  display: grid;
-  font-family: 'Roboto', sans-serif;
+  overflow: visible;
   background-color: #414141;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 92fr 8fr 100fr;
   grid-template-areas:
     "header empty empty empty"
     "nav empty empty empty"
-    "div1 div2 div3 div4";
+    "sec1 sec2 sec3 sec4";
 }
 
-
-.div1 {
-  grid-area: div1;
+.section {
   background-image: var(--background-gradient);
 }
 
-.div2 {
-  grid-area: div2;
-  background-image: var(--background-gradient);
+.section--first {
+  grid-area: sec1;
 }
 
-.div3 {
-  grid-area: div3;
-  background-image: var(--background-gradient);
+.section--second {
+  grid-area: sec2;
 }
 
-.div4 {
-  grid-area: div4;
-  background-image: var(--background-gradient);
+.section--third {
+  grid-area: sec3;
+}
+
+.section--fourth {
+  grid-area: sec4;
 }

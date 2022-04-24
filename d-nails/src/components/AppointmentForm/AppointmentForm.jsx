@@ -19,6 +19,7 @@ const AppointmentForm = () => {
     const [emailInputValidity, setEmailInputValidity] = useState(false);
     const [dateInputValidity, setDateInputValidity] = useState(false);
     const [messageInputValidity, setMessageInputValidity] = useState(false);
+    const [touched, setTouched] = useState(false);
     const [formValidity, setFormValidity] = useState(false);
 
     const inputValidator = (value) => {
@@ -55,11 +56,11 @@ const AppointmentForm = () => {
     return (
         <div className={style()}>
             <form className={style('form')} action="submit">
-                <input className={style('input', { upper_left: true, invalid: !nameInputValidity })} type="text" placeholder='IMIĘ' name='imie' ref={nameInputRef} onBlur={() => onBlurHandler(nameInputRef, setNameInputValidity)} />
-                <input className={style('input', { upper_right: true, invalid: !surnameInputValidity })} type="text" placeholder='NAZWISKO' name='nazwisko' ref={surnameInputRef} onBlur={() => onBlurHandler(surnameInputRef, setSurnameInputValidity)} />
-                <input className={style('input', { inner: true, invalid: !emailInputValidity })} type="email" placeholder='EMAIL' name='email' ref={emailInputRef} onBlur={() => onBlurHandler(emailInputRef, setEmailInputValidity)} />
-                <input className={style('input', { inner: true, invalid: !dateInputValidity })} type="datetime-local" placeholder='DATA' name='data' ref={dateInputRef} onBlur={() => onBlurHandler(dateInputRef, setDateInputValidity)} />
-                <textarea className={style('message', { invalid: !messageInputValidity })} name="message" id="" cols="30" rows="10" ref={messageInputRef} onBlur={() => onBlurHandler(messageInputRef, setMessageInputValidity)} ></textarea>
+                <input className={style('input', { upper_left: true, invalid: !nameInputValidity && touched })} type="text" placeholder='IMIĘ' name='imie' ref={nameInputRef} onBlur={() => onBlurHandler(nameInputRef, setNameInputValidity)} onClick={() => { setTouched(true) }} />
+                <input className={style('input', { upper_right: true, invalid: !surnameInputValidity && touched })} type="text" placeholder='NAZWISKO' name='nazwisko' ref={surnameInputRef} onBlur={() => onBlurHandler(surnameInputRef, setSurnameInputValidity)} onClick={() => { setTouched(true) }} />
+                <input className={style('input', { inner: true, invalid: !emailInputValidity && touched })} type="email" placeholder='EMAIL' name='email' ref={emailInputRef} onBlur={() => onBlurHandler(emailInputRef, setEmailInputValidity)} onClick={() => { setTouched(true) }} />
+                <input className={style('input', { inner: true, invalid: !dateInputValidity && touched })} type="datetime-local" placeholder='DATA' name='data' ref={dateInputRef} onBlur={() => onBlurHandler(dateInputRef, setDateInputValidity)} onClick={() => { setTouched(true) }} />
+                <textarea className={style('message', { invalid: !messageInputValidity && touched })} name="message" id="" cols="30" rows="10" ref={messageInputRef} onBlur={() => onBlurHandler(messageInputRef, setMessageInputValidity)} onClick={() => { setTouched(true) }}></textarea>
                 <Button name='wyślij' clicker={onSubmitHandler} />
             </form>
         </div>

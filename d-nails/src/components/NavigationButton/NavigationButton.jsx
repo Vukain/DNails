@@ -21,6 +21,7 @@ const NavigationButton = (props) => {
 
     const textStyle = {};
     textStyle[props.position] = true;
+    textStyle['hidden'] = props.name === 'header' && currentLevel === 1;
 
     return (
         <div className={style(overalStyle)}>
@@ -28,7 +29,7 @@ const NavigationButton = (props) => {
                 <span className={style('button_text', textStyle)}>{props.name}</span>
             </button>
         </div>
-    )
-}
+    );
+};
 
 export default NavigationButton;

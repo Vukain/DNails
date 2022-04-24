@@ -18,20 +18,27 @@ html {
   --mainColor3: #d75641;
 
   --almostWhite: #f3f3f3;
-  --lightestGray: #c4c1c1;
-  --anotherGray: #d1d0d0;
-  --lightGray: #414141;
-  --darkerGray: #3f3f3f;
-  --darkGray: #292929;
+  
+  --lightestGray: #d1d0d0;
+  --lighterGray: #c4c1c1;
 
-  --lighterGray: #666666;
+  --lightGray: #666666;
+  --mediumGray: #524f4f;
+  --darkGray: #414141;
+  --darkerGray: #3f3f3f;
+  --darkestGray: #292929;
+
+
   /* --lightGray: #575757;
   --darkGray: #2F2F2F; */
-  --buttonGray: #524f4f;
+
 
   /* --lighterGray: #666666;
   --lightGray: #48484F;
   --darkGray: #2d2e33; */
+
+  --background-plain: radial-gradient(circle at center center, #4d4848, #292525);
+  --background-gradient: radial-gradient(circle at center center, rgba(33, 33, 33, 0), rgb(33, 33, 33)), repeating-linear-gradient(135deg, rgb(33, 33, 33) 0px, rgb(33, 33, 33) 1px, transparent 1px, transparent 4px), repeating-linear-gradient(45deg, rgb(56, 56, 56) 0px, rgb(56, 56, 56) 5px, transparent 5px, transparent 6px), linear-gradient(90deg, rgb(33, 33, 33), rgb(33, 33, 33));
 
   height: 100%;
   width: 100%;

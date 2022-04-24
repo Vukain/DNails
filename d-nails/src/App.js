@@ -10,9 +10,6 @@ import ContentCard from './components/ContentCard/ContentCard';
 import Appointment from './components/Appointment/Appointment';
 import NailPainter from './components/NailPainter/NailPainter';
 
-// import Test from './components/Test/Test';
-
-
 function App() {
 
   const { currentSection, setCurrentSection } = useContext(AppContext);
@@ -25,30 +22,30 @@ function App() {
   // const throttledRef = useRef(isThrottled);
   // throttledRef.current ->
 
-  const headRef = useRef(null);
-  const div1Ref = useRef(null);
-  const div2Ref = useRef(null);
-  const div3Ref = useRef(null);
-  const div4Ref = useRef(null);
+  const headerRef = useRef(null);
+  const firstSectionRef = useRef(null);
+  const secondSectionRef = useRef(null);
+  const thirdSectionRef = useRef(null);
+  const fourthSectionRef = useRef(null);
 
   let throtle = false;
 
   useEffect(() => {
-    setSections([headRef.current, div1Ref.current, div2Ref.current, div3Ref.current, div4Ref.current]);
-    document.addEventListener('wheel', scroller);
-    document.addEventListener('keydown', keyer);
+    setSections([headerRef.current, firstSectionRef.current, secondSectionRef.current, thirdSectionRef.current, fourthSectionRef.current]);
+    // document.addEventListener('wheel', scroller);
+    document.addEventListener('keydown', keyDownHandler);
   }, []);
 
-  const keyer = (e) => {
+  const keyDownHandler = (e) => {
     if (e.key === 'ArrowDown') { 
       sectionChanger('down');
     } else if (e.key === 'ArrowUp') {
       sectionChanger('up');
-    } 
-  }
+    };
+  };
 
   const sectionChanger = (direction) => {
-    const sections = [headRef.current, div1Ref.current, div2Ref.current, div3Ref.current, div4Ref.current];
+    const sections = [headerRef.current, firstSectionRef.current, secondSectionRef.current, thirdSectionRef.current, fourthSectionRef.current];
 
     if (direction === 'up' && sectionRef.current > 0) {
       sectionRef.current -= 1;
@@ -60,16 +57,12 @@ function App() {
       sectionRef.current += 1;
       setCurrentSection(sectionRef.current)
       setCurrentLevel(2);
-    }
+    };
     sections[sectionRef.current].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'start' });
   };
 
-  // const tester = (e) => {
-  //   console.log(currentSection)
-  // }
 
-  const scroller = (e) => {
-    const { deltaY } = e;
+  const scrollHandler = (e) => {
     if (!throtle) {
       throtle = true;
       if (e.deltaY > 0) {
@@ -88,36 +81,34 @@ function App() {
     }
   };
 
-
   return (
-    <div className="App">
+    <div className="App" onWheel={scrollHandler} onKeyDown={() => {}}>
 
-      <Header refo={headRef} />
+      <Header refo={headerRef} />
       <Navigation secto={sectionRef} />
 
-      <div className='section div1' ref={div1Ref} >
+      <section className='section section--first' ref={firstSectionRef} >
         <ContentCard />
-      </div>
+      </section>
 
-      <div className='section div2' ref={div2Ref} >
+      <section className='section section--second' ref={secondSectionRef} >
         <ContentCard>
           <NailPainter />
         </ContentCard>
-      </div>
+      </section>
 
-      <div className='section div3' ref={div3Ref} >
+      <section className='section section--third' ref={thirdSectionRef} >
         <ContentCard>
           <Appointment />
         </ContentCard>
-      </div>
+      </section>
 
-      <div className='section div4' ref={div4Ref} >
+      <section className='section section--fourth' ref={fourthSectionRef} >
         <ContentCard>
           <Gallery />
         </ContentCard>
-      </div>
-      
-      {/* <Test /> */}
+      </section>
+
     </div>
   );
 }

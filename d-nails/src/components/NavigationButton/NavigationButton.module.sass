@@ -1,10 +1,10 @@
 .navigation_button
     position: relative
-    flex-grow: 0
+    flex-grow: 1
     flex-basis: 15%
-    border: none
-    margin: 16px 30px
     cursor: pointer
+    margin: 16px 30px
+    border: none
     transition: 2s
     overflow: visible
 
@@ -13,26 +13,17 @@
         content: ""
         display: block
         position: absolute
-        border-radius: 20px 0
-        z-index: 1
         top: 2px
         bottom: 2px
         left: 2px
         right: 2px
+        border-radius: 20px 0
+        z-index: 1
         background-image: linear-gradient(90deg, var(--mainColor1), var(--mainColor2), var(--mainColor3))
         background-size: 100vw 100%
         background-position-x: -400%
         transition: .3s linear
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.1)
-
-    &--normal_button
-        margin: 0
-        grid-column: span 2
-        width: 40%
-        justify-self: center
-        &::before
-            background-size: 100%
-            background-position-x: unset
 
     &--active
         &::before
@@ -42,6 +33,9 @@
             left: -1px
             right: -1px
             transform: skew(4deg, 1.5deg)
+
+    &--upper_level
+        flex-grow: 0
 
     &--first
         &::before
@@ -92,17 +86,13 @@
             display: block
             transition: .2s linear
             border-radius: 18px 0
-            // background: linear-gradient(90deg, rgb(62, 62, 62), rgb(62, 62, 62))
             background-image: radial-gradient(circle at center, var(--mediumGray), var(--darkerGray))
             background-clip: padding-box
             border: 1px solid transparent
 
-            // box-shadow: inset 0 0 1em #333333
-
         &::after
             position: absolute
             z-index: 3
-            // transform: rotate(-45deg)
             top: -20vh
             left: 50%
             transform: translateX(-50%)
@@ -114,10 +104,6 @@
             transition: .5s
             background-image: linear-gradient(90deg, var(--mainColor1), var(--mainColor2), var(--mainColor3))
             background-size: 100vw 100%
-
-        &--normal
-            &::after
-                background-size: unset
 
         &--first
             &::after
@@ -138,6 +124,25 @@
         &--fifth
             &::after
                 background-position-x: 100%
+
+        &:hover
+            span
+                color: var(--almostWhite)
+            &::after
+                height: 40vh
+                width: 40vh
+
+        &--upper_level
+            flex-grow: 0
+            background-image: linear-gradient(90deg, var(--mainColor1), var(--mainColor2), var(--mainColor3))
+            background-clip: text
+            color: transparent
+            background-size: 100vw 100%
+            &:hover
+                span
+                    color: var(--almostWhite)
+            &::after, &::before
+                opacity: 0
 
         &_text
             position: absolute
@@ -163,23 +168,4 @@
             &--fifth
                 background-position-x: 100%
             &--hidden
-                opacity: 0
-
-        &:hover
-            span
-                color: var(--almostWhite)
-            &::after
-                height: 40vh
-                width: 40vh
-
-        &--butter
-            flex-grow: 0
-            background-image: linear-gradient(90deg, var(--mainColor1), var(--mainColor2), var(--mainColor3))
-            background-clip: text
-            color: transparent
-            background-size: 100vw 100%
-            &:hover
-                span
-                    color: var(--almostWhite)
-            &::after, &::before
                 opacity: 0

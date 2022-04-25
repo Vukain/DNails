@@ -6,16 +6,16 @@ import { AppContext } from './AppContext';
 import Header from './components/Header/Header';
 import Navigation from './components/Navigation/Navigation';
 import Gallery from './components/Gallery/Gallery';
-import ContentCard from './components/ContentCard/ContentCard';
+import Section from './components/Section/Section';
 import Appointment from './components/Appointment/Appointment';
 import NailPainter from './components/NailPainter/NailPainter';
 
 function App() {
 
-  const { currentSection, setCurrentSection } = useContext(AppContext);
-  const { sections, setSections } = useContext(AppContext);
-  const { currentLevel, setCurrentLevel } = useContext(AppContext);
-  const sectionRef = useRef(currentSection);
+  const { setCurrentSection } = useContext(AppContext);
+  const { setSectionRefs } = useContext(AppContext);
+  const { setCurrentLevel } = useContext(AppContext);
+  const { currentSectionRef } = useContext(AppContext);
 
   // Access current state without update delays, no re-render
   // const [isThrottled, setIsThrottled] = useState(false);
@@ -28,43 +28,32 @@ function App() {
   const thirdSectionRef = useRef(null);
   const fourthSectionRef = useRef(null);
 
-  let throtle = false;
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
 
-  useEffect(() => {
-    setSections([headerRef.current, firstSectionRef.current, secondSectionRef.current, thirdSectionRef.current, fourthSectionRef.current]);
-    // document.addEventListener('wheel', scroller);
-    document.addEventListener('keydown', keyDownHandler);
-  }, []);
-
-  const keyDownHandler = (e) => {
-    if (e.key === 'ArrowDown') { 
-      sectionChanger('down');
-    } else if (e.key === 'ArrowUp') {
-      sectionChanger('up');
-    };
-  };
+  let scrollThrotle = false;
 
   const sectionChanger = (direction) => {
     const sections = [headerRef.current, firstSectionRef.current, secondSectionRef.current, thirdSectionRef.current, fourthSectionRef.current];
 
-    if (direction === 'up' && sectionRef.current > 0) {
-      sectionRef.current -= 1;
-      setCurrentSection(sectionRef.current);
-      if (sectionRef.current === 0) {
+    if (direction === 'up' && currentSectionRef.current > 0) {
+      currentSectionRef.current -= 1;
+      setCurrentSection(currentSectionRef.current);
+      if (currentSectionRef.current === 0) {
         setCurrentLevel(1);
       };
-    } else if (direction === 'down' && sectionRef.current < sections.length - 1) {
-      sectionRef.current += 1;
-      setCurrentSection(sectionRef.current)
+    } else if (direction === 'down' && currentSectionRef.current < sections.length - 1) {
+      currentSectionRef.current += 1;
+      setCurrentSection(currentSectionRef.current)
       setCurrentLevel(2);
     };
-    sections[sectionRef.current].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'start' });
+
+    sections[currentSectionRef.current].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'start' });
   };
 
-
   const scrollHandler = (e) => {
-    if (!throtle) {
-      throtle = true;
+    if (!scrollThrotle) {
+      scrollThrotle = true;
       if (e.deltaY > 0) {
         setTimeout(() => {
           sectionChanger('down');
@@ -76,41 +65,71 @@ function App() {
       };
 
       setTimeout(() => {
-        throtle = false;
+        scrollThrotle = false;
       }, 800);
-    }
+    };
   };
 
+  const handleTouchStart = (e) => {
+    setTouchStart(e.targetTouches[0].clientY);
+}
+
+  const handleTouchMove = (e) => {
+      setTouchEnd(e.targetTouches[0].clientY);
+  }
+
+  const handleTouchEnd = () => {
+      if (touchStart - touchEnd > 200) {
+        setTimeout(() => {
+          sectionChanger('up');
+        }, 100);
+      }
+
+      if (touchStart - touchEnd < -200) {
+        setTimeout(() => {
+          sectionChanger('down');
+        }, 100);
+      }
+  }
+
+  const keyDownHandler = (e) => {
+    if (e.key === 'ArrowDown') { 
+      sectionChanger('down');
+    } else if (e.key === 'ArrowUp') {
+      sectionChanger('up');
+    };
+  };
+
+  useEffect(() => {
+    setSectionRefs([headerRef.current, firstSectionRef.current, secondSectionRef.current, thirdSectionRef.current, fourthSectionRef.current]);
+    // document.addEventListener('wheel', scroller);
+    document.addEventListener('keydown', keyDownHandler);
+  }, []);
+
   return (
-    <div className="App" onWheel={scrollHandler} onKeyDown={() => {}}>
+    <div className="App" onWheel={scrollHandler} onKeyDown={() => {}} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
 
-      <Header refo={headerRef} />
-      <Navigation secto={sectionRef} />
+      <Header ref={headerRef} />
 
-      <section className='section section--first' ref={firstSectionRef} >
-        <ContentCard />
-      </section>
+      <Navigation/>
 
-      <section className='section section--second' ref={secondSectionRef} >
-        <ContentCard>
-          <NailPainter />
-        </ContentCard>
-      </section>
+      <Section ref={firstSectionRef} position='first'>
+      </Section>
 
-      <section className='section section--third' ref={thirdSectionRef} >
-        <ContentCard>
-          <Appointment />
-        </ContentCard>
-      </section>
+      <Section ref={secondSectionRef} position='second'>
+        <NailPainter />
+      </Section>
 
-      <section className='section section--fourth' ref={fourthSectionRef} >
-        <ContentCard>
-          <Gallery />
-        </ContentCard>
-      </section>
+      <Section ref={thirdSectionRef} position='third'>
+        <Appointment />
+      </Section>
+
+      <Section ref={fourthSectionRef} position='fourth'>
+        <Gallery />
+      </Section>
 
     </div>
   );
-}
+};
 
 export default App;

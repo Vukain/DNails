@@ -1,23 +1,18 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import bemCssModules from 'bem-css-modules';
 
 import { default as HeaderStyles } from './Header.module.sass';
-
-import Navigation from '../Navigation/Navigation';
 
 import { ReactComponent as HeaderImage } from '../../media/header_test.svg';
 
 const style = bemCssModules(HeaderStyles);
 
-const Header = (props) => {
+const Header = forwardRef((props, ref) => {
     return (
-        <div className={style()} ref={props.refo}>
-            {/* <div className={style('placeholder')}></div> */}
-            {/* <div lassName={style('test')}><Navigation /></div> */}
-
+        <header className={style()} ref={ref}>
             <HeaderImage className={style('header_image')} preserveAspectRatio='none' />
-        </div>
+        </header>
     );
-}
+})
 
 export default Header;

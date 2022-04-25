@@ -7,40 +7,28 @@
         background-position: 0% 0%
 
 .navigation
-    justify-content: flex-end
-    display: flex
-    grid-area: nav
     position: sticky
     top: 0
     left: 0
+    grid-area: nav
+    display: flex
+    justify-content: flex-end
     background-color: transparent
     transition: 2s
 
-    &--lower
-        opacity: 1
+    &--lower_level
         &::before
             content: ""
             display: block
-            background: linear-gradient(90deg, var(--mainColor1), var(--mainColor2), var(--mainColor3))
-            // background-size: 200% 100%
-            // background-position: 0% 0%
             position: absolute
             width: 100%
             height: calc(100% + 16px)
-            // animation: bgc 7s infinite ease-in
+            background: linear-gradient(90deg, var(--mainColor1), var(--mainColor2), var(--mainColor3))
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.6)
-            // transform: skew(-28deg, 0.7deg)
-            // border-radius: 10px
-            // clip-path: polygon(0 0, 100% 0, 100% 100%, 0 84%)
         &::after
             content: ""
             display: block
-            background-color: var(--darkestGray)
             position: absolute
             width: 100%
             height: calc(100% + 0px)
-            // transform: skew(-35deg, 0.5deg)
-            // border-radius: 10px
-            // clip-path: polygon(0 0, 100% 0, 100% 88%, 0 82%)
-        & *
-            flex-grow: 1
+            background-color: var(--darkestGray)

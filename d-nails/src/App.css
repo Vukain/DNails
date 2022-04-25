@@ -14,23 +14,3 @@
     "nav empty empty empty"
     "sec1 sec2 sec3 sec4";
 }
-
-.section {
-  background-image: var(--background-gradient);
-}
-
-.section--first {
-  grid-area: sec1;
-}
-
-.section--second {
-  grid-area: sec2;
-}
-
-.section--third {
-  grid-area: sec3;
-}
-
-.section--fourth {
-  grid-area: sec4;
-}

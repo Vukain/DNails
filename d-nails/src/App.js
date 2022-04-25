@@ -1,8 +1,9 @@
-import { useEffect, useRef, useState, useContext } from 'react';
+import { useEffect, useRef, useState, useContext, useCallback } from 'react';
 
 import './App.css';
 
 import { AppContext } from './AppContext';
+
 import Header from './components/Header/Header';
 import Navigation from './components/Navigation/Navigation';
 import Gallery from './components/Gallery/Gallery';
@@ -33,7 +34,7 @@ function App() {
 
   let scrollThrotle = false;
 
-  const sectionChanger = (direction) => {
+  const sectionChanger = useCallback((direction) => {
     const sections = [headerRef.current, firstSectionRef.current, secondSectionRef.current, thirdSectionRef.current, fourthSectionRef.current];
 
     if (direction === 'up' && currentSectionRef.current > 0) {
@@ -49,7 +50,7 @@ function App() {
     };
 
     sections[currentSectionRef.current].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'start' });
-  };
+  }, [currentSectionRef, setCurrentSection, setCurrentLevel]);
 
   const scrollHandler = (e) => {
     if (!scrollThrotle) {
@@ -83,28 +84,28 @@ function App() {
         setTimeout(() => {
           sectionChanger('up');
         }, 100);
-      }
+      };
 
       if (touchStart - touchEnd < -200) {
         setTimeout(() => {
           sectionChanger('down');
         }, 100);
-      }
-  }
+      };
+  };
 
-  const keyDownHandler = (e) => {
+  const keyDownHandler = useCallback((e) => {
     if (e.key === 'ArrowDown') { 
       sectionChanger('down');
     } else if (e.key === 'ArrowUp') {
       sectionChanger('up');
     };
-  };
+  }, [sectionChanger]);
 
   useEffect(() => {
     setSectionRefs([headerRef.current, firstSectionRef.current, secondSectionRef.current, thirdSectionRef.current, fourthSectionRef.current]);
     // document.addEventListener('wheel', scroller);
     document.addEventListener('keydown', keyDownHandler);
-  }, []);
+  }, [setSectionRefs, keyDownHandler]);
 
   return (
     <div className="App" onWheel={scrollHandler} onKeyDown={() => {}} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>

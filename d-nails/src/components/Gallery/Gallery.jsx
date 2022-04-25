@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import bemCssModules from 'bem-css-modules';
 
 import { default as GalleryStyles } from './Gallery.module.sass';
@@ -32,7 +32,7 @@ const Gallery = (props) => {
         } else {
             setCurrentlyEnlarged(action);
         };
-    }
+    };
 
     const imageNames = new Array(14).fill(placeholder)
     const images = imageNames.map((el, idx) => <GalleryImage key={el + idx} image={el} index={idx} enlarge={false} active={currentlyEnlarged} changeActive={imageSwitcher} />)
@@ -61,7 +61,7 @@ const Gallery = (props) => {
     );
 
     const normalImages = (
-        <div className={style({ enlarged: currentlyEnlarged !== null })}>
+        <div className={style()}>
             {images}
         </div>
     );

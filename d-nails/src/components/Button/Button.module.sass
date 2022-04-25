@@ -55,22 +55,22 @@
             transition: .5s
             background-image: linear-gradient(90deg, var(--mainColor1), var(--mainColor2), var(--mainColor3))
 
-        &_text
-            position: absolute
-            display: block
-            z-index: 30
-            background-image: linear-gradient(90deg, var(--mainColor1), var(--mainColor2), var(--mainColor3))
-            background-clip: text
-            color: transparent
-            background-size: 100vw 100%
-            background-position-x: -400%
-            font-weight: bold
-            transition: .5s
-            text-transform: uppercase
-
         &:hover
             span
                 color: var(--almostWhite)
             &::after
                 height: 40vh
                 width: 40vh
+
+        &_text
+            position: absolute
+            display: block
+            z-index: 30
+            color: transparent
+            background-image: linear-gradient(90deg, var(--mainColor1), var(--mainColor2), var(--mainColor3))
+            background-clip: text
+            background-size: 100vw 100%
+            background-position-x: -400%
+            font-weight: bold
+            text-transform: uppercase
+            transition: .5s

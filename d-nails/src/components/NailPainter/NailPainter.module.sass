@@ -1,5 +1,4 @@
 .nail_painter
-
     position: relative
     top: 0
     left: 0
@@ -7,7 +6,8 @@
     height: 100%
     padding: 16px
     display: flex
-    z-index: 999
+    z-index: 1
+
     &__canvas_wrapper
         position: relative
         padding: 64px
@@ -15,7 +15,7 @@
         height: 100%
         position: relative
 
-    &__test
+    &__overlay
         position: absolute
         top: 64px
         left: 64px
@@ -32,14 +32,12 @@
             height: 100%
             background-color: var(--darkGray)
             border-radius: 10px
-            z-index: -99
+            z-index: -1
 
     &__color_picker
         padding: 64px
         width: 50%
         height: 100%
-
-        background-clip: content-box
         display: flex
         flex-direction: column
         gap: 10px
@@ -58,11 +56,9 @@
     &__color_filter
         position: relative
         height: 18%
-        // background-color: var(--darkGray)
         border-radius: 10px 10px 0 0
         font-size: 28px
         font-weight: bold
-        // background-image: linear-gradient(45deg, var(--mainColor1) 25%, var(--mainColor2), var(--mainColor3) 75%)
         color: var(--almostWhite)
         display: grid
         grid-template-columns: repeat(3, 1fr)
@@ -72,24 +68,25 @@
         grid-gap: 10px
 
     &__color_filter_title
-        border-radius: 10px 10px 0 0
-        font-size: 28px
-        font-weight: bold
-        display: flex
-        justify-content: center
-        align-items: center
         background-image: linear-gradient(45deg, var(--mainColor1) 25%, var(--mainColor2), var(--mainColor3) 75%)
         grid-column-start: span 3
         grid-row-start: span 1
+        border-radius: 10px 10px 0 0
         box-shadow: 0 0 30px rgba(0, 0, 0, 0.3)
+        display: flex
+        justify-content: center
+        align-items: center
+
+    &__title_text
+        all: unset
+        font-size: 28px
+        font-weight: bold
 
     &__color_filter_option
         cursor: pointer
         display: flex
         justify-content: center
         align-items: center
-        font-size: 24px
-        font-weight: bold
         background: var(--darkGray)
         transition: .5s
         box-shadow: 0 0 30px rgba(0, 0, 0, 0.2)
@@ -100,6 +97,11 @@
                 background: var(--mainColor2)
             &:nth-child(4)
                 background: var(--mainColor3)
+
+    &__option_text
+        all: unset
+        font-size: 24px
+        font-weight: bold
 
     &__color_selector
         background-color: var(--lighterGray)
@@ -116,7 +118,6 @@
         border-radius: 10px
         margin: 10px
         cursor: pointer
-        position: relative
         aspect-ratio: 1 / 1
         transition: .1s
         border: 5px solid transparent

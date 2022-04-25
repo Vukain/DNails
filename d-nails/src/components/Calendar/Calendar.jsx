@@ -17,16 +17,14 @@ const Calendar = () => {
     const startDayCurrent = currentMonth.startOf("month").format("d");
     const startDayNext = nextMonth.startOf("month").format("d");
 
-    // console.log(moment(), currentMonth)
-
-    const daysCurrent = Array.from(Array(currentMonth.daysInMonth()), (_, i) => <div key={i} className={style('day', { not_empty: true, today: i + 1 === moment().date(), passed: i + 1 < moment().date(), busy: i % 3 == 0, unavailable: i % 5 == 0, })
+    const daysCurrent = Array.from(Array(currentMonth.daysInMonth()), (_, i) => <div key={i} className={style('day', { not_empty: true, today: i + 1 === moment().date(), passed: i + 1 < moment().date(), busy: i % 3 === 0, unavailable: i % 5 === 0, })
     }> {i + 1}</div >);
     const emptyDaysCurrent = Array.from(Array(startDayCurrent > 1 ? startDayCurrent - 1 : 6), (_, i) => <div key={"empty" + i} className={style('day', { not_empty: false })}></div>);
 
-    const daysNext = Array.from(Array(nextMonth.daysInMonth()), (_, i) => <div key={i} className={style('day', { not_empty: true, busy: i % 3 == 0, unavailable: i % 5 == 0, })}>{i + 1}</div>);
+    const daysNext = Array.from(Array(nextMonth.daysInMonth()), (_, i) => <div key={i} className={style('day', { not_empty: true, busy: i % 3 === 0, unavailable: i % 5 === 0, })}>{i + 1}</div>);
     const emptyDaysNext = Array.from(Array(startDayNext > 1 ? startDayCurrent - 1 : 6), (_, i) => <div key={"empty" + i} className={style('day', { not_empty: false })}></div>);
 
-    const daaaaays = activeMonth === 0 ? [...emptyDaysCurrent, ...daysCurrent] : [...emptyDaysNext, ...daysNext];
+    const displayedDays = activeMonth === 0 ? [...emptyDaysCurrent, ...daysCurrent] : [...emptyDaysNext, ...daysNext];
 
     const monthHandler = (mth) => {
         setActiveMonth(mth)
@@ -48,7 +46,7 @@ const Calendar = () => {
                 <div className={style('weekday')}>NIE</div>
             </div>
             <div className={style('days')}>
-                {daaaaays}
+                {displayedDays}
             </div>
         </div >
     );

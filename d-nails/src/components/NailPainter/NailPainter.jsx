@@ -1,11 +1,9 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import bemCssModules from 'bem-css-modules';
 
 import { default as NailPainterStyles } from './NailPainter.module.sass';
 
 import { ReactComponent as NailsImage } from '../../media/test.svg';
-
-// import NailPainterfrom '../NailPainterForm/NailPainter';
 
 const style = bemCssModules(NailPainterStyles);
 
@@ -13,7 +11,7 @@ const NailPainter = () => {
 
     const canvasRef = useRef(null);
     const wrapperRef = useRef(null);
-    const overlayRef = useRef(null)
+    const overlayRef = useRef(null);
 
     const [canvasContext, setCanvasContext] = useState(null);
     const [lacquerType, setLacquerType] = useState('standard');
@@ -27,11 +25,12 @@ const NailPainter = () => {
 
     useEffect(() => {
         const canvas = canvasRef.current;
+
         canvas.width = wrapperRef.current.offsetWidth - 128;
         canvas.height = wrapperRef.current.offsetHeight - 128;
 
         const context = canvas.getContext('2d');
-        context.fillStyle = lacquerColor;
+        context.fillStyle = '#95285b';
         setCanvasContext(context);
     }, []);
 
@@ -44,7 +43,7 @@ const NailPainter = () => {
         canvasContext.beginPath();
         canvasContext.arc(e.offsetX, e.offsetY, 16, 0, 2 * Math.PI, false)
         canvasContext.fill();
-    }
+    };
 
     const onMouseDownHandler = (e) => {
         const cursorX = canvasRef.current.getBoundingClientRect().left;
@@ -53,11 +52,11 @@ const NailPainter = () => {
         canvasContext.arc(e.clientX - cursorX, e.clientY - cursorY, 16, 0, 2 * Math.PI, false)
         canvasContext.fill();
         overlayRef.current.addEventListener("mousemove", paintListener);
-    }
+    };
 
     const onMouseUpHandler = () => {
         overlayRef.current.removeEventListener("mousemove", paintListener)
-    }
+    };
 
     return (
         <section className={style()}>
@@ -65,16 +64,16 @@ const NailPainter = () => {
             <div className={style('canvas_wrapper')} ref={wrapperRef}>
                 <canvas ref={canvasRef}></canvas>
                 <NailsImage className={style('nails_image')} />
-                <div ref={overlayRef} className={style('test')} onMouseDown={onMouseDownHandler} onMouseUp={onMouseUpHandler}>
+                <div ref={overlayRef} className={style('overlay')} onMouseDown={onMouseDownHandler} onMouseUp={onMouseUpHandler}>
                 </div>
             </div>
 
             <div className={style('color_picker')}  >
                 <div className={style('color_filter')}>
-                    <div className={style('color_filter_title')}>DOSTĘPNE KOLORY</div>
-                    <div className={style('color_filter_option', { active: lacquerType === 'standard' })} onClick={() => setLacquerType('standard')}>STANDARD</div>
-                    <div className={style('color_filter_option', { active: lacquerType === 'metallic' })} onClick={() => setLacquerType('metallic')}>METALICZNE</div>
-                    <div className={style('color_filter_option', { active: lacquerType === 'pearl' })} onClick={() => setLacquerType('pearl')}>PERŁOWE</div>
+                    <div className={style('color_filter_title')}><h2 className={style('title_text')}>DOSTĘPNE KOLORY</h2></div>
+                    <div className={style('color_filter_option', { active: lacquerType === 'standard' })} onClick={() => setLacquerType('standard')}><h3 className={style('option_text')}>STANDARD</h3></div>
+                    <div className={style('color_filter_option', { active: lacquerType === 'metallic' })} onClick={() => setLacquerType('metallic')}><h3 className={style('option_text')}>METALICZNE</h3></div>
+                    <div className={style('color_filter_option', { active: lacquerType === 'pearl' })} onClick={() => setLacquerType('pearl')}><h3 className={style('option_text')}>PERŁOWE</h3></div>
                 </div>
                 <div className={style('color_selector')}>
                     {squaries}
@@ -83,6 +82,6 @@ const NailPainter = () => {
             </div>
         </section>
     );
-}
+};
 
 export default NailPainter;

@@ -21,7 +21,7 @@
         left: 64px
         width: calc(100% - 128px)
         height: calc(100% - 128px)
-        border-radius: 10px
+        border-radius: var(--borderRadiusSmall)
         cursor: crosshair
         box-shadow: 0 0 30px rgba(0, 0, 0, 0.3)
         &::before
@@ -31,21 +31,20 @@
             width: 100%
             height: 100%
             background-color: var(--darkGray)
-            border-radius: 10px
+            border-radius: var(--borderRadiusSmall)
             z-index: -1
 
     &__color_picker
         padding: 64px
         width: 50%
         height: 100%
-        display: flex
-        flex-direction: column
-        gap: 10px
-
-        // display: grid
+        // display: flex
+        // flex-direction: column
+        gap: var(--gap)
+        display: grid
+        grid-template-rows: 6vh 4vh 1fr
         // align-content: start
         // grid-template-columns: repeat(auto-fill, minmax(10%, 1fr))
-        // grid-template-rows: repeat(auto-fit, minmax(10%, 1fr))
 
         // display: flex
         // flex-wrap: wrap
@@ -53,25 +52,13 @@
         // align-content: flex-start
         // justify-content: center
 
-    &__color_filter
+    &__title
         position: relative
-        height: 18%
-        border-radius: 10px 10px 0 0
+        border-radius: var(--borderRadiusSmall) var(--borderRadiusSmall) 0 0
         font-size: 28px
         font-weight: bold
         color: var(--almostWhite)
-        display: grid
-        grid-template-columns: repeat(3, 1fr)
-        grid-template-rows: 3fr 2fr
-        align-items: stretch
-        align-content: center
-        grid-gap: 10px
-
-    &__color_filter_title
         background-image: linear-gradient(45deg, var(--mainColor1) 25%, var(--mainColor2), var(--mainColor3) 75%)
-        grid-column-start: span 3
-        grid-row-start: span 1
-        border-radius: 10px 10px 0 0
         box-shadow: 0 0 30px rgba(0, 0, 0, 0.3)
         display: flex
         justify-content: center
@@ -82,6 +69,16 @@
         font-size: 28px
         font-weight: bold
 
+    &__color_filter
+        position: relative
+        font-size: 28px
+        font-weight: bold
+        color: var(--almostWhite)
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        align-content: stretch
+        gap: var(--gap)
+
     &__color_filter_option
         cursor: pointer
         display: flex
@@ -91,11 +88,11 @@
         transition: .5s
         box-shadow: 0 0 30px rgba(0, 0, 0, 0.2)
         &:hover, &--active
-            &:nth-child(2)
+            &:nth-child(1)
                 background: var(--mainColor1)
-            &:nth-child(3)
+            &:nth-child(2)
                 background: var(--mainColor2)
-            &:nth-child(4)
+            &:nth-child(3)
                 background: var(--mainColor3)
 
     &__option_text
@@ -104,9 +101,9 @@
         font-weight: bold
 
     &__color_selector
+        align-self: start
         background-color: var(--lighterGray)
-        border-radius: 0 0 10px 10px
-        // flex-grow: 1
+        border-radius: 0 0 var(--borderRadiusSmall) var(--borderRadiusSmall)
         display: grid
         align-content: start
         grid-template-columns: repeat(auto-fill, minmax(10%, 1fr))
@@ -115,7 +112,7 @@
     &__color_select
         // width: 50px
         // height: 50px
-        border-radius: 10px
+        border-radius: var(--borderRadiusSmall)
         margin: 10px
         cursor: pointer
         aspect-ratio: 1 / 1

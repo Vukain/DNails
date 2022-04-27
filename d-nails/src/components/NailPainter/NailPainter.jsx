@@ -60,7 +60,7 @@ const NailPainter = () => {
 
     return (
         <section className={style()}>
-            <div ></div>
+
             <div className={style('canvas_wrapper')} ref={wrapperRef}>
                 <canvas ref={canvasRef}></canvas>
                 <NailsImage className={style('nails_image')} />
@@ -68,9 +68,11 @@ const NailPainter = () => {
                 </div>
             </div>
 
-            <div className={style('color_picker')}  >
+            <div className={style('color_picker')}>
+                <div className={style('title')}>
+                    <h2 className={style('title_text')}>DOSTĘPNE KOLORY</h2>
+                </div>
                 <div className={style('color_filter')}>
-                    <div className={style('color_filter_title')}><h2 className={style('title_text')}>DOSTĘPNE KOLORY</h2></div>
                     <div className={style('color_filter_option', { active: lacquerType === 'standard' })} onClick={() => setLacquerType('standard')}><h3 className={style('option_text')}>STANDARD</h3></div>
                     <div className={style('color_filter_option', { active: lacquerType === 'metallic' })} onClick={() => setLacquerType('metallic')}><h3 className={style('option_text')}>METALICZNE</h3></div>
                     <div className={style('color_filter_option', { active: lacquerType === 'pearl' })} onClick={() => setLacquerType('pearl')}><h3 className={style('option_text')}>PERŁOWE</h3></div>
@@ -78,8 +80,8 @@ const NailPainter = () => {
                 <div className={style('color_selector')}>
                     {squaries}
                 </div>
-
             </div>
+
         </section>
     );
 };

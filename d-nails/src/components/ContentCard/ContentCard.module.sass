@@ -9,9 +9,8 @@
 .wrapper
     position: absolute
     width: calc(100vw - 16vh)
-    height: 76vh
-    margin: 16vh 8vh 8vh 8vh
-    border-radius: 20px
+    height: 74.5vh
+    margin: 17.5vh 8vh 8vh 8vh
 
     &::before
         content: ""
@@ -21,7 +20,7 @@
         bottom: 0px
         left: 0px
         right: 0px
-        border-radius: 16px 0
+        border-radius: var(--borderRadiusBig) 0
         box-shadow: 0 0 40px rgba(0, 0, 0, 0.6)
         background: linear-gradient(45deg, var(--darkestGray) 10%, var(--mainColor1), var(--mainColor2), var(--mainColor3), var(--mainColor2), var(--mainColor1), var(--darkestGray) 90%)
         background-size: 200% 100%
@@ -36,9 +35,9 @@
         content: ""
         display: block
         position: absolute
-        top: 16px
-        bottom: 16px
-        left: 16px
-        right: 16px
-        border-radius: 12px 0
+        top: var(--colorBorderWidth)
+        bottom: var(--colorBorderWidth)
+        left: var(--colorBorderWidth)
+        right: var(--colorBorderWidth)
+        border-radius: var(--borderRadiusSmall) 0
         background: var(--darkestGray)

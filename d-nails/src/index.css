@@ -18,20 +18,27 @@ html {
   --mainColor3: #d75641;
 
   --almostWhite: #f3f3f3;
-  
+
   --lightestGray: #d1d0d0;
   --lighterGray: #c4c1c1;
-
   --lightGray: #666666;
   --mediumGray: #524f4f;
   --darkGray: #414141;
   --darkerGray: #3f3f3f;
   --darkestGray: #292929;
 
+  --borderRadiusBig: 20px;
+  --borderRadiusMedium: 15px;
+  --borderRadiusSmall: 10px;
+  
+  --gapBig: 16px;
+  --gap: 10px;
+
+  --colorBorderWidth: 1.5vh;
+
 
   /* --lightGray: #575757;
   --darkGray: #2F2F2F; */
-
 
   /* --lighterGray: #666666;
   --lightGray: #48484F;

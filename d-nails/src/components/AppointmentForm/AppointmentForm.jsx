@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import bemCssModules from 'bem-css-modules';
+import moment from 'moment';
 
 import Button from '../Button/Button';
 
@@ -8,7 +9,6 @@ import { default as AppointmentFormStyles } from './AppointmentForm.module.sass'
 const style = bemCssModules(AppointmentFormStyles);
 
 const AppointmentForm = () => {
-
     const nameInputRef = useRef();
     const surnameInputRef = useRef();
     const emailInputRef = useRef();
@@ -49,6 +49,8 @@ const AppointmentForm = () => {
             messageInputRef.current.value = null;
         };
     };
+    const today = moment();
+    const todayDate = `${today.year()}-${today.month() > 8 ? today.month() + 1 : '0' + (today.month() + 1)}-${today.date() > 9 ? today.date() : '0' + today.date()}T08:30`
 
     useEffect(() => {
         setFormValidity([nameInputValidity, surnameInputValidity, emailInputValidity, dateInputValidity, messageInputValidity].every(bool => bool));
@@ -57,10 +59,11 @@ const AppointmentForm = () => {
     return (
         <div className={style()}>
             <form className={style('form')} action="submit">
-                <input className={style('input', { upper_left: true, invalid: !nameInputValidity && touched })} type="text" placeholder='IMIĘ' name='imie' ref={nameInputRef} onBlur={() => onBlurHandler(nameInputRef, setNameInputValidity)} onClick={() => { setTouched(true) }} />
-                <input className={style('input', { upper_right: true, invalid: !surnameInputValidity && touched })} type="text" placeholder='NAZWISKO' name='nazwisko' ref={surnameInputRef} onBlur={() => onBlurHandler(surnameInputRef, setSurnameInputValidity)} onClick={() => { setTouched(true) }} />
-                <input className={style('input', { inner: true, invalid: !emailInputValidity && touched })} type="email" placeholder='EMAIL' name='email' ref={emailInputRef} onBlur={() => onBlurHandler(emailInputRef, setEmailInputValidity)} onClick={() => { setTouched(true) }} />
-                <input className={style('input', { inner: true, invalid: !dateInputValidity && touched })} type="datetime-local" placeholder='DATA' name='data' ref={dateInputRef} onBlur={() => onBlurHandler(dateInputRef, setDateInputValidity)} onClick={() => { setTouched(true) }} />
+                <div className={style('title')}><h2 className={style('title_text')}>UMÓW WIZYTĘ</h2></div>
+                <input className={style('input', { invalid: !nameInputValidity && touched })} type="text" placeholder='IMIĘ' name='imie' ref={nameInputRef} onBlur={() => onBlurHandler(nameInputRef, setNameInputValidity)} onClick={() => { setTouched(true) }} />
+                <input className={style('input', { invalid: !surnameInputValidity && touched })} type="text" placeholder='NAZWISKO' name='nazwisko' ref={surnameInputRef} onBlur={() => onBlurHandler(surnameInputRef, setSurnameInputValidity)} onClick={() => { setTouched(true) }} />
+                <input className={style('input', { invalid: !emailInputValidity && touched })} type="email" placeholder='EMAIL' name='email' ref={emailInputRef} onBlur={() => onBlurHandler(emailInputRef, setEmailInputValidity)} onClick={() => { setTouched(true) }} />
+                <input className={style('input', { invalid: !dateInputValidity && touched })} type="datetime-local" placeholder='DATA' name='data' ref={dateInputRef} onBlur={() => onBlurHandler(dateInputRef, setDateInputValidity)} onClick={() => { setTouched(true) }} defaultValue={todayDate} min={todayDate} />
                 <textarea className={style('message', { invalid: !messageInputValidity && touched })} name="message" cols="30" rows="10" ref={messageInputRef} onBlur={() => onBlurHandler(messageInputRef, setMessageInputValidity)} onClick={() => { setTouched(true) }}></textarea>
                 <Button name='wyślij' clicker={onSubmitHandler} />
             </form>

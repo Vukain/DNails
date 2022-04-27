@@ -17,7 +17,7 @@ const Calendar = () => {
     const startDayCurrent = currentMonth.startOf("month").format("d");
     const startDayNext = nextMonth.startOf("month").format("d");
 
-    const daysCurrent = Array.from(Array(currentMonth.daysInMonth()), (_, i) => <div key={i} onClick={() => selectDayHandler(i)} className={style('day', { not_empty: true, selected: i + 1 === selectedDay, passed: i + 1 < moment().date(), busy: i % 3 === 0, unavailable: i % 5 === 0, })
+    const daysCurrent = Array.from(Array(currentMonth.daysInMonth()), (_, i) => <div key={i} onClick={() => selectDayHandler(i, 'this')} className={style('day', { not_empty: true, selected: i + 1 === selectedDay, passed: i + 1 < moment().date(), busy: i % 3 === 0, unavailable: i % 5 === 0, })
     }> {i + 1}</div >);
     const emptyDaysCurrent = Array.from(Array(startDayCurrent > 1 ? startDayCurrent - 1 : 6), (_, i) => <div key={"empty" + i} className={style('day', { not_empty: false })}></div>);
 
@@ -31,10 +31,14 @@ const Calendar = () => {
         setSelectedDay(null);
     };
 
-    const selectDayHandler = (idx) => {
-        if ((idx + 1) >= moment().date()) {
+    const selectDayHandler = (idx, month) => {
+        if (month === 'this') {
+            if ((idx + 1) >= moment().date()) {
+                setSelectedDay(idx + 1);
+            };
+        } else {
             setSelectedDay(idx + 1);
-        }
+        };
     };
 
     return (

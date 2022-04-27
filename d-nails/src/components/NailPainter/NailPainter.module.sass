@@ -11,8 +11,8 @@
     &__canvas_wrapper
         position: relative
         padding: 64px
-        width: 50%
         height: 100%
+        width: 50%
         position: relative
 
     &__overlay
@@ -55,9 +55,7 @@
     &__title
         position: relative
         border-radius: var(--borderRadiusSmall) var(--borderRadiusSmall) 0 0
-        font-size: 28px
-        font-weight: bold
-        color: var(--almostWhite)
+
         background-image: linear-gradient(45deg, var(--mainColor1) 25%, var(--mainColor2), var(--mainColor3) 75%)
         box-shadow: 0 0 30px rgba(0, 0, 0, 0.3)
         display: flex
@@ -68,12 +66,10 @@
         all: unset
         font-size: 28px
         font-weight: bold
+        color: var(--almostWhite)
 
     &__color_filter
         position: relative
-        font-size: 28px
-        font-weight: bold
-        color: var(--almostWhite)
         display: grid
         grid-template-columns: repeat(3, 1fr)
         align-content: stretch
@@ -97,7 +93,8 @@
 
     &__option_text
         all: unset
-        font-size: 24px
+        color: var(--almostWhite)
+        font-size: var(--fontSizeBig)
         font-weight: bold
 
     &__color_selector
@@ -132,4 +129,4 @@
         left: 64px
         width: calc(100% - 128px)
         height: calc(100% - 128px)
-        border-radius: 10px
+        border-radius: var(--borderRadiusSmall)

@@ -35,6 +35,10 @@ html {
   --gap: 10px;
 
   --colorBorderWidth: 1.5vh;
+  --fontSizeBigger: 3vh;
+  --fontSizeBig: 2.2vh;
+  --fontSizeNormal: 1vw;
+
 
 
   /* --lightGray: #575757;

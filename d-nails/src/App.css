@@ -8,7 +8,7 @@
   font-family: 'Roboto', sans-serif;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 90fr 8fr 100fr;
+  grid-template-rows: 92fr 8fr 100fr;
   grid-template-areas:
     "header empty empty empty"
     "nav empty empty empty"

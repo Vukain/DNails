@@ -21,7 +21,7 @@ const Calendar = () => {
     }> {i + 1}</div >);
     const emptyDaysCurrent = Array.from(Array(startDayCurrent > 1 ? startDayCurrent - 1 : 6), (_, i) => <div key={"empty" + i} className={style('day', { not_empty: false })}></div>);
 
-    const daysNext = Array.from(Array(nextMonth.daysInMonth()), (_, i) => <div key={i} className={style('day', { not_empty: true, busy: i % 3 === 0, unavailable: i % 5 === 0, })}>{i + 1}</div>);
+    const daysNext = Array.from(Array(nextMonth.daysInMonth()), (_, i) => <div key={i} onClick={() => selectDayHandler(i)} className={style('day', { not_empty: true, selected: i + 1 === selectedDay, busy: i % 3 === 0, unavailable: i % 5 === 0, })}>{i + 1}</div>);
     const emptyDaysNext = Array.from(Array(startDayNext > 1 ? startDayCurrent - 1 : 6), (_, i) => <div key={"empty" + i} className={style('day', { not_empty: false })}></div>);
 
     const displayedDays = activeMonth === 0 ? [...emptyDaysCurrent, ...daysCurrent] : [...emptyDaysNext, ...daysNext];
@@ -32,7 +32,9 @@ const Calendar = () => {
     };
 
     const selectDayHandler = (idx) => {
-        setSelectedDay(idx + 1);
+        if ((idx + 1) >= moment().date()) {
+            setSelectedDay(idx + 1);
+        }
     };
 
     return (

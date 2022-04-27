@@ -14,3 +14,18 @@
     "nav empty empty empty"
     "sec1 sec2 sec3 sec4";
 }
+
+@media (orientation: portrait) {
+  .App {
+    width: 200vw;
+    height: 400vh;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: 1fr 1fr;
+    font-size: 0;
+    grid-template-areas:
+      "header sec1"
+      "empty sec2"
+      "empty sec3 "
+      "empty sec4";
+  }
+}

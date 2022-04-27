@@ -39,6 +39,7 @@ html {
   --fontSizeBig: 2.2vh;
   --fontSizeNormal: 1vw;
 
+  --padding: 6vh;
 
 
   /* --lightGray: #575757;
@@ -54,4 +55,15 @@ html {
   height: 100%;
   width: 100%;
   overflow: hidden;
+}
+
+@media (orientation: portrait) {
+  #root {
+    --colorBorderWidth: 3vw;
+    --fontSizeBigger: 3vw;
+    --fontSizeBig: 2.5vw;
+    --fontSizeNormal: 2vw;
+
+    --padding: 6vw;
+  }
 }

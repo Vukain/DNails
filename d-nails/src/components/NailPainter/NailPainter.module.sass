@@ -4,23 +4,25 @@
     left: 0
     width: 100%
     height: 100%
-    padding: 16px
     display: flex
     z-index: 1
 
+    @media (orientation: portrait)
+        flex-direction: column
+
     &__canvas_wrapper
+        flex-grow: 2
         position: relative
-        padding: 64px
+        padding: var(--padding)
         height: 100%
-        width: 50%
         position: relative
 
     &__overlay
         position: absolute
-        top: 64px
-        left: 64px
-        width: calc(100% - 128px)
-        height: calc(100% - 128px)
+        top: var(--padding)
+        left: var(--padding)
+        width: calc(100% - var(--padding) - var(--padding))
+        height: calc(100% - var(--padding) - var(--padding))
         border-radius: var(--borderRadiusSmall)
         cursor: crosshair
         box-shadow: 0 0 30px rgba(0, 0, 0, 0.3)
@@ -35,8 +37,8 @@
             z-index: -1
 
     &__color_picker
-        padding: 64px
-        width: 50%
+        flex-grow: 1
+        padding: var(--padding)
         height: 100%
         // display: flex
         // flex-direction: column
@@ -64,7 +66,7 @@
 
     &__title_text
         all: unset
-        font-size: 28px
+        font-size: var(--fontSizeBigger)
         font-weight: bold
         color: var(--almostWhite)
 

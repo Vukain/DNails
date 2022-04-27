@@ -82,13 +82,13 @@ function App() {
   const handleTouchEnd = () => {
       if (touchStart - touchEnd > 200) {
         setTimeout(() => {
-          sectionChanger('up');
+          sectionChanger('down');
         }, 100);
       };
 
       if (touchStart - touchEnd < -200) {
         setTimeout(() => {
-          sectionChanger('down');
+          sectionChanger('up');
         }, 100);
       };
   };

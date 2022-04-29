@@ -4,14 +4,16 @@
     left: 0
     width: 100%
     height: 100%
-    display: flex
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-template-rows: 1fr
     z-index: 1
 
     @media (orientation: portrait)
-        flex-direction: column
+        grid-template-columns: 1fr
+        grid-template-rows: 1fr 1fr
 
     &__canvas_wrapper
-        flex-grow: 2
         position: relative
         padding: var(--padding)
         height: 100%
@@ -37,7 +39,6 @@
             z-index: -1
 
     &__color_picker
-        flex-grow: 1
         padding: var(--padding)
         height: 100%
         // display: flex

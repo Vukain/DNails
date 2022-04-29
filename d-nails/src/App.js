@@ -73,6 +73,7 @@ function App() {
 
   const handleTouchStart = (e) => {
     setTouchStart(e.targetTouches[0].clientY);
+    setTouchEnd(e.targetTouches[0].clientY);
 }
 
   const handleTouchMove = (e) => {
@@ -80,13 +81,13 @@ function App() {
   }
 
   const handleTouchEnd = () => {
-      if (touchStart - touchEnd > 200) {
+      if (touchStart - touchEnd > 160) {
         setTimeout(() => {
           sectionChanger('down');
         }, 100);
       };
 
-      if (touchStart - touchEnd < -200) {
+      if (touchStart - touchEnd < -160) {
         setTimeout(() => {
           sectionChanger('up');
         }, 100);

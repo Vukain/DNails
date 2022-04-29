@@ -16,6 +16,7 @@ const NailPainter = () => {
     const [canvasContext, setCanvasContext] = useState(null);
     const [lacquerType, setLacquerType] = useState('standard');
     const [lacquerColor, setLacquerColor] = useState('#95285b');
+    const [isPainting, setIsPainting] = useState(false);
 
     const colors = [{ type: 'standard', color: '#95285b' }, { type: 'standard', color: '#b11335' }, { type: 'standard', color: '#d75641' }, { type: 'standard', color: '#8ab9d7' }, { type: 'standard', color: '#d9f6a6' }, { type: 'standard', color: '#845EC2' }, { type: 'standard', color: '#D65DB1' },
     { type: 'standard', color: '#FF6F91' }, { type: 'standard', color: '#FF9671' }, { type: 'standard', color: '#FFC75F' }, { type: 'standard', color: '#F9F871' }, { type: 'standard', color: '#DD2E5D' }, { type: 'standard', color: '#BA3A80' }, { type: 'standard', color: '#894990' },
@@ -39,23 +40,34 @@ const NailPainter = () => {
         setLacquerColor(color);
     };
 
-    const paintListener = (e) => {
-        canvasContext.beginPath();
-        canvasContext.arc(e.offsetX, e.offsetY, 16, 0, 2 * Math.PI, false)
-        canvasContext.fill();
+    const paintListener = (e, mode) => {
+        if (isPainting) {
+            const cursorX = canvasRef.current.getBoundingClientRect().left;
+            const cursorY = canvasRef.current.getBoundingClientRect().top;
+            canvasContext.beginPath();
+            if (mode === 'touch') {
+                canvasContext.arc(e.targetTouches[0].clientX - cursorX, e.targetTouches[0].clientY - cursorY, 16, 0, 2 * Math.PI, false);
+            } else {
+                canvasContext.arc(e.clientX - cursorX, e.clientY - cursorY, 16, 0, 2 * Math.PI, false);
+            }
+            canvasContext.fill();
+        };
     };
 
     const onMouseDownHandler = (e) => {
         const cursorX = canvasRef.current.getBoundingClientRect().left;
         const cursorY = canvasRef.current.getBoundingClientRect().top;
         canvasContext.beginPath();
-        canvasContext.arc(e.clientX - cursorX, e.clientY - cursorY, 16, 0, 2 * Math.PI, false)
+        canvasContext.arc(e.clientX - cursorX, e.clientY - cursorY, 16, 0, 2 * Math.PI, false);
         canvasContext.fill();
-        overlayRef.current.addEventListener("mousemove", paintListener);
+        setIsPainting(true);
+        // overlayRef.current.addEventListener("mousemove", paintListener)
     };
 
     const onMouseUpHandler = () => {
-        overlayRef.current.removeEventListener("mousemove", paintListener)
+        setIsPainting(false)
+        console.log('up')
+        // overlayRef.current.removeEventListener("mousemove", paintListener)
     };
 
     return (
@@ -64,7 +76,7 @@ const NailPainter = () => {
             <div className={style('canvas_wrapper')} ref={wrapperRef}>
                 <canvas ref={canvasRef}></canvas>
                 <NailsImage className={style('nails_image')} />
-                <div ref={overlayRef} className={style('overlay')} onMouseDown={onMouseDownHandler} onMouseUp={onMouseUpHandler}>
+                <div ref={overlayRef} className={style('overlay')} onMouseDown={onMouseDownHandler} onTouchStart={onMouseDownHandler} onMouseMove={paintListener} onTouchMove={(e) => paintListener(e, 'touch')} onMouseUp={onMouseUpHandler} onTouchEnd={onMouseUpHandler} >
                 </div>
             </div>
 

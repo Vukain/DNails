@@ -18,7 +18,7 @@
 @media (orientation: portrait) {
   .App {
     width: 200vw;
-    height: 400vh;
+    height: 400%;
     grid-template-rows: repeat(4, 1fr);
     grid-template-columns: 1fr 1fr;
     font-size: 0;

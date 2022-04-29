@@ -108,6 +108,8 @@
         align-content: start
         grid-template-columns: repeat(auto-fill, minmax(10%, 1fr))
         box-shadow: 0 0 30px rgba(0, 0, 0, 0.3)
+        @media (orientation: portrait)
+            grid-template-columns: repeat(auto-fill, minmax(16%, 1fr))
 
     &__color_select
         // width: 50px

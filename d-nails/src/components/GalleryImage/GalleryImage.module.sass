@@ -60,10 +60,6 @@
         cursor: pointer
         transition: 0.4s
         transform: scale(1)
-
-        @media (orientation: portrait)
-            object-fit: contain
-
         &:hover
             z-index: 99
             filter: grayscale(0%)
@@ -74,3 +70,7 @@
             cursor: default
             &:hover
                 transform: scale(1)
+
+        &--enlarge
+            @media (orientation: portrait)
+                object-fit: contain

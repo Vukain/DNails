@@ -27,9 +27,9 @@ html {
   --darkerGray: #3f3f3f;
   --darkestGray: #292929;
 
-  --borderRadiusBig: 20px;
-  --borderRadiusMedium: 15px;
-  --borderRadiusSmall: 10px;
+  --borderRadiusBig: 2vh;
+  --borderRadiusMedium: 1.5vh;
+  --borderRadiusSmall: 1vh;
   
   --gapBig: 16px;
   --gap: 10px;
@@ -60,10 +60,13 @@ html {
 @media (orientation: portrait) {
   #root {
     --colorBorderWidth: 3vw;
-    --fontSizeBigger: 3vw;
-    --fontSizeBig: 2.5vw;
-    --fontSizeNormal: 2vw;
+    --fontSizeBigger: 4.6vw;
+    --fontSizeBig: 3.2vw;
+    --fontSizeNormal: 2.6vw;
 
     --padding: 6vw;
+    --borderRadiusBig: 4vw;
+    --borderRadiusMedium: 3vw;
+    --borderRadiusSmall: 2vw;
   }
 }

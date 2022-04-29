@@ -46,8 +46,9 @@
 
         &::-webkit-datetime-edit
             font-size: var(--fontSizeNormal)
-            text-align: center
+            display: flex
             align-self: center
+            justify-content: center
             text-transform: uppercase
         &::-webkit-calendar-picker-indicator
             align-self: center
@@ -59,7 +60,8 @@
         box-sizing: border-box
         grid-column: span 2
         font-size: var(--fontSizeNormal)
-        color: var(--darkestGray)
+        font-weight: bold
+        color: var(--darkGray)
         background-color: var(--lighterGray)
         border-radius: 0 0 var(--borderRadiusSmall) var(--borderRadiusSmall)
         border: 2px solid var(--darkGray)

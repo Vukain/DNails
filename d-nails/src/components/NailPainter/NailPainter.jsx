@@ -26,9 +26,9 @@ const NailPainter = () => {
 
     useEffect(() => {
         const canvas = canvasRef.current;
-
-        canvas.width = wrapperRef.current.offsetWidth - 128;
-        canvas.height = wrapperRef.current.offsetHeight - 128;
+        console.log(wrapperRef.current)
+        canvas.width = wrapperRef.current.offsetWidth - wrapperRef.current.offsetWidth * 0.2;
+        canvas.height = wrapperRef.current.offsetHeight - wrapperRef.current.offsetWidth * 0.2;
 
         const context = canvas.getContext('2d');
         context.fillStyle = '#95285b';

@@ -5,14 +5,15 @@
         height: 100%
         gap: 10px
         display: grid
-        grid-template-rows: 6vh 4vh 4vh 1fr 5vh
+        grid-template-rows: 6vh 5vh 5vh 5vh 5vh 1fr 5vh
         grid-template-columns: 1fr 1fr
+        @media (orientation: portrait)
 
     &__title
         position: relative
         grid-column: span 2
         border-radius: var(--borderRadiusSmall) var(--borderRadiusSmall) 0 0
-        background-image: linear-gradient(45deg, var(--mainColor1) 25%, var(--mainColor2), var(--mainColor3) 75%)
+        background-image: linear-gradient(45deg, var(--mainColor1), var(--mainColor2), var(--mainColor3))
         box-shadow: 0 0 30px rgba(0, 0, 0, 0.3)
         display: flex
         justify-content: center
@@ -36,6 +37,8 @@
         text-align: center
         transition: .4s
         border: 2px solid var(--darkGray)
+        @media (orientation: portrait)
+            grid-column: span 2
         &:focus
             border: 2px solid var(--mainColor3)
             border-radius: 10px

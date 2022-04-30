@@ -74,6 +74,6 @@ const Calendar = () => {
             </div>
         </div >
     );
-}
+};
 
 export default Calendar;

@@ -5,6 +5,8 @@ import { default as NailPainterStyles } from './NailPainter.module.sass';
 
 import { ReactComponent as NailsImage } from '../../media/test.svg';
 
+import ContentSwitcher from '../ContentSwitcher/ContentSwitcher';
+
 const style = bemCssModules(NailPainterStyles);
 
 const NailPainter = () => {
@@ -17,6 +19,7 @@ const NailPainter = () => {
     const [lacquerType, setLacquerType] = useState('standard');
     const [lacquerColor, setLacquerColor] = useState('#95285b');
     const [isPainting, setIsPainting] = useState(false);
+    const [currentMobileSection, setCurrentMobileSection] = useState(0);
 
     const colors = [{ type: 'standard', color: '#95285b' }, { type: 'standard', color: '#b11335' }, { type: 'standard', color: '#d75641' }, { type: 'standard', color: '#8ab9d7' }, { type: 'standard', color: '#d9f6a6' }, { type: 'standard', color: '#845EC2' }, { type: 'standard', color: '#D65DB1' },
     { type: 'standard', color: '#FF6F91' }, { type: 'standard', color: '#FF9671' }, { type: 'standard', color: '#FFC75F' }, { type: 'standard', color: '#F9F871' }, { type: 'standard', color: '#DD2E5D' }, { type: 'standard', color: '#BA3A80' }, { type: 'standard', color: '#894990' },
@@ -73,14 +76,14 @@ const NailPainter = () => {
     return (
         <section className={style()}>
 
-            <div className={style('canvas_wrapper')} ref={wrapperRef}>
+            <div className={style('canvas_wrapper', { hidden: currentMobileSection === 0 })} ref={wrapperRef}>
                 <canvas ref={canvasRef}></canvas>
                 <NailsImage className={style('nails_image')} />
                 <div ref={overlayRef} className={style('overlay')} onMouseDown={onMouseDownHandler} onTouchStart={onMouseDownHandler} onMouseMove={paintListener} onTouchMove={(e) => paintListener(e, 'touch')} onMouseUp={onMouseUpHandler} onTouchEnd={onMouseUpHandler} >
                 </div>
             </div>
 
-            <div className={style('color_picker')}>
+            <div className={style('color_picker', { hidden: currentMobileSection === 1 })}>
                 <div className={style('title')}>
                     <h2 className={style('title_text')}>DOSTĘPNE KOLORY</h2>
                 </div>
@@ -93,6 +96,8 @@ const NailPainter = () => {
                     {squaries}
                 </div>
             </div>
+
+            <ContentSwitcher firstOption='kolory' secondOption='tester' current={currentMobileSection} sectionChanger={setCurrentMobileSection} />
 
         </section>
     );

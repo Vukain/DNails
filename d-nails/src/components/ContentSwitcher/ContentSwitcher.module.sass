@@ -1,0 +1,33 @@
+.content_switcher
+    display: none
+    grid-template-rows: 1fr
+    grid-template-columns: 1fr 1fr
+    cursor: pointer
+    // box-shadow: 0 0 30px rgba(0, 0, 0, 0.3)
+    padding: var(--padding)
+    @media (orientation: portrait)
+        display: grid
+
+    &__option
+        background-image: linear-gradient(45deg, var(--mainColor1), var(--mainColor2), var(--mainColor3))
+        background-size: 200% 100%
+        background-position: 0%
+        display: flex
+        justify-content: center
+        align-items: center
+        border-radius: var(--borderRadiusSmall) 0 0 var(--borderRadiusSmall)
+        font-size: var(--fontSizeBigger)
+        font-weight: bold
+        color: var(--almostWhite)
+        transition: .4s
+        text-transform: uppercase
+        &:hover
+            animation: bgc 2s infinite ease-in alternate
+        &:nth-of-type(2)
+            background-position: 100%
+            border-radius: 0 var(--borderRadiusSmall) var(--borderRadiusSmall) 0
+            &:hover
+                animation-direction: alternate-reverse
+
+        &--inactive
+            filter: grayscale(100%)

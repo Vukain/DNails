@@ -35,11 +35,15 @@
         grid-column: span 1
         color: var(--darkGray)
         font-weight: bold
-        text-align: center
+        justify-content: center
+        align-content: center
+        align-items: center
         transition: .4s
         border: 2px solid var(--darkGray)
+
         @media (orientation: portrait)
             grid-column: span 2
+
         &:focus
             border: 2px solid var(--mainColor3)
             border-radius: 10px
@@ -54,6 +58,7 @@
             align-self: center
             justify-content: center
             text-transform: uppercase
+
         &::-webkit-calendar-picker-indicator
             align-self: center
             margin-right: 5px

@@ -1,28 +1,28 @@
 {
   "files": {
     "main.css": "/DNails/static/css/main.bd1becc9.chunk.css",
-    "main.js": "/DNails/static/js/main.88a55a76.chunk.js",
-    "main.js.map": "/DNails/static/js/main.88a55a76.chunk.js.map",
-    "runtime-main.js": "/DNails/static/js/runtime-main.9a4060f9.js",
-    "runtime-main.js.map": "/DNails/static/js/runtime-main.9a4060f9.js.map",
+    "main.js": "/DNails/static/js/main.eb3385ee.chunk.js",
+    "main.js.map": "/DNails/static/js/main.eb3385ee.chunk.js.map",
+    "runtime-main.js": "/DNails/static/js/runtime-main.ce61eaac.js",
+    "runtime-main.js.map": "/DNails/static/js/runtime-main.ce61eaac.js.map",
     "static/css/2.679831fc.chunk.css": "/DNails/static/css/2.679831fc.chunk.css",
-    "static/js/2.2ccb242e.chunk.js": "/DNails/static/js/2.2ccb242e.chunk.js",
-    "static/js/2.2ccb242e.chunk.js.map": "/DNails/static/js/2.2ccb242e.chunk.js.map",
-    "static/js/3.79e6a079.chunk.js": "/DNails/static/js/3.79e6a079.chunk.js",
-    "static/js/3.79e6a079.chunk.js.map": "/DNails/static/js/3.79e6a079.chunk.js.map",
+    "static/js/2.baec1a54.chunk.js": "/DNails/static/js/2.baec1a54.chunk.js",
+    "static/js/2.baec1a54.chunk.js.map": "/DNails/static/js/2.baec1a54.chunk.js.map",
+    "static/js/3.4e6ffdaf.chunk.js": "/DNails/static/js/3.4e6ffdaf.chunk.js",
+    "static/js/3.4e6ffdaf.chunk.js.map": "/DNails/static/js/3.4e6ffdaf.chunk.js.map",
     "index.html": "/DNails/index.html",
     "static/css/2.679831fc.chunk.css.map": "/DNails/static/css/2.679831fc.chunk.css.map",
     "static/css/main.bd1becc9.chunk.css.map": "/DNails/static/css/main.bd1becc9.chunk.css.map",
-    "static/js/2.2ccb242e.chunk.js.LICENSE.txt": "/DNails/static/js/2.2ccb242e.chunk.js.LICENSE.txt",
+    "static/js/2.baec1a54.chunk.js.LICENSE.txt": "/DNails/static/js/2.baec1a54.chunk.js.LICENSE.txt",
     "static/media/header_test.54374e49.svg": "/DNails/static/media/header_test.54374e49.svg",
     "static/media/placeholder.c57f741f.jpeg": "/DNails/static/media/placeholder.c57f741f.jpeg",
     "static/media/test.cbae6f58.svg": "/DNails/static/media/test.cbae6f58.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.9a4060f9.js",
+    "static/js/runtime-main.ce61eaac.js",
     "static/css/2.679831fc.chunk.css",
-    "static/js/2.2ccb242e.chunk.js",
+    "static/js/2.baec1a54.chunk.js",
     "static/css/main.bd1becc9.chunk.css",
-    "static/js/main.88a55a76.chunk.js"
+    "static/js/main.eb3385ee.chunk.js"
   ]
 }

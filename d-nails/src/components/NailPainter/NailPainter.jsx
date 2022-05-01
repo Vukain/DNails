@@ -31,8 +31,16 @@ const NailPainter = () => {
         const canvas = canvasRef.current;
         const canvasSizing = wrapperRef.current
 
-        canvas.width = canvasSizing.offsetWidth - canvasSizing.offsetWidth * 0.2;
-        canvas.height = canvasSizing.offsetHeight - canvasSizing.offsetWidth * 0.2;
+        let widthRatioAdjust = 0;
+        let heightRatioAdjust = 0;
+        if (canvasSizing.offsetWidth > canvasSizing.offsetHeight) {
+            widthRatioAdjust = canvasSizing.offsetWidth - canvasSizing.offsetHeight
+        } else {
+            heightRatioAdjust = canvasSizing.offsetHeight - canvasSizing.offsetWidth;
+        };
+
+        canvas.width = canvasSizing.offsetWidth - widthRatioAdjust;
+        canvas.height = canvasSizing.offsetHeight - heightRatioAdjust;
 
         const context = canvas.getContext('2d');
         context.fillStyle = '#95285b';
@@ -81,8 +89,8 @@ const NailPainter = () => {
     return (
         <section className={style()}>
 
-            <div className={style('canvas_wrapper', { hidden: currentMobileSection === 0 })}>
-                <canvas ref={canvasRef}></canvas>
+            <div className={style('canvas_wrapper', { hidden: currentMobileSection === 0 })} >
+                <canvas ref={canvasRef} className={style('canvas')}></canvas>
                 <NailsImage className={style('nails_image')} />
                 <div ref={overlayRef} className={style('overlay')} onMouseDown={onMouseDownHandler} onTouchStart={(e) => onMouseDownHandler(e, 'touch')} onMouseMove={paintListener} onTouchMove={(e) => paintListener(e, 'touch')} onMouseUp={onMouseUpHandler} onTouchEnd={onMouseUpHandler} >
                 </div>

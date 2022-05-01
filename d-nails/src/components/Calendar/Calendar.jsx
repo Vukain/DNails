@@ -49,7 +49,7 @@ const Calendar = () => {
                 <div onClick={() => { monthHandler(1) }} className={style('chosen_month', { inactive_month: activeMonth !== 1 })}>{months[nextMonth.month()]}</div>
             </div>
 
-            <div className={style('week')}>
+            <div className={style('week_labels')}>
                 <div className={style('weekday')}>PON</div>
                 <div className={style('weekday')}>WTO</div>
                 <div className={style('weekday')}>ŚRO</div>
@@ -63,8 +63,9 @@ const Calendar = () => {
                 {displayedDays}
             </div>
 
+            <div className={style('hour_label')}>GODZ</div>
+
             <div className={style('hours')}>
-                <div className={style('hour_label')}>GODZ</div>
                 <div className={style('hour')}>8</div>
                 <div className={style('hour')}>10</div>
                 <div className={style('hour')}>12</div>

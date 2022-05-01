@@ -13,7 +13,7 @@
     grid-template-columns: repeat(8, 1fr)
     gap: var(--gap)
     @media (orientation: portrait)
-        grid-template-rows: 6vh 4vh 1fr 8vh
+        grid-template-rows: 6vh 5vh 1fr 5vh 8vh
         grid-template-columns: repeat(7, 1fr)
 
     &__month
@@ -50,7 +50,7 @@
         &--inactive_month
             filter: grayscale(100%)
 
-    &__week
+    &__week_labels
         grid-column: span 7
         background-color: var(--almostWhite)
         color: var(--darkGray)
@@ -73,7 +73,7 @@
 
     &__hours
         grid-column: 8
-        grid-row: 2 / 4
+        grid-row: 3 / 4
         overflow: hidden
         border-radius: 0 0 var(--borderRadiusSmall) 0
         display: flex
@@ -81,22 +81,22 @@
         @media (orientation: portrait)
             flex-direction: row
             grid-column: 1 / 8
-            grid-row: 4
+            grid-row: 5
             border-radius: 0 0 var(--borderRadiusSmall) var(--borderRadiusSmall)
 
     &__hour_label
+        grid-row-start: 2
+        grid-column-start: 8
         background-color: var(--almostWhite)
-        height: 4vh
         display: flex
         align-items: center
         justify-content: center
         font-size: var(--fontSizeBig)
         font-weight: bold
         color: var(--darkGray)
-        margin: 0 0 var(--gap) 0
         @media (orientation: portrait)
-            margin: 0 var(--gap) 0 0
-            height: unset
+            grid-row-start: 4
+            grid-column: 1 / 8
 
     &__hour
         flex-grow: 1

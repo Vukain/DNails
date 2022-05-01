@@ -8,19 +8,19 @@
     grid-template-columns: 1fr 1fr
     grid-template-rows: 1fr
     z-index: 999
+    padding: var(--padding)
+    gap: var(--padding)
     @media (orientation: portrait)
         grid-template-columns: 1fr
         grid-template-rows: 6fr 1fr
 
     &__calendar
-        padding: var(--padding)
         &--hidden
             @media (orientation: portrait)
                 display: none
         // flex-shrink: 0
 
     &__contact
-        padding: var(--padding)
         &--hidden
             @media (orientation: portrait)
                 display: none

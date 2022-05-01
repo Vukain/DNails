@@ -8,27 +8,30 @@
     grid-template-columns: 1fr 1fr
     grid-template-rows: 1fr
     z-index: 1
-
+    padding: var(--padding)
+    gap: var(--padding)
     @media (orientation: portrait)
         grid-template-columns: 1fr
         grid-template-rows: 6fr 1fr
 
     &__canvas_wrapper
         position: relative
-        padding: var(--padding)
-        height: 100%
-        position: relative
+        overflow: hidden
+        border-radius: var(--borderRadiusSmall)
         &--hidden
             @media (orientation: portrait)
                 display: none
+    &__canvas
+        position: relative
+        top: 50%
+        transform: translateY(-50%)
 
     &__overlay
         position: absolute
-        top: var(--padding)
-        left: var(--padding)
-        width: calc(100% - var(--padding) - var(--padding))
-        height: calc(100% - var(--padding) - var(--padding))
-        border-radius: var(--borderRadiusSmall)
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
         cursor: crosshair
         box-shadow: 0 0 30px rgba(0, 0, 0, 0.3)
         &::before
@@ -38,25 +41,23 @@
             width: 100%
             height: 100%
             background-color: var(--darkGray)
-            border-radius: var(--borderRadiusSmall)
-            z-index: -1
+            z-index: -4
+
+    &__nails_image
+        position: absolute
+        top: 0
+        left: 50%
+        height: 100%
+        transform: translateX(-50%)
+        @media (orientation: portrait)
+            height: unset
+            width: 120%
+            top: 20%
 
     &__color_picker
-        padding: var(--padding)
-        height: 100%
-        // display: flex
-        // flex-direction: column
         gap: var(--gap)
         display: grid
         grid-template-rows: 6vh 4vh 1fr
-        // align-content: start
-        // grid-template-columns: repeat(auto-fill, minmax(10%, 1fr))
-
-        // display: flex
-        // flex-wrap: wrap
-        // align-items: flex-start
-        // align-content: flex-start
-        // justify-content: center
         &--hidden
             @media (orientation: portrait)
                 display: none
@@ -117,28 +118,14 @@
             grid-template-columns: repeat(auto-fill, minmax(16%, 1fr))
 
     &__color_select
-        // width: 50px
-        // height: 50px
         border-radius: var(--borderRadiusSmall)
         margin: 1vh
         cursor: pointer
         aspect-ratio: 1 / 1
         transition: .1s
         border: 5px solid transparent
-        // &::before
-        //     content: ""
-        //     display: block
-        //     padding-top: 100%
         @media (orientation: portrait)
             margin: 2vw
 
         &--selected
             border: 5px solid var(--darkestGray)
-
-    &__nails_image
-        position: absolute
-        top: var(--padding)
-        left: var(--padding)
-        width: calc(100% - var(--padding) - var(--padding))
-        height: calc(100% - var(--padding) - var(--padding))
-        border-radius: var(--borderRadiusSmall)

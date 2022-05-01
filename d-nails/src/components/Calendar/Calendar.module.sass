@@ -10,14 +10,21 @@
     margin: auto
     display: grid
     grid-template-rows: 6vh 4vh 1fr
-    row-gap: 10px
+    grid-template-columns: repeat(8, 1fr)
+    gap: var(--gap)
+    @media (orientation: portrait)
+        grid-template-rows: 6vh 4vh 1fr 8vh
+        grid-template-columns: repeat(7, 1fr)
 
     &__month
+        grid-column: span 8
         display: grid
         grid-template-rows: 1fr
         grid-template-columns: 1fr 1fr
         cursor: pointer
         box-shadow: 0 0 30px rgba(0, 0, 0, 0.3)
+        @media (orientation: portrait)
+            grid-column: span 7
 
     &__chosen_month
         background-image: linear-gradient(45deg, var(--mainColor1), var(--mainColor2), var(--mainColor3))
@@ -42,12 +49,14 @@
 
         &--inactive_month
             filter: grayscale(100%)
+
     &__week
+        grid-column: span 7
         background-color: var(--almostWhite)
         color: var(--darkGray)
         display: grid
         grid-template-rows: 1fr
-        grid-template-columns: repeat(8, 1fr)
+        grid-template-columns: repeat(7, 1fr)
         border-radius: 0px
         box-shadow: 0 0 30px rgba(0, 0, 0, 0.3)
 
@@ -62,19 +71,35 @@
         line-height: 100%
         text-align: center
 
-    &__days_hours
-        display: grid
-        grid-template-columns: repeat(8, 1fr)
-        grid-gap: 10px
-
     &__hours
-        background-color: var(--lighterGray)
+        grid-column: 8
+        grid-row: 2 / 4
+        overflow: hidden
         border-radius: 0 0 var(--borderRadiusSmall) 0
         display: flex
         flex-direction: column
+        @media (orientation: portrait)
+            flex-direction: row
+            grid-column: 1 / 8
+            grid-row: 4
+            border-radius: 0 0 var(--borderRadiusSmall) var(--borderRadiusSmall)
+
+    &__hour_label
+        background-color: var(--almostWhite)
+        height: 4vh
+        display: flex
+        align-items: center
+        justify-content: center
+        font-size: var(--fontSizeBig)
+        font-weight: bold
+        margin: 0 0 var(--gap) 0
+        @media (orientation: portrait)
+            margin: 0 var(--gap) 0 0
+            height: unset
 
     &__hour
         flex-grow: 1
+        background-color: var(--lighterGray)
         display: flex
         align-items: center
         justify-content: center
@@ -91,6 +116,8 @@
         z-index: 1
         border-radius: 0 0 0 var(--borderRadiusSmall)
         box-shadow: 0 0 30px rgba(0, 0, 0, 0.3)
+        @media (orientation: portrait)
+            border-radius: 0
 
     &__day
         display: flex

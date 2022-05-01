@@ -29,9 +29,10 @@ const NailPainter = () => {
 
     useEffect(() => {
         const canvas = canvasRef.current;
-        console.log(wrapperRef.current)
-        canvas.width = wrapperRef.current.offsetWidth - wrapperRef.current.offsetWidth * 0.2;
-        canvas.height = wrapperRef.current.offsetHeight - wrapperRef.current.offsetWidth * 0.2;
+        const canvasSizing = wrapperRef.current
+
+        canvas.width = canvasSizing.offsetWidth - canvasSizing.offsetWidth * 0.2;
+        canvas.height = canvasSizing.offsetHeight - canvasSizing.offsetWidth * 0.2;
 
         const context = canvas.getContext('2d');
         context.fillStyle = '#95285b';
@@ -57,11 +58,15 @@ const NailPainter = () => {
         };
     };
 
-    const onMouseDownHandler = (e) => {
+    const onMouseDownHandler = (e, mode) => {
         const cursorX = canvasRef.current.getBoundingClientRect().left;
         const cursorY = canvasRef.current.getBoundingClientRect().top;
         canvasContext.beginPath();
-        canvasContext.arc(e.clientX - cursorX, e.clientY - cursorY, 16, 0, 2 * Math.PI, false);
+        if (mode === 'touch') {
+            canvasContext.arc(e.targetTouches[0].clientX - cursorX, e.targetTouches[0].clientY - cursorY, 16, 0, 2 * Math.PI, false);
+        } else {
+            canvasContext.arc(e.clientX - cursorX, e.clientY - cursorY, 16, 0, 2 * Math.PI, false);
+        }
         canvasContext.fill();
         setIsPainting(true);
         // overlayRef.current.addEventListener("mousemove", paintListener)
@@ -76,14 +81,14 @@ const NailPainter = () => {
     return (
         <section className={style()}>
 
-            <div className={style('canvas_wrapper', { hidden: currentMobileSection === 0 })} ref={wrapperRef}>
+            <div className={style('canvas_wrapper', { hidden: currentMobileSection === 0 })}>
                 <canvas ref={canvasRef}></canvas>
                 <NailsImage className={style('nails_image')} />
-                <div ref={overlayRef} className={style('overlay')} onMouseDown={onMouseDownHandler} onTouchStart={onMouseDownHandler} onMouseMove={paintListener} onTouchMove={(e) => paintListener(e, 'touch')} onMouseUp={onMouseUpHandler} onTouchEnd={onMouseUpHandler} >
+                <div ref={overlayRef} className={style('overlay')} onMouseDown={onMouseDownHandler} onTouchStart={(e) => onMouseDownHandler(e, 'touch')} onMouseMove={paintListener} onTouchMove={(e) => paintListener(e, 'touch')} onMouseUp={onMouseUpHandler} onTouchEnd={onMouseUpHandler} >
                 </div>
             </div>
 
-            <div className={style('color_picker', { hidden: currentMobileSection === 1 })}>
+            <div className={style('color_picker', { hidden: currentMobileSection === 1 })} ref={wrapperRef}>
                 <div className={style('title')}>
                     <h2 className={style('title_text')}>DOSTĘPNE KOLORY</h2>
                 </div>

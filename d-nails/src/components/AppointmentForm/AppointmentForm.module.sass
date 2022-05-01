@@ -3,11 +3,12 @@
 
     &__form
         height: 100%
-        gap: 10px
+        gap: var(--gap)
         display: grid
-        grid-template-rows: 6vh 5vh 5vh 5vh 5vh 1fr 5vh
+        grid-template-rows: 6vh 4vh 4vh 1fr 5vh
         grid-template-columns: 1fr 1fr
         @media (orientation: portrait)
+            grid-template-rows: 6vh 5vh 5vh 5vh 5vh 1fr 5vh
 
     &__title
         position: relative

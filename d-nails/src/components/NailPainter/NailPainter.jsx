@@ -20,10 +20,13 @@ const NailPainter = () => {
     const [lacquerColor, setLacquerColor] = useState('#95285b');
     const [isPainting, setIsPainting] = useState(false);
     const [currentMobileSection, setCurrentMobileSection] = useState(0);
+    const [colors, setColors] = useState([])
 
-    const colors = [{ type: 'standard', color: '#95285b' }, { type: 'standard', color: '#b11335' }, { type: 'standard', color: '#d75641' }, { type: 'standard', color: '#8ab9d7' }, { type: 'standard', color: '#d9f6a6' }, { type: 'standard', color: '#845EC2' }, { type: 'standard', color: '#D65DB1' },
-    { type: 'standard', color: '#FF6F91' }, { type: 'standard', color: '#FF9671' }, { type: 'standard', color: '#FFC75F' }, { type: 'standard', color: '#F9F871' }, { type: 'standard', color: '#DD2E5D' }, { type: 'standard', color: '#BA3A80' }, { type: 'standard', color: '#894990' },
-    { type: 'standard', color: '#58518B' }, { type: 'standard', color: '#354F75' }, { type: 'standard', color: '#2F4858' }, { type: 'metallic', color: '#D8C56F' }, { type: 'metallic', color: '#939393' }, { type: 'metallic', color: '#C3644A' }, { type: 'pearl', color: '#D9DE9F' }, { type: 'pearl', color: '#D8A1B8' }, { type: 'pearl', color: '#C1AAD5' }];
+    // const colors = [{ type: 'standard', color: '#95285b' }, { type: 'standard', color: '#b11335' }, { type: 'standard', color: '#d75641' }, { type: 'standard', color: '#8ab9d7' }, { type: 'standard', color: '#d9f6a6' }, { type: 'standard', color: '#845EC2' }, { type: 'standard', color: '#D65DB1' },
+    // { type: 'standard', color: '#FF6F91' }, { type: 'standard', color: '#FF9671' }, { type: 'standard', color: '#FFC75F' }, { type: 'standard', color: '#F9F871' }, { type: 'standard', color: '#DD2E5D' }, { type: 'standard', color: '#BA3A80' }, { type: 'standard', color: '#894990' },
+    // { type: 'standard', color: '#58518B' }, { type: 'standard', color: '#354F75' }, { type: 'standard', color: '#2F4858' }, { type: 'metallic', color: '#D8C56F' }, { type: 'metallic', color: '#939393' }, { type: 'metallic', color: '#C3644A' }, { type: 'pearl', color: '#D9DE9F' }, { type: 'pearl', color: '#D8A1B8' }, { type: 'pearl', color: '#C1AAD5' }];
+
+
     const filteredColors = colors.filter(e => e.type === lacquerType);
     const squaries = filteredColors.map((e, i) => <div key={i} className={style('color_select', { selected: e.color === lacquerColor })} style={{ backgroundColor: e.color }} onClick={() => colorChanger(e.color)}></div>)
 
@@ -45,7 +48,22 @@ const NailPainter = () => {
         const context = canvas.getContext('2d');
         context.fillStyle = '#95285b';
         setCanvasContext(context);
+
+        colorFetcher()
     }, []);
+
+    const colorFetcher = async () => {
+        let response = await fetch('https://dnails-ab48e-default-rtdb.firebaseio.com/colors.json')
+        response = await response.json()
+        const fetchedColors = [];
+        for (const key in response) {
+            fetchedColors.push({
+                type: response[key].type,
+                color: response[key].color
+            });
+        };
+        setColors(fetchedColors);
+    }
 
     const colorChanger = (color) => {
         canvasContext.fillStyle = color;

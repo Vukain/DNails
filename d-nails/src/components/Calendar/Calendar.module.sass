@@ -76,6 +76,7 @@
         grid-row: 3 / 4
         overflow: hidden
         border-radius: 0 0 var(--borderRadiusSmall) 0
+        background-color: var(--lighterGray)
         display: flex
         flex-direction: column
         @media (orientation: portrait)
@@ -99,6 +100,7 @@
             grid-column: 1 / 8
 
     &__hour
+        position: relative
         flex-grow: 1
         background-color: var(--lighterGray)
         display: flex
@@ -107,6 +109,20 @@
         font-size: var(--fontSizeBig)
         font-weight: bold
         color: var(--darkGray)
+        z-index: 3
+        &::after
+            cursor: pointer
+            display: block
+            content: ""
+            width: calc(100% - 2vh)
+            height: calc(100% - 2vh)
+            position: absolute
+            z-index: -1
+            border-radius: var(--borderRadiusSmall)
+            background-color: var(--lightestGray)
+            @media (orientation: portrait)
+                width: calc(100% - 3vw)
+                height: calc(100% - 3vw)
 
     &__days
         background-color: var(--lighterGray)
@@ -162,8 +178,8 @@
                 border-radius: var(--borderRadiusSmall)
                 background-color: var(--lightestGray)
                 @media (orientation: portrait)
-                    width: calc(100% - 2vw)
-                    height: calc(100% - 2vw)
+                    width: calc(100% - 3vw)
+                    height: calc(100% - 3vw)
 
             &:hover
                 &::before

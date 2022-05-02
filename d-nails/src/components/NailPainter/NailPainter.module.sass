@@ -12,7 +12,7 @@
     gap: var(--padding)
     @media (orientation: portrait)
         grid-template-columns: 1fr
-        grid-template-rows: 6fr 1fr
+        grid-template-rows: 1fr 5vh
 
     &__canvas_wrapper
         position: relative
@@ -23,7 +23,7 @@
                 display: none
     &__canvas
         position: relative
-        top: 50%
+        top: calc(50% + 1px)
         transform: translateY(-50%)
 
     &__overlay

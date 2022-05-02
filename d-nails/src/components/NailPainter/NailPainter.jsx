@@ -20,7 +20,7 @@ const NailPainter = () => {
     const [lacquerColor, setLacquerColor] = useState('#95285b');
     const [isPainting, setIsPainting] = useState(false);
     const [currentMobileSection, setCurrentMobileSection] = useState(0);
-    const [colors, setColors] = useState([])
+    const [colors, setColors] = useState([]);
 
     // const colors = [{ type: 'standard', color: '#95285b' }, { type: 'standard', color: '#b11335' }, { type: 'standard', color: '#d75641' }, { type: 'standard', color: '#8ab9d7' }, { type: 'standard', color: '#d9f6a6' }, { type: 'standard', color: '#845EC2' }, { type: 'standard', color: '#D65DB1' },
     // { type: 'standard', color: '#FF6F91' }, { type: 'standard', color: '#FF9671' }, { type: 'standard', color: '#FFC75F' }, { type: 'standard', color: '#F9F871' }, { type: 'standard', color: '#DD2E5D' }, { type: 'standard', color: '#BA3A80' }, { type: 'standard', color: '#894990' },
@@ -39,7 +39,7 @@ const NailPainter = () => {
         if (canvasSizing.offsetWidth > canvasSizing.offsetHeight) {
             widthRatioAdjust = canvasSizing.offsetWidth - canvasSizing.offsetHeight
         } else {
-            heightRatioAdjust = canvasSizing.offsetHeight - canvasSizing.offsetWidth;
+            heightRatioAdjust = canvasSizing.offsetHeight - canvasSizing.offsetWidth - 2;
         };
 
         canvas.width = canvasSizing.offsetWidth - widthRatioAdjust;

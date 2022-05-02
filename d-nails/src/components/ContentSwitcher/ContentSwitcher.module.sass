@@ -5,7 +5,6 @@
     cursor: pointer
     font-size: 0
     // box-shadow: 0 0 30px rgba(0, 0, 0, 0.3)
-    padding: var(--padding)
     @media (orientation: portrait)
         display: grid
 
@@ -16,7 +15,7 @@
         display: flex
         justify-content: center
         align-items: center
-        border-radius: var(--borderRadiusSmall) 0 0 var(--borderRadiusSmall)
+        border-radius: var(--borderRadiusSmall) 0 0 0
         font-size: var(--fontSizeBigger)
         font-weight: bold
         color: var(--almostWhite)
@@ -26,7 +25,7 @@
             animation: bgc 2s infinite ease-in alternate
         &:nth-of-type(2)
             background-position: 100%
-            border-radius: 0 var(--borderRadiusSmall) var(--borderRadiusSmall) 0
+            border-radius: 0 0 var(--borderRadiusSmall) 0
             &:hover
                 animation-direction: alternate-reverse
 

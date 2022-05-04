@@ -19,7 +19,7 @@ const NailPainter = () => {
     const [lacquerType, setLacquerType] = useState('standard');
     const [lacquerColor, setLacquerColor] = useState('#95285b');
     const [isPainting, setIsPainting] = useState(false);
-    const [currentMobileSection, setCurrentMobileSection] = useState(0);
+    const [currentMobileSection, setCurrentMobileSection] = useState(1);
     const [colors, setColors] = useState([]);
 
     // const colors = [{ type: 'standard', color: '#95285b' }, { type: 'standard', color: '#b11335' }, { type: 'standard', color: '#d75641' }, { type: 'standard', color: '#8ab9d7' }, { type: 'standard', color: '#d9f6a6' }, { type: 'standard', color: '#845EC2' }, { type: 'standard', color: '#D65DB1' },
@@ -49,7 +49,8 @@ const NailPainter = () => {
         context.fillStyle = '#95285b';
         setCanvasContext(context);
 
-        colorFetcher()
+        colorFetcher();
+        setCurrentMobileSection(0);
     }, []);
 
     const colorFetcher = async () => {
@@ -107,14 +108,26 @@ const NailPainter = () => {
     return (
         <section className={style()}>
 
-            <div className={style('canvas_wrapper', { hidden: currentMobileSection === 0 })} >
+            <div className={style('nail_canvas', { hidden: currentMobileSection === 0 })} >
+                <div className={style('title')}>
+                    <h2 className={style('title_text')}>tester kolorów</h2>
+                </div>
+                <div className={style('canvas_wrapper')} ref={wrapperRef}>
+                    <canvas ref={canvasRef} className={style('canvas')}></canvas>
+                    <NailsImage className={style('nails_image')} />
+                    <div ref={overlayRef} className={style('overlay')} onMouseDown={onMouseDownHandler} onTouchStart={(e) => onMouseDownHandler(e, 'touch')} onMouseMove={paintListener} onTouchMove={(e) => paintListener(e, 'touch')} onMouseUp={onMouseUpHandler} onTouchEnd={onMouseUpHandler} >
+                    </div>
+                </div>
+            </div>
+
+            {/* <div className={style('canvas_wrapper', { hidden: currentMobileSection === 0 })} >
                 <canvas ref={canvasRef} className={style('canvas')}></canvas>
                 <NailsImage className={style('nails_image')} />
                 <div ref={overlayRef} className={style('overlay')} onMouseDown={onMouseDownHandler} onTouchStart={(e) => onMouseDownHandler(e, 'touch')} onMouseMove={paintListener} onTouchMove={(e) => paintListener(e, 'touch')} onMouseUp={onMouseUpHandler} onTouchEnd={onMouseUpHandler} >
                 </div>
-            </div>
+            </div> */}
 
-            <div className={style('color_picker', { hidden: currentMobileSection === 1 })} ref={wrapperRef}>
+            <div className={style('color_picker', { hidden: currentMobileSection === 1 })}>
                 <div className={style('title')}>
                     <h2 className={style('title_text')}>DOSTĘPNE KOLORY</h2>
                 </div>

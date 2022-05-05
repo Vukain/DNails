@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import moment from 'moment';
 import bemCssModules from 'bem-css-modules';
 
@@ -13,22 +13,49 @@ const Calendar = () => {
     const [nextMonth, setNextMonth] = useState(moment().add(1, 'months'));
     const [months, setMonths] = useState(['STYCZEŃ', 'LUTY', 'MARZEC', 'KWIECIEŃ', 'MAJ', 'CZERWIEC', 'LIPIEC', 'SIERPIEŃ', 'WRZESIEŃ', 'PAŹDZIERNIK', 'LISTOPAD', 'GRUDZIEŃ']);
     const [selectedDay, setSelectedDay] = useState(moment().date());
+    const [daysCurrent, setDaysCurrent] = useState([]);
+    const [daysNext, setDaysNext] = useState([]);
+    const [emptyDaysCurrent, setEmptyDaysCurrent] = useState([]);
+    const [emptyDaysNext, setEmptyDaysNext] = useState([]);
+
 
     const startDayCurrent = currentMonth.startOf("month").format("d");
     const startDayNext = nextMonth.startOf("month").format("d");
 
-    const daysCurrent = Array.from(Array(currentMonth.daysInMonth()), (_, i) => <div key={i} onClick={() => selectDayHandler(i, 'this')} className={style('day', { not_empty: true, selected: i + 1 === selectedDay, passed: i + 1 < moment().date(), busy: i % 3 === 0, unavailable: i % 5 === 0, })
-    }> {i + 1}</div >);
-    const emptyDaysCurrent = Array.from(Array(startDayCurrent > 1 ? startDayCurrent - 1 : 6), (_, i) => <div key={"empty" + i} className={style('day', { not_empty: false })}></div>);
+    const DUMMY_DAYS_CURRENT = useRef([]);
+    const DUMMY_DAYS_NEXT = useRef([]);
 
-    const daysNext = Array.from(Array(nextMonth.daysInMonth()), (_, i) => <div key={i} onClick={() => selectDayHandler(i)} className={style('day', { not_empty: true, selected: i + 1 === selectedDay, busy: i % 3 === 0, unavailable: i % 5 === 0, })}>{i + 1}</div>);
-    const emptyDaysNext = Array.from(Array(startDayNext > 1 ? startDayNext - 1 : 6), (_, i) => <div key={"empty" + i} className={style('day', { not_empty: false })}></div>);
+    useEffect(() => {
+        for (let day = 0; day < currentMonth.daysInMonth(); day++) {
+            DUMMY_DAYS_CURRENT.current.push({ hours: [8, 10, 12, 14, 16, 18].filter(() => Math.random() > 0.7) });
+        };
+
+        for (let day = 0; day < nextMonth.daysInMonth(); day++) {
+            DUMMY_DAYS_NEXT.current.push({ hours: [8, 10, 12, 14, 16, 18].filter(() => Math.random() > 0.7) });
+        };
+
+        const daysCurrentMapped = DUMMY_DAYS_CURRENT.current.map((day, i) => <div key={i} onClick={() => selectDayHandler(i, 'this')} className={style('day', { not_empty: true, selected: i + 1 === selectedDay, passed: i + 1 < moment().date(), busy: day['hours'].length > 1, unavailable: day['hours'].length > 3 })}> {i + 1} </div >);
+        const emptyDaysCurrentMapped = Array.from(Array(startDayCurrent > 1 ? startDayCurrent - 1 : 6), (_, i) => <div key={"empty" + i} className={style('day', { not_empty: false })}></div>);
+        const daysNextMapped = DUMMY_DAYS_NEXT.current.map((day, i) => <div key={i} onClick={() => selectDayHandler(i)} className={style('day', { not_empty: true, selected: i + 1 === selectedDay, busy: day['hours'].length > 1, unavailable: day['hours'].length > 3 })}>{i + 1}</div>);
+        const emptyDaysNextMapped = Array.from(Array(startDayNext > 1 ? startDayNext - 1 : 6), (_, i) => <div key={"empty" + i} className={style('day', { not_empty: false })}></div>);
+
+        setDaysCurrent(daysCurrentMapped);
+        setEmptyDaysCurrent(emptyDaysCurrentMapped);
+        setDaysNext(daysNextMapped);
+        setEmptyDaysNext(emptyDaysNextMapped);
+
+    }, [DUMMY_DAYS_CURRENT, DUMMY_DAYS_NEXT]);
 
     const displayedDays = activeMonth === 0 ? [...emptyDaysCurrent, ...daysCurrent] : [...emptyDaysNext, ...daysNext];
+    const hours = [8, 10, 12, 14, 16, 18].map((hour, i) => <div key={i} className={style('hour', { unavailable: activeMonth === 0 ? DUMMY_DAYS_CURRENT.current.length > 0 ? DUMMY_DAYS_CURRENT.current[selectedDay - 1]['hours'].includes(hour) : false : DUMMY_DAYS_CURRENT.current.length > 0 ? DUMMY_DAYS_NEXT.current[selectedDay - 1]['hours'].includes(hour) : false })}>{hour}</div>);
 
     const monthHandler = (mth) => {
         setActiveMonth(mth);
-        setSelectedDay(null);
+        if (mth === 1) {
+            setSelectedDay(1);
+        } else {
+            setSelectedDay(moment().date());
+        };
     };
 
     const selectDayHandler = (idx, month) => {
@@ -66,12 +93,7 @@ const Calendar = () => {
             <div className={style('hour_label')}>GODZ</div>
 
             <div className={style('hours')}>
-                <div className={style('hour')}>8</div>
-                <div className={style('hour')}>10</div>
-                <div className={style('hour')}>12</div>
-                <div className={style('hour')}>14</div>
-                <div className={style('hour')}>16</div>
-                <div className={style('hour')}>18</div>
+                {hours}
             </div>
         </div >
     );

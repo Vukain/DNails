@@ -1,6 +1,6 @@
 .appointment_form
     height: 100%
-
+    filter: drop-shadow(0 0 var(--shadowRadius) rgba(0, 0, 0, 0.3))
     &__form
         height: 100%
         gap: var(--gap)
@@ -15,7 +15,7 @@
         grid-column: span 2
         border-radius: var(--borderRadiusSmall) var(--borderRadiusSmall) 0 0
         background-image: linear-gradient(45deg, var(--mainColor1), var(--mainColor2), var(--mainColor3))
-        box-shadow: 0 0 30px rgba(0, 0, 0, 0.3)
+        // box-shadow: 0 0 var(--shadowRadius) rgba(0, 0, 0, 0.3)
         display: flex
         justify-content: center
         align-items: center
@@ -29,7 +29,7 @@
     &__input
         all: unset
         position: relative
-        box-sizing: border-box
+        // box-sizing: border-// box
         font-size: var(--fontSizeNormal)
         background-color: var(--lighterGray)
         grid-column: span 1
@@ -66,7 +66,7 @@
 
     &__message
         all: unset
-        box-sizing: border-box
+        // box-sizing: border-// box
         grid-column: span 2
         font-size: var(--fontSizeNormal)
         font-weight: bold

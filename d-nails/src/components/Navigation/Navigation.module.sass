@@ -25,7 +25,7 @@
             width: 100%
             height: calc(100% + var(--colorBorderWidth))
             background: linear-gradient(90deg, var(--mainColor1), var(--mainColor2), var(--mainColor3))
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.6)
+            box-shadow: 0 0 calc(var(--shadowRadius)*2) rgba(0, 0, 0, 0.6)
         &::after
             content: ""
             display: block

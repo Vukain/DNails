@@ -40,7 +40,7 @@ html {
   --fontSizeNormal: 1vw;
 
   --padding: 6vh;
-
+  --shadowRadius: 1.4vh;
 
   /* --lightGray: #575757;
   --darkGray: #2F2F2F; */
@@ -68,5 +68,7 @@ html {
     --borderRadiusBig: 4vw;
     --borderRadiusMedium: 3vw;
     --borderRadiusSmall: 2vw;
+    --shadowRadius: 3vw;
+
   }
 }

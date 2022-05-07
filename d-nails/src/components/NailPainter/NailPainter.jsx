@@ -3,7 +3,7 @@ import bemCssModules from 'bem-css-modules';
 
 import { default as NailPainterStyles } from './NailPainter.module.sass';
 
-import { ReactComponent as NailsImage } from '../../media/test.svg';
+import { ReactComponent as NailsImage } from '../../media/nails.svg';
 
 import ContentSwitcher from '../ContentSwitcher/ContentSwitcher';
 

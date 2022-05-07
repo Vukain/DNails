@@ -12,6 +12,7 @@
     grid-template-rows: 6vh 4vh 1fr
     grid-template-columns: repeat(8, 1fr)
     gap: var(--gap)
+    filter: drop-shadow(0 0 var(--shadowRadius) rgba(0, 0, 0, 0.3))
     @media (orientation: portrait)
         grid-template-rows: 6vh 5vh 1fr 5vh 8vh
         grid-template-columns: repeat(7, 1fr)
@@ -22,7 +23,7 @@
         grid-template-rows: 1fr
         grid-template-columns: 1fr 1fr
         cursor: pointer
-        box-shadow: 0 0 30px rgba(0, 0, 0, 0.3)
+        // box-shadow: 0 0 var(--shadowRadius) rgba(0, 0, 0, 0.3)
         @media (orientation: portrait)
             grid-column: span 7
 
@@ -33,7 +34,7 @@
         display: flex
         justify-content: center
         align-items: center
-        border-radius: var(--borderRadiusSmall)0 0 0px
+        border-radius: var(--borderRadiusSmall) 0 0 0px
         font-size: var(--fontSizeBigger)
         font-weight: bold
         color: var(--almostWhite)
@@ -58,7 +59,7 @@
         grid-template-rows: 1fr
         grid-template-columns: repeat(7, 1fr)
         border-radius: 0px
-        box-shadow: 0 0 30px rgba(0, 0, 0, 0.3)
+        // box-shadow: 0 0 var(--shadowRadius) rgba(0, 0, 0, 0.3)
 
     &__weekday
         display: flex
@@ -79,6 +80,7 @@
         background-color: var(--lighterGray)
         display: flex
         flex-direction: column
+        // box-shadow: 0 0 var(--shadowRadius) rgba(0, 0, 0, 0.3)
         @media (orientation: portrait)
             flex-direction: row
             grid-column: 1 / 8
@@ -95,6 +97,7 @@
         font-size: var(--fontSizeBig)
         font-weight: bold
         color: var(--darkGray)
+        // box-shadow: 0 0 var(--shadowRadius) rgba(0, 0, 0, 0.3)
         @media (orientation: portrait)
             grid-row-start: 4
             grid-column: 1 / 8
@@ -137,7 +140,7 @@
         grid-template-columns: repeat(7, 1fr)
         z-index: 1
         border-radius: 0 0 0 var(--borderRadiusSmall)
-        box-shadow: 0 0 30px rgba(0, 0, 0, 0.3)
+        // box-shadow: 0 0 var(--shadowRadius) rgba(0, 0, 0, 0.3)
         @media (orientation: portrait)
             border-radius: 0
 
@@ -165,7 +168,7 @@
                 position: absolute
                 z-index: -2
                 border-radius: var(--borderRadiusMedium)
-                box-shadow: 0 0 15px rgba(0, 0, 0, 0.08)
+                // box-shadow: 0 0 15px rgba(0, 0, 0, 0.08)
                 transition: .5s
                 background-image: linear-gradient(45deg, var(--lighterGray) 40%, var(--mainColor1), var(--mainColor2), var(--mainColor3))
                 background-size: 400% 100%

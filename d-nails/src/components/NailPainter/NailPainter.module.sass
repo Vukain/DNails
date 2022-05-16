@@ -10,7 +10,7 @@
     z-index: 1
     padding: var(--padding)
     gap: var(--padding)
-    filter: drop-shadow(0 0 var(--shadowRadius) rgba(0, 0, 0, 0.4))
+    filter: drop-shadow(0 0 var(--shadowRadius) rgba(0, 0, 0, 0.2))
 
     @media (orientation: portrait)
         grid-template-columns: 1fr
@@ -37,8 +37,7 @@
         position: relative
         top: 1px
         @media (orientation: portrait)
-            top: 46%
-            transform: translateY(-50%)
+            top: 17%
 
     &__overlay
         position: absolute
@@ -65,7 +64,7 @@
         @media (orientation: portrait)
             height: unset
             width: 126%
-            top: 20%
+            top: 16%
 
     &__color_picker
         gap: var(--gap)

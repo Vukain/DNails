@@ -44,7 +44,7 @@ const Navigation = (props) => {
             <NavigationButton scroller={sectionScroller} name='usługi' position='second' section={1} level={2} />
             <NavigationButton scroller={sectionScroller} name='kolory' position='third' section={2} level={2} />
             <NavigationButton scroller={sectionScroller} name='wizyty' position='fourth' section={3} level={2} />
-            <NavigationButton scroller={sectionScroller} name='galeria' position='fifth' section={4} level={2} />;
+            <NavigationButton scroller={sectionScroller} name='galeria' position='fifth' section={4} level={2} />
         </nav>
     );
 };

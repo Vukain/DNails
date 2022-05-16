@@ -40,7 +40,7 @@ html {
   --fontSizeNormal: 1vw;
 
   --padding: 6vh;
-  --shadowRadius: 1.4vh;
+  --shadowRadius: 1.2vh;
 
   /* --lightGray: #575757;
   --darkGray: #2F2F2F; */
@@ -60,6 +60,7 @@ html {
 @media (orientation: portrait) {
   #root {
     --colorBorderWidth: 3vw;
+    --fontSizeBiggest: 7vw;
     --fontSizeBigger: 4.6vw;
     --fontSizeBig: 3.4vw;
     --fontSizeNormal: 3vw;
@@ -68,7 +69,7 @@ html {
     --borderRadiusBig: 4vw;
     --borderRadiusMedium: 3vw;
     --borderRadiusSmall: 2vw;
-    --shadowRadius: 3vw;
+    --shadowRadius: 2vw;
 
   }
 }

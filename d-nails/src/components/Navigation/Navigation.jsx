@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import bemCssModules from 'bem-css-modules';
 
 import { AppContext } from '../../AppContext';
@@ -10,6 +10,8 @@ import { default as NavigationStyles } from './Navigation.module.sass';
 const style = bemCssModules(NavigationStyles);
 
 const Navigation = (props) => {
+
+    const [mobileNavigationActive, setMobileNavigationActive] = useState(false);
 
     const { currentLevel, setCurrentLevel } = useContext(AppContext);
     const { currentSection, setCurrentSection } = useContext(AppContext);
@@ -39,7 +41,7 @@ const Navigation = (props) => {
     };
 
     return (
-        <nav className={style({ lower_level: currentLevel === 2 })}>
+        <nav className={style({ lower_level: currentLevel === 2, active: mobileNavigationActive })}>
             <NavigationButton scroller={sectionScroller} name='header' position='first' section={0} level={1} />
             <NavigationButton scroller={sectionScroller} name='usługi' position='second' section={1} level={2} />
             <NavigationButton scroller={sectionScroller} name='kolory' position='third' section={2} level={2} />

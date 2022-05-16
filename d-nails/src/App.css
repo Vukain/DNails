@@ -3,7 +3,7 @@
   width: 400vw;
   height: 200vh;
   overflow: visible;
-  background-color: #414141;
+  background-color: var(--darkestGray);
   text-align: center;
   font-family: 'Roboto', sans-serif;
   display: grid;

@@ -16,7 +16,6 @@
     background-color: transparent
     transition: 2s
     z-index: 9999
-
     @media (orientation: portrait)
         grid-area: unset
         position: fixed
@@ -25,7 +24,35 @@
         right: 0
         padding: calc(8vw + 2 * var(--colorBorderWidth))
         gap: calc(4vw + var(--colorBorderWidth))
-        // display: block
+        display: none
+
+        &::before
+            @media (orientation: portrait)
+                content: ""
+                display: block
+                position: absolute
+                width: 100%
+                height: calc(100% + var(--colorBorderWidth))
+                background: linear-gradient(90deg, var(--mainColor1), var(--mainColor2), var(--mainColor3))
+                box-shadow: 0 0 calc(var(--shadowRadius)*2) rgba(0, 0, 0, 0.6)
+                top: 0
+                left: 0
+        &::after
+            @media (orientation: portrait)
+                content: ""
+                display: block
+                position: absolute
+                background-color: var(--darkestGray)
+
+                border-radius: var(--borderRadiusSmall) 0
+                top: calc(var(--colorBorderWidth) + 4vw)
+                bottom: calc(var(--colorBorderWidth) + 4vw)
+                right: calc(var(--colorBorderWidth) + 4vw)
+                left: calc(var(--colorBorderWidth) + 4vw)
+
+    &--active
+        @media (orientation: portrait)
+            display: flex
 
     &--lower_level
         &::before

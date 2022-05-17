@@ -1,0 +1,14 @@
+@mixin title
+    position: relative
+    border-radius: var(--borderRadiusSmall) var(--borderRadiusSmall) 0 0
+    background-image: linear-gradient(45deg, var(--mainColor1), var(--mainColor2), var(--mainColor3))
+    text-transform: uppercase
+    display: flex
+    justify-content: center
+    align-items: center
+
+@mixin title-text
+    all: unset
+    font-size: var(--fontSizeBigger)
+    font-weight: bold
+    color: var(--almostWhite)

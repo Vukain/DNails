@@ -2,7 +2,7 @@
     grid-row: span 2
     grid-column: span 2
     position: relative
-
+    backface-visibility: hidden
     @media (orientation: portrait)
         grid-template-columns: repeat(6, 1fr)
         grid-template-rows: repeat(14, 1fr)
@@ -60,6 +60,7 @@
         cursor: pointer
         transition: 0.4s
         transform: scale(1)
+        backface-visibility: hidden
         &:hover
             z-index: 99
             filter: grayscale(0%)

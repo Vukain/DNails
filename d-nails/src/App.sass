@@ -1,0 +1,20 @@
+.App
+  position: relative
+  width: 400vw
+  height: 200vh
+  overflow: visible
+  background-color: var(--darkestGray)
+  text-align: center
+  font-family: 'Roboto', sans-serif
+  display: grid
+  grid-template-columns: repeat(4, 1fr)
+  grid-template-rows: 92fr 8fr 100fr
+  grid-template-areas: "header empty empty empty" "nav empty empty empty" "sec1 sec2 sec3 sec4"
+
+  @media (orientation: portrait)
+    width: 200vw
+    height: 400%
+    grid-template-rows: repeat(4, 1fr)
+    grid-template-columns: 1fr 1fr
+    font-size: 0
+    grid-template-areas: "header sec1" "empty sec2" "empty sec3" "empty sec4"

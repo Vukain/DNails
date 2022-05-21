@@ -3,7 +3,7 @@ import bemCssModules from 'bem-css-modules';
 
 import { default as HeaderStyles } from './Header.module.sass';
 
-import { ReactComponent as HeaderImage } from '../../media/header_test.svg';
+import { ReactComponent as HeaderImage } from '../../media/header_nails.svg';
 
 const style = bemCssModules(HeaderStyles);
 

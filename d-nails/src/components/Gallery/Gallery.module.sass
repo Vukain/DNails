@@ -53,29 +53,30 @@
         z-index: 999
         cursor: pointer
         filter: grayscale(1)
-        transition: .2s
+        transition: .3s
 
     &__next_image
         right: 2%
         top: 50%
         transform: translateY(-50%) rotate(135deg)
         &:hover
-            transform: translateY(-50%) rotate(135deg) scale(1.2)
             filter: grayscale(0) drop-shadow(4px -4px 4px rgba(0, 0, 0, 0.4))
+            transform: translateY(-50%) rotate(135deg) scale(1.2)
+
         &:active
-            transform: translateY(-50%) rotate(135deg) scale(1.15)
             filter: grayscale(0) drop-shadow(3px -3px 3px rgba(0, 0, 0, 0.5))
+            transform: translateY(-50%) rotate(135deg) scale(1.15)
 
     &__previous_image
         left: 2%
         top: 50%
         transform: translateY(-50%) rotate(-45deg)
         &:hover
-            transform: translateY(-50%) rotate(-45deg) scale(1.2)
             filter: grayscale(0) drop-shadow(-4px 4px 4px rgba(0, 0, 0, 0.4))
+            transform: translateY(-50%) rotate(-45deg) scale(1.2)
         &:active
-            transform: translateY(-50%) rotate(-45deg) scale(1.15)
             filter: grayscale(0) drop-shadow(-3px 3px 3px rgba(0, 0, 0, 0.5))
+            transform: translateY(-50%) rotate(-45deg) scale(1.15)
 
     &__close_image
         right: 1%
@@ -85,11 +86,11 @@
         transform-origin: 50% 50%
         transform: translateY(0%) scale(1)
         &:hover
-            transform: translateY(0%) scale(1.2)
             filter: grayscale(0) drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.4))
+            transform: translateY(0%) scale(1.2)
         &:active
-            transform: translateY(0%) scale(1.15)
             filter: grayscale(0) drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5))
+            transform: translateY(0%) scale(1.15)
 
     &__arrow_first
         position: absolute

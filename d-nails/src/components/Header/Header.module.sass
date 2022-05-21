@@ -13,6 +13,12 @@
         left: 0px
         height: 100%
         width: 100vw
+        @media(orientation: portrait)
+            display: none
+        &--port
+            display: none
+            @media(orientation: portrait)
+                display: block
 
     // &__placeholder
     //     width: 100%

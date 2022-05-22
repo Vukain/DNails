@@ -7,7 +7,7 @@ import { AppContext } from './AppContext';
 import Header from './components/Header/Header';
 import Navigation from './components/Navigation/Navigation';
 import Gallery from './components/Gallery/Gallery';
-import Section from './components/Section/Section';
+import Section from './layout/Section/Section';
 import Appointment from './components/Appointment/Appointment';
 import NailPainter from './components/NailPainter/NailPainter';
 

@@ -3,9 +3,12 @@ import bemCssModules from 'bem-css-modules';
 
 import { default as GalleryStyles } from './Gallery.module.sass';
 
-import placeholder from '../../media/placeholder.jpeg';
-
 import GalleryImage from '../GalleryImage/GalleryImage';
+
+import nail_image_01 from '../../media/nails_14.jpg';
+import nail_image_01_bw from '../../media/nails_14_bw.jpg';
+
+
 
 const style = bemCssModules(GalleryStyles);
 
@@ -34,7 +37,7 @@ const Gallery = (props) => {
         };
     };
 
-    const imageNames = new Array(14).fill(placeholder)
+    const imageNames = new Array(14).fill([nail_image_01_bw, nail_image_01])
     const images = imageNames.map((el, idx) => <GalleryImage key={el + idx} image={el} index={idx} enlarge={false} active={currentlyEnlarged} changeActive={imageSwitcher} />)
 
     const enlargedImage = (

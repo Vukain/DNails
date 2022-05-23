@@ -47,7 +47,6 @@
         height: 100%
         @media (orientation: portrait)
             background-color: rgba(0, 0, 0, 0.9)
-
     &__imag
         position: absolute
         top: 0
@@ -56,22 +55,27 @@
         height: 100%
         object-fit: cover
         border-radius: var(--borderRadiusSmall)
-        filter: grayscale(100%) brightness(80%) contrast(110%)
         cursor: pointer
         transition: 0.4s
         transform: scale(1)
         backface-visibility: hidden
-        &:hover
-            z-index: 99
-            filter: grayscale(0%)
-            transform: scale(1.08)
+
+        &--color
+            opacity: 0
 
         &--active
-            filter: grayscale(0%)
             cursor: default
-            &:hover
-                transform: scale(1)
+            &.gallery_image__imag--color
+                opacity: 1
 
         &--enlarge
             @media (orientation: portrait)
                 object-fit: contain
+
+    &:hover &__imag
+        z-index: 99
+        transform: scale(1.08)
+        &--color
+            opacity: 1
+        &--active
+            transform: scale(1)

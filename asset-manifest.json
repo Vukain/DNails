@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/DNails/static/css/main.b1831f9a.chunk.css",
-    "main.js": "/DNails/static/js/main.ce4e94e1.chunk.js",
-    "main.js.map": "/DNails/static/js/main.ce4e94e1.chunk.js.map",
+    "main.css": "/DNails/static/css/main.6370573f.chunk.css",
+    "main.js": "/DNails/static/js/main.0f991b3b.chunk.js",
+    "main.js.map": "/DNails/static/js/main.0f991b3b.chunk.js.map",
     "runtime-main.js": "/DNails/static/js/runtime-main.a21d67be.js",
     "runtime-main.js.map": "/DNails/static/js/runtime-main.a21d67be.js.map",
     "static/css/2.679831fc.chunk.css": "/DNails/static/css/2.679831fc.chunk.css",
@@ -10,15 +10,42 @@
     "static/js/2.7bf35b9c.chunk.js.map": "/DNails/static/js/2.7bf35b9c.chunk.js.map",
     "index.html": "/DNails/index.html",
     "static/css/2.679831fc.chunk.css.map": "/DNails/static/css/2.679831fc.chunk.css.map",
-    "static/css/main.b1831f9a.chunk.css.map": "/DNails/static/css/main.b1831f9a.chunk.css.map",
+    "static/css/main.6370573f.chunk.css.map": "/DNails/static/css/main.6370573f.chunk.css.map",
     "static/js/2.7bf35b9c.chunk.js.LICENSE.txt": "/DNails/static/js/2.7bf35b9c.chunk.js.LICENSE.txt",
-    "static/media/placeholder.c57f741f.jpeg": "/DNails/static/media/placeholder.c57f741f.jpeg"
+    "static/media/nails_01.ae5ee316.jpg": "/DNails/static/media/nails_01.ae5ee316.jpg",
+    "static/media/nails_01_bw.e6c1a7db.jpg": "/DNails/static/media/nails_01_bw.e6c1a7db.jpg",
+    "static/media/nails_02.7ece704d.jpg": "/DNails/static/media/nails_02.7ece704d.jpg",
+    "static/media/nails_02_bw.dbca5347.jpg": "/DNails/static/media/nails_02_bw.dbca5347.jpg",
+    "static/media/nails_03.417d72e0.jpg": "/DNails/static/media/nails_03.417d72e0.jpg",
+    "static/media/nails_03_bw.2439c43f.jpg": "/DNails/static/media/nails_03_bw.2439c43f.jpg",
+    "static/media/nails_04.d4192bcc.jpg": "/DNails/static/media/nails_04.d4192bcc.jpg",
+    "static/media/nails_04_bw.2759135f.jpg": "/DNails/static/media/nails_04_bw.2759135f.jpg",
+    "static/media/nails_05.5eb901ec.jpg": "/DNails/static/media/nails_05.5eb901ec.jpg",
+    "static/media/nails_05_bw.5f000b3f.jpg": "/DNails/static/media/nails_05_bw.5f000b3f.jpg",
+    "static/media/nails_06.b8509e37.jpg": "/DNails/static/media/nails_06.b8509e37.jpg",
+    "static/media/nails_06_bw.bf5fa86c.jpg": "/DNails/static/media/nails_06_bw.bf5fa86c.jpg",
+    "static/media/nails_07.59217613.jpg": "/DNails/static/media/nails_07.59217613.jpg",
+    "static/media/nails_07_bw.20bc79db.jpg": "/DNails/static/media/nails_07_bw.20bc79db.jpg",
+    "static/media/nails_08.19010cb8.jpg": "/DNails/static/media/nails_08.19010cb8.jpg",
+    "static/media/nails_08_bw.731a8ed0.jpg": "/DNails/static/media/nails_08_bw.731a8ed0.jpg",
+    "static/media/nails_09.1a59e36d.jpg": "/DNails/static/media/nails_09.1a59e36d.jpg",
+    "static/media/nails_09_bw.736259dd.jpg": "/DNails/static/media/nails_09_bw.736259dd.jpg",
+    "static/media/nails_10.b907e499.jpg": "/DNails/static/media/nails_10.b907e499.jpg",
+    "static/media/nails_10_bw.e42b1e52.jpg": "/DNails/static/media/nails_10_bw.e42b1e52.jpg",
+    "static/media/nails_11.faa9d4ac.jpg": "/DNails/static/media/nails_11.faa9d4ac.jpg",
+    "static/media/nails_11_bw.416bb5ed.jpg": "/DNails/static/media/nails_11_bw.416bb5ed.jpg",
+    "static/media/nails_12.f8d4a4e1.jpg": "/DNails/static/media/nails_12.f8d4a4e1.jpg",
+    "static/media/nails_12_bw.51030bd0.jpg": "/DNails/static/media/nails_12_bw.51030bd0.jpg",
+    "static/media/nails_13.df4c5c8b.jpg": "/DNails/static/media/nails_13.df4c5c8b.jpg",
+    "static/media/nails_13_bw.effe6325.jpg": "/DNails/static/media/nails_13_bw.effe6325.jpg",
+    "static/media/nails_14.c2d51d6b.jpg": "/DNails/static/media/nails_14.c2d51d6b.jpg",
+    "static/media/nails_14_bw.4b719127.jpg": "/DNails/static/media/nails_14_bw.4b719127.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.a21d67be.js",
     "static/css/2.679831fc.chunk.css",
     "static/js/2.7bf35b9c.chunk.js",
-    "static/css/main.b1831f9a.chunk.css",
-    "static/js/main.ce4e94e1.chunk.js"
+    "static/css/main.6370573f.chunk.css",
+    "static/js/main.0f991b3b.chunk.js"
   ]
 }

@@ -48,7 +48,7 @@
         object-position: center
         border-radius: var(--borderRadiusSmall)
         cursor: pointer
-        transition: transform 0.4s
+        transition: transform .4s, opacity .4s
         transform: scale(1)
         backface-visibility: hidden
 
@@ -73,6 +73,7 @@
     &:hover &__imag
         z-index: 99
         transform: scale(1.08)
+
         &--color
             opacity: 1
         &--active

@@ -3,35 +3,25 @@
     grid-column: span 2
     position: relative
     backface-visibility: hidden
+    // &:nth-child(1) .gallery_image__imag
+    //     object-position: center
     @media (orientation: portrait)
         grid-template-columns: repeat(6, 1fr)
         grid-template-rows: repeat(14, 1fr)
 
     &--normal
-        &:nth-child(1)
-            grid-row: span 4
-            grid-column: span 4
-
-        &:nth-child(5)
-            grid-row: span 2
-            grid-column: span 4
-
-        &:nth-child(8)
-            grid-row: span 4
-            grid-column: span 4
-
-        @media (orientation: portrait)
+        @media (orientation: landscape)
             &:nth-child(1)
-                grid-row: span 2
-                grid-column: span 2
+                grid-row: span 4
+                grid-column: span 4
 
             &:nth-child(5)
                 grid-row: span 2
-                grid-column: span 2
+                grid-column: span 4
 
             &:nth-child(8)
-                grid-row: span 2
-                grid-column: span 2
+                grid-row: span 4
+                grid-column: span 4
 
     &--miniature
         grid-row: span 1
@@ -47,6 +37,7 @@
         height: 100%
         @media (orientation: portrait)
             background-color: rgba(0, 0, 0, 0.9)
+
     &__imag
         position: absolute
         top: 0
@@ -54,11 +45,18 @@
         width: 100%
         height: 100%
         object-fit: cover
+        object-position: center
         border-radius: var(--borderRadiusSmall)
         cursor: pointer
-        transition: 0.4s
+        transition: transform 0.4s
         transform: scale(1)
         backface-visibility: hidden
+
+        &--top
+            object-position: center 30%
+
+        &--bottom
+            object-position: center 70%
 
         &--color
             opacity: 0

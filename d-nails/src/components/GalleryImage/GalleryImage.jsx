@@ -11,8 +11,8 @@ const GalleryImage = (props) => {
 
     return (
         <div className={imageGridStyle} onClick={() => { props.changeActive(props.index) }}>
-            <img src={props.image[0]} className={style('imag', { active: props.active === props.index, enlarge: props.enlarge })} alt="" />
-            <img src={props.image[1]} className={style('imag', { color: true, active: props.active === props.index, enlarge: props.enlarge })} alt="" />
+            <img src={props.image[0]} className={style('imag', { active: props.active === props.index, enlarge: props.enlarge, top: props.top, bottom: props.bottom })} alt="" />
+            <img src={props.image[1]} className={style('imag', { color: true, active: props.active === props.index, enlarge: props.enlarge, top: props.top, bottom: props.bottom })} alt="" />
         </div>);
 };
 

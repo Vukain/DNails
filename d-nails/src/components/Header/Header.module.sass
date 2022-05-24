@@ -1,3 +1,28 @@
+@keyframes moveInLeft
+    0%
+        opacity: 0
+        transform: translateX(-25%)
+    80%
+        transform: translateX(2%)
+
+    100%
+        opacity: 1
+        transform: translateX(0)
+
+@keyframes moveInRight
+    0%
+        border-top: 2px solid transparent
+        opacity: 0
+        transform: translateX(25%)
+    80%
+        transform: translateX(-2%)
+        border-top: 2px solid transparent
+
+    100%
+        opacity: 1
+        transform: translateX(0)
+        border-top: 2px solid var(--lightGray)
+
 .header
     position: relative
     grid-area: header
@@ -15,6 +40,7 @@
         width: 100vw
         @media(orientation: portrait)
             display: none
+
         &--port
             display: none
             @media(orientation: portrait)
@@ -29,22 +55,31 @@
         color: var(--lightestGray)
         font-weight: 300
         transform: translate(-50%, -50%)
+        @media(orientation: portrait)
+            top: 22%
+            left: 40%
 
     &__contact
         position: absolute
-        bottom: 26%
-        right: 23%
+        bottom: 28%
+        right: 24%
         color: var(--lightestGray)
         transform: translate(50%, 50%)
-        // text-align: right
+        @media(orientation: portrait)
+            bottom: 20%
+            right: 40%
 
     &__heading
         &--main
             display: block
             font-family: 'satisfy'
             font-size: var(--fontSizeHeaderMain)
+            animation: moveInLeft .8s .2s ease-out backwards
             // font-weight: 300
             // letter-spacing: .1em
+            @media(orientation: portrait)
+                margin-bottom: 4vw
+
         &--sub
             text-align: center
             display: block
@@ -52,15 +87,20 @@
             font-size: var(--fontSizeHeaderSub)
             // letter-spacing: .3em
             letter-spacing: .24em
-            text-indent: .3em
+            text-indent: .24em
             line-height: 1.8em
             border-top: 2px solid var(--lightGray)
             color: transparent
             background-clip: text
             font-weight: 700
             background-image: linear-gradient(90deg, var(--mainColor1), var(--mainColor2), var(--mainColor3))
-        &--contact
+            animation: moveInRight .8s .2s ease-out backwards
+            @media(orientation: portrait)
+                line-height: 2em
+                padding-top: 3vw
+                text-indent: .5em
 
+        &--contact
             display: block
             text-transform: uppercase
 
@@ -69,9 +109,13 @@
             font-size: calc(1.2 * var(--fontSizeHeaderSub))
             letter-spacing: .24em
             margin-bottom: .2em
+            animation: moveInLeft .8s .2s ease-out backwards
+            @media(orientation: portrait)
+                margin-bottom: .4em
 
         &--tel
             color: var(--mainColor1)
+
         &--email
             color: var(--mainColor3)
 
@@ -80,6 +124,9 @@
             font-size: calc(1.2 * var(--fontSizeBig))
             line-height: 1.8em
             border-top: 2px solid var(--lightGray)
+            animation: moveInRight .8s .2s ease-out backwards
+            @media(orientation: portrait)
+                line-height: 3em
 
         &--color
             color: var(--mainColor2)

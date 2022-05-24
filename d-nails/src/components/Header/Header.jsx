@@ -6,8 +6,8 @@ import { default as HeaderStyles } from './Header.module.sass';
 import HeaderImageLandscape from '../../media/header_nails_landscape.svg';
 import HeaderImagePortrait from '../../media/header_nails_portrait.svg';
 
-// import { HeaderImageLandscape } from '../../media';
-// import { HeaderImagePortrait } from '../../media';
+// import { ReactComponent as HeaderImageLandscape } from '../../media/header_nails_landscape.svg';
+
 
 const style = bemCssModules(HeaderStyles);
 

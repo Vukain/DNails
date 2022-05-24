@@ -8,11 +8,11 @@
     grid-template-columns: repeat(14, 1fr)
     grid-template-rows: repeat(6, 1fr)
     grid-gap: var(--gapBig)
-    z-index: 99
+    z-index: 999
 
     @media (orientation: portrait)
-        grid-template-columns: repeat(6, 1fr)
-        grid-template-rows: repeat(14, 1fr)
+        grid-template-columns: repeat(3, 1fr)
+        grid-template-rows: repeat(5, 1fr)
 
     &--enlarged_mode
         grid-template-columns: 5fr 5fr
@@ -46,7 +46,7 @@
         height: 4.6vh
         width: 4.6vh
         position: absolute
-        z-index: 999
+        z-index: 9999
         cursor: pointer
         filter: grayscale(1)
         transition: .2s

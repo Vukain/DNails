@@ -23,7 +23,6 @@
         grid-template-rows: 1fr
         grid-template-columns: 1fr 1fr
         cursor: pointer
-        // box-shadow: 0 0 var(--shadowRadius) rgba(0, 0, 0, 0.3)
         @media (orientation: portrait)
             grid-column: span 7
 
@@ -36,10 +35,10 @@
         align-items: center
         border-radius: var(--borderRadiusSmall) 0 0 0px
         font-size: var(--fontSizeBigger)
+        letter-spacing: .14em
         font-weight: bold
         color: var(--almostWhite)
         transition: .4s
-        // filter: grayscale(100%)
         &:hover
             animation: bgc 2s infinite ease-in alternate
         &:nth-of-type(2)

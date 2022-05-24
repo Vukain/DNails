@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/DNails/static/css/main.710a37e0.chunk.css",
-    "main.js": "/DNails/static/js/main.475eca19.chunk.js",
-    "main.js.map": "/DNails/static/js/main.475eca19.chunk.js.map",
+    "main.css": "/DNails/static/css/main.c2f8382d.chunk.css",
+    "main.js": "/DNails/static/js/main.046a53f0.chunk.js",
+    "main.js.map": "/DNails/static/js/main.046a53f0.chunk.js.map",
     "runtime-main.js": "/DNails/static/js/runtime-main.a21d67be.js",
     "runtime-main.js.map": "/DNails/static/js/runtime-main.a21d67be.js.map",
     "static/css/2.679831fc.chunk.css": "/DNails/static/css/2.679831fc.chunk.css",
@@ -10,7 +10,7 @@
     "static/js/2.7bf35b9c.chunk.js.map": "/DNails/static/js/2.7bf35b9c.chunk.js.map",
     "index.html": "/DNails/index.html",
     "static/css/2.679831fc.chunk.css.map": "/DNails/static/css/2.679831fc.chunk.css.map",
-    "static/css/main.710a37e0.chunk.css.map": "/DNails/static/css/main.710a37e0.chunk.css.map",
+    "static/css/main.c2f8382d.chunk.css.map": "/DNails/static/css/main.c2f8382d.chunk.css.map",
     "static/js/2.7bf35b9c.chunk.js.LICENSE.txt": "/DNails/static/js/2.7bf35b9c.chunk.js.LICENSE.txt",
     "static/media/nails_01.ae5ee316.jpg": "/DNails/static/media/nails_01.ae5ee316.jpg",
     "static/media/nails_01_bw.e6c1a7db.jpg": "/DNails/static/media/nails_01_bw.e6c1a7db.jpg",
@@ -45,7 +45,7 @@
     "static/js/runtime-main.a21d67be.js",
     "static/css/2.679831fc.chunk.css",
     "static/js/2.7bf35b9c.chunk.js",
-    "static/css/main.710a37e0.chunk.css",
-    "static/js/main.475eca19.chunk.js"
+    "static/css/main.c2f8382d.chunk.css",
+    "static/js/main.046a53f0.chunk.js"
   ]
 }

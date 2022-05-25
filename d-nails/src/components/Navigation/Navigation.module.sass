@@ -11,8 +11,6 @@
         opacity: 1
     50%
         opacity: 0
-    99%
-        visibility: show
     100%
         visibility: hidden
 
@@ -20,8 +18,6 @@
     0%
         opacity: 0
         visibility: hidden
-    1%
-        visibility: show
     30%
         opacity: 0
     100%
@@ -49,7 +45,7 @@
         // bottom: 0
         // right: 0
         padding: calc(8vw + 2 * var(--color-border-width))
-        gap: calc(4vw + var(--color-border-width))
+        gap: calc(4vw + var(--color-border-width))cd
 
     &::before
         content: ""
@@ -80,17 +76,16 @@
         width: 100%
         height: 100%
         background-color: var(--darkest-gray)
-        transition: opacity 0s, all 2s
+        transition: all 2s
         @media (orientation: portrait)
             position: fixed
             border-radius: var(--border-radius-small) 0
-            width: calc(100vw - 2*var(--color-border-width) - 8vw)
-            height: calc(100vh - 2*var(--color-border-width) - 8vw)
+            width: calc(100% - 2*var(--color-border-width) - 8vw)
+            height: calc(100% - 2*var(--color-border-width) - 8vw)
             top: unset
             left: unset
             right: calc(var(--color-border-width) + 4vw)
             bottom: calc(var(--color-border-width) + 4vw)
-            opacity: 1
             animation: show-delay 2s ease forwards
 
     &--lower_level
@@ -113,6 +108,7 @@
             &::after
                 opacity: 0
                 animation: none
+                visibility: hidden
                 // width: 5vh
                 // height: 5vh
                 // border-radius: 50%
@@ -125,6 +121,7 @@
     &--hidden.navigation--clicked
         @media (orientation: portrait)
             &::after
+                visibility: visible
                 animation: hide 2s ease forwards
 
     &__hamburger

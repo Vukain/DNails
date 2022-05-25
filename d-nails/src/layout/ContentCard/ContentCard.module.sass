@@ -12,7 +12,7 @@
     bottom: 8vh
     left: 8vh
     right: 8vh
-    padding: calc(1 * var(--colorBorderWidth))
+    padding: var(--color-border-width)
 
     &::before
         content: ""
@@ -22,9 +22,9 @@
         bottom: 0px
         left: 0px
         right: 0px
-        border-radius: var(--borderRadiusBig) 0
-        box-shadow: 0 0 calc(var(--shadowRadius)*3) rgba(0, 0, 0, 0.6)
-        background: linear-gradient(45deg, var(--darkestGray) 10%, var(--mainColor1), var(--mainColor2), var(--mainColor3), var(--mainColor2), var(--mainColor1), var(--darkestGray) 90%)
+        border-radius: var(--border-radius-big) 0
+        box-shadow: 0 0 calc(var(--shadow-radius)*3) rgba(0, 0, 0, 0.6)
+        background: linear-gradient(45deg, var(--darkest-gray) 10%, var(--main-color-1), var(--main-color-2), var(--main-color-3), var(--main-color-2), var(--main-color-1), var(--darkest-gray) 90%)
         background-size: 200% 100%
         background-position: 0% 0%
         animation: bgc 8s infinite ease-in
@@ -37,12 +37,12 @@
         content: ""
         display: block
         position: absolute
-        top: var(--colorBorderWidth)
-        bottom: var(--colorBorderWidth)
-        left: var(--colorBorderWidth)
-        right: var(--colorBorderWidth)
-        border-radius: var(--borderRadiusSmall) 0
-        background: var(--darkestGray)
+        top: var(--color-border-width)
+        bottom: var(--color-border-width)
+        left: var(--color-border-width)
+        right: var(--color-border-width)
+        border-radius: var(--border-radius-small) 0
+        background: var(--darkest-gray)
 
     @media (orientation: portrait)
         // margin: 4vw 4vw 8vw 4vw

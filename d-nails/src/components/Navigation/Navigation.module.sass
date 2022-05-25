@@ -6,6 +6,25 @@
     100%
         background-position: 0% 0%
 
+@keyframes hide
+    50%
+        opacity: 0
+    99%
+        visibility: show
+    100%
+        visibility: hidden
+
+@keyframes show-delay
+    0%
+        opacity: 0
+        visibility: hidden
+    1%
+        visibility: show
+    30%
+        opacity: 0
+    100%
+        opacity: 1
+
 .navigation
     position: sticky
     top: 0
@@ -20,61 +39,95 @@
         grid-area: unset
         position: fixed
         flex-direction: column
-        bottom: 0
-        right: 0
-        padding: calc(8vw + 2 * var(--colorBorderWidth))
-        gap: calc(4vw + var(--colorBorderWidth))
-        display: none
-    &::before
-        @media (orientation: portrait)
-            content: ""
-            display: block
-            position: absolute
-            width: 100%
-            height: calc(100% + var(--colorBorderWidth))
-            background: linear-gradient(90deg, var(--mainColor1), var(--mainColor2), var(--mainColor3))
-            top: 0
-            left: 0
-    &::after
-        @media (orientation: portrait)
-            content: ""
-            display: block
-            position: absolute
-            background-color: var(--darkestGray)
-            border-radius: var(--borderRadiusSmall) 0
-            top: calc(var(--colorBorderWidth) + 4vw)
-            bottom: calc(var(--colorBorderWidth) + 4vw)
-            right: calc(var(--colorBorderWidth) + 4vw)
-            left: calc(var(--colorBorderWidth) + 4vw)
+        transition: 0s
+        width: 100%
+        height: 100%
+        // top: unset
+        // left: unset
+        // bottom: 0
+        // right: 0
+        padding: calc(8vw + 2 * var(--color-border-width))
+        gap: calc(4vw + var(--color-border-width))
 
-    &--active
+    &::before
+        content: ""
+        display: block
+        position: absolute
+        width: 100%
+        height: calc(100% + var(--color-border-width))
+        opacity: 0
+        background: var(--color-gradient)
+        box-shadow: 0 var(--shadow-radius) var(--shadow-radius) rgba(0, 0, 0, 0.2)
+        transition: 2s
         @media (orientation: portrait)
-            display: flex
+            position: fixed
+            width: 5vh
+            height: 5vh
+            border-radius: 50%
+            opacity: 1
+            bottom: 7vh
+            right: 7vh
+            transition: 1s cubic-bezier(0.83, 0, 0.17, 1)
+            background-image: linear-gradient(45deg, var(--main-color-1), var(--main-color-2), var(--main-color-3))
+            transform: translate(50%, 50%) scale(50)
+
+    &::after
+        content: ""
+        display: block
+        position: absolute
+        width: 100%
+        height: 100%
+        background-color: var(--darkest-gray)
+        transition: 2s
+        @media (orientation: portrait)
+            position: fixed
+            border-radius: var(--border-radius-small) 0
+            width: calc(100vw - 2*var(--color-border-width) - 8vw)
+            height: calc(100vh - 2*var(--color-border-width) - 8vw)
+            top: unset
+            left: unset
+            right: calc(var(--color-border-width) + 4vw)
+            bottom: calc(var(--color-border-width) + 4vw)
+            opacity: 1
+            animation: show-delay 2s ease forwards
 
     &--lower_level
         &::before
-            content: ""
-            display: block
-            position: absolute
-            width: 100%
-            height: calc(100% + var(--colorBorderWidth))
-            background: linear-gradient(90deg, var(--mainColor1), var(--mainColor2), var(--mainColor3))
-            box-shadow: 0 var(--shadowRadius) var(--shadowRadius) rgba(0, 0, 0, 0.2)
+            opacity: 1
             @media (orientation: portrait)
-                top: 0
-                left: 0
+                background-image: linear-gradient(45deg, var(--main-color-1), var(--main-color-2), var(--main-color-3))
         &::after
-            content: ""
-            display: block
-            position: absolute
-            width: 100%
-            height: 100%
-            background-color: var(--darkestGray)
             @media (orientation: portrait)
-                width: unset
-                height: unset
-                border-radius: var(--borderRadiusSmall) 0
-                top: calc(var(--colorBorderWidth) + 4vw)
-                bottom: calc(var(--colorBorderWidth) + 4vw)
-                right: calc(var(--colorBorderWidth) + 4vw)
-                left: calc(var(--colorBorderWidth) + 4vw)
+                // width: unset
+                // height: unset
+
+    &--hidden
+        @media (orientation: portrait)
+            padding: 0
+            height: 100%
+            width: 0%
+            &::before
+                transform: translate(50%, 50%) scale(1)
+            &::after
+                opacity: 0
+                animation: hide 2s ease forwards
+                // width: 5vh
+                // height: 5vh
+                // border-radius: 50%
+                // top: unset
+                // left: unset
+                // bottom: 7vh
+                // right: 7vh
+                // transform: translate(50%, 50%)
+
+    &__hamburger
+        @media (orientation: portrait)
+            position: fixed
+            bottom: 7vh
+            right: 7vh
+            width: 6vh
+            height: 6vh
+            border-radius: 50%
+            background-color: var(--light-gray)
+            z-index: 9999999999
+            transform: translate(50%, 50%)

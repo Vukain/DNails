@@ -2,7 +2,7 @@
 
 .appointment_form
     height: 100%
-    filter: drop-shadow(0 0 var(--shadowRadius) rgba(0, 0, 0, 0.3))
+    filter: drop-shadow(0 0 var(--shadow-radius) rgba(0, 0, 0, 0.3))
     &__form
         height: 100%
         gap: var(--gap)
@@ -23,30 +23,30 @@
         all: unset
         position: relative
         // box-sizing: border-// box
-        font-size: var(--fontSizeNormal)
-        background-color: var(--lighterGray)
+        font-size: var(--font-size-normal)
+        background-color: var(--lighter-gray)
         grid-column: span 1
-        color: var(--darkGray)
+        color: var(--dark-gray)
         font-weight: bold
         justify-content: center
         align-content: center
         align-items: center
         transition: .4s
-        border: 2px solid var(--darkGray)
+        border: 2px solid var(--dark-gray)
 
         @media (orientation: portrait)
             grid-column: span 2
 
         &:focus
-            border: 2px solid var(--mainColor3)
+            border: 2px solid var(--main-color-3)
             border-radius: 10px
-            background-color: var(--almostWhite)
+            background-color: var(--almost-white)
 
         &--invalid
-            border-color: var(--mainColor2)
+            border-color: var(--main-color-2)
 
         &::-webkit-datetime-edit
-            font-size: var(--fontSizeNormal)
+            font-size: var(--font-size-normal)
             display: flex
             align-self: center
             justify-content: center
@@ -61,20 +61,20 @@
         all: unset
         // box-sizing: border-// box
         grid-column: span 2
-        font-size: var(--fontSizeNormal)
+        font-size: var(--font-size-normal)
         font-weight: bold
         color: var(--darkGray)
-        background-color: var(--lighterGray)
-        border-radius: 0 0 var(--borderRadiusSmall) var(--borderRadiusSmall)
-        border: 2px solid var(--darkGray)
+        background-color: var(--lighter-gray)
+        border-radius: 0 0 var(--border-radius-small) var(--border-radius-small)
+        border: 2px solid var(--dark-gray)
         transition: .4s
         text-align: left
         padding: 10px
 
         &:focus
-            border: 2px solid var(--mainColor3)
+            border: 2px solid var(--main-color-3)
             border-radius: 10px
-            background-color: var(--almostWhite)
+            background-color: var(--almost-white)
 
         &--invalid
-            border-color: var(--mainColor2)
+            border-color: var(--main-color-2)

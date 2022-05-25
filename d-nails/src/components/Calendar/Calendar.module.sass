@@ -12,7 +12,7 @@
     grid-template-rows: 6vh 4vh 1fr
     grid-template-columns: repeat(8, 1fr)
     gap: var(--gap)
-    filter: drop-shadow(0 0 var(--shadowRadius) rgba(0, 0, 0, 0.3))
+    filter: drop-shadow(0 0 var(--shadow-radius) rgba(0, 0, 0, 0.3))
     @media (orientation: portrait)
         grid-template-rows: 6vh 5vh 1fr 5vh 8vh
         grid-template-columns: repeat(7, 1fr)
@@ -27,23 +27,23 @@
             grid-column: span 7
 
     &__chosen_month
-        background-image: linear-gradient(45deg, var(--mainColor1), var(--mainColor2), var(--mainColor3))
+        background-image: linear-gradient(45deg, var(--main-color-1), var(--main-color-2), var(--main-color-3))
         background-size: 200% 100%
         background-position: 0%
         display: flex
         justify-content: center
         align-items: center
-        border-radius: var(--borderRadiusSmall) 0 0 0px
-        font-size: var(--fontSizeBigger)
+        border-radius: var(--border-radius-small) 0 0 0px
+        font-size: var(--font-size-bigger)
         letter-spacing: .14em
         font-weight: bold
-        color: var(--almostWhite)
+        color: var(--almost-white)
         transition: .4s
         &:hover
             animation: bgc 2s infinite ease-in alternate
         &:nth-of-type(2)
             background-position: 100%
-            border-radius: 0 var(--borderRadiusSmall) 0px 0
+            border-radius: 0 var(--border-radius-small) 0px 0
             &:hover
                 animation-direction: alternate-reverse
 
@@ -52,8 +52,8 @@
 
     &__week_labels
         grid-column: span 7
-        background-color: var(--almostWhite)
-        color: var(--darkGray)
+        background-color: var(--almost-white)
+        color: var(--dark-gray)
         display: grid
         grid-template-rows: 1fr
         grid-template-columns: repeat(7, 1fr)
@@ -64,9 +64,9 @@
         display: flex
         justify-content: center
         align-items: center
-        font-size: var(--fontSizeBig)
+        font-size: var(--font-size-big)
         font-weight: bold
-        border-radius: var(--borderRadiusSmall)
+        border-radius: var(--border-radius-small)
         margin: 0
         line-height: 100%
         text-align: center
@@ -75,8 +75,8 @@
         grid-column: 8
         grid-row: 3 / 4
         overflow: hidden
-        border-radius: 0 0 var(--borderRadiusSmall) 0
-        background-color: var(--lighterGray)
+        border-radius: 0 0 var(--border-radius-small) 0
+        background-color: var(--lighter-gray)
         display: flex
         flex-direction: column
         // box-shadow: 0 0 var(--shadowRadius) rgba(0, 0, 0, 0.3)
@@ -84,18 +84,18 @@
             flex-direction: row
             grid-column: 1 / 8
             grid-row: 5
-            border-radius: 0 0 var(--borderRadiusSmall) var(--borderRadiusSmall)
+            border-radius: 0 0 var(--border-radius-small) var(--border-radius-small)
 
     &__hour_label
         grid-row-start: 2
         grid-column-start: 8
-        background-color: var(--almostWhite)
+        background-color: var(--almost-white)
         display: flex
         align-items: center
         justify-content: center
-        font-size: var(--fontSizeBig)
+        font-size: var(--font-size-big)
         font-weight: bold
-        color: var(--darkGray)
+        color: var(--dark-gray)
         // box-shadow: 0 0 var(--shadowRadius) rgba(0, 0, 0, 0.3)
         @media (orientation: portrait)
             grid-row-start: 4
@@ -104,13 +104,13 @@
     &__hour
         position: relative
         flex-grow: 1
-        background-color: var(--lighterGray)
+        background-color: var(--lighter-gray)
         display: flex
         align-items: center
         justify-content: center
-        font-size: var(--fontSizeBig)
+        font-size: var(--font-size-big)
         font-weight: bold
-        color: var(--darkGray)
+        color: var(--dark-gray)
         z-index: 3
         &::after
             cursor: pointer
@@ -120,26 +120,25 @@
             height: calc(100% - 2vh)
             position: absolute
             z-index: -1
-            border-radius: var(--borderRadiusSmall)
-            background-color: var(--lightestGray)
+            border-radius: var(--border-radius-small)
+            background-color: var(--lightest-gray)
             @media (orientation: portrait)
                 width: calc(100% - 3vw)
                 height: calc(100% - 3vw)
 
         &--unavailable
-            color: var(--almostWhite)
+            color: var(--almost-white)
             &::after
-                background-color: var(--mainColor2)
+                background-color: var(--main-color-2)
 
     &__days
-        background-color: var(--lighterGray)
+        background-color: var(--lighter-gray)
         grid-column: span 7
         display: grid
         grid-auto-rows: 1fr
         grid-template-columns: repeat(7, 1fr)
         z-index: 1
-        border-radius: 0 0 0 var(--borderRadiusSmall)
-        // box-shadow: 0 0 var(--shadowRadius) rgba(0, 0, 0, 0.3)
+        border-radius: 0 0 0 var(--border-radius-small)
         @media (orientation: portrait)
             border-radius: 0
 
@@ -148,10 +147,10 @@
         position: relative
         justify-content: center
         align-items: center
-        font-size: var(--fontSizeBig)
+        font-size: var(--font-size-big)
         font-weight: bold
-        color: var(--darkGray)
-        border-radius: var(--borderRadiusSmall)
+        color: var(--dark-gray)
+        border-radius: var(--border-radius-small)
         overflow: visible
         margin: 1vh
         z-index: 3
@@ -166,10 +165,10 @@
                 height: calc(100% - 1vh)
                 position: absolute
                 z-index: -2
-                border-radius: var(--borderRadiusMedium)
+                border-radius: var(--border-radius-medium)
                 // box-shadow: 0 0 15px rgba(0, 0, 0, 0.08)
                 transition: .5s
-                background-image: linear-gradient(45deg, var(--lighterGray) 40%, var(--mainColor1), var(--mainColor2), var(--mainColor3))
+                background-image: linear-gradient(45deg, var(--lighter-gray) 40%, var(--main-color-1), var(--main-color-2), var(--main-color-3))
                 background-size: 400% 100%
                 @media (orientation: portrait)
                     width: calc(100% - 1vw)
@@ -182,8 +181,8 @@
                 height: calc(100% - 2vh)
                 position: absolute
                 z-index: -1
-                border-radius: var(--borderRadiusSmall)
-                background-color: var(--lightestGray)
+                border-radius: var(--border-radius-small)
+                background-color: var(--lightest-gray)
                 @media (orientation: portrait)
                     width: calc(100% - 3vw)
                     height: calc(100% - 3vw)
@@ -197,16 +196,14 @@
                 background-position-x: 100%
 
         &--busy
-            color: var(--almostWhite)
+            color: var(--almost-white)
             &::after
-                // opacity: 0.8
-                background-color: var(--mainColor3)
+                background-color: var(--main-color-3)
 
         &--unavailable
-            color: var(--almostWhite)
+            color: var(--almost-white)
             &::after
-                // opacity: 0.8
-                background-color: var(--mainColor2)
+                background-color: var(--main-color-2)
 
         &--passed
             cursor: default

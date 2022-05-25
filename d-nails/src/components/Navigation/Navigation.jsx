@@ -11,7 +11,7 @@ const style = bemCssModules(NavigationStyles);
 
 const Navigation = (props) => {
 
-    const [mobileNavigationActive, setMobileNavigationActive] = useState(false);
+    const [mobileNavigationHidden, setMobileNavigationHidden] = useState(true);
 
     const { currentLevel, setCurrentLevel } = useContext(AppContext);
     const { currentSection, setCurrentSection } = useContext(AppContext);
@@ -41,12 +41,13 @@ const Navigation = (props) => {
     };
 
     return (
-        <nav className={style({ lower_level: currentLevel === 2, active: mobileNavigationActive })}>
-            <NavigationButton scroller={sectionScroller} name='header' position='first' section={0} level={1} />
-            <NavigationButton scroller={sectionScroller} name='usługi' position='second' section={1} level={2} />
-            <NavigationButton scroller={sectionScroller} name='kolory' position='third' section={2} level={2} />
-            <NavigationButton scroller={sectionScroller} name='wizyty' position='fourth' section={3} level={2} />
-            <NavigationButton scroller={sectionScroller} name='galeria' position='fifth' section={4} level={2} />
+        <nav className={style({ lower_level: currentLevel === 2, hidden: mobileNavigationHidden })}>
+            <NavigationButton scroller={sectionScroller} hidden_burger={mobileNavigationHidden} name='header' position='first' section={0} level={1} />
+            <NavigationButton scroller={sectionScroller} hidden_burger={mobileNavigationHidden} name='usługi' position='second' section={1} level={2} />
+            <NavigationButton scroller={sectionScroller} hidden_burger={mobileNavigationHidden} name='kolory' position='third' section={2} level={2} />
+            <NavigationButton scroller={sectionScroller} hidden_burger={mobileNavigationHidden} name='wizyty' position='fourth' section={3} level={2} />
+            <NavigationButton scroller={sectionScroller} hidden_burger={mobileNavigationHidden} name='galeria' position='fifth' section={4} level={2} />
+            <div className={style('hamburger')} onClick={() => setMobileNavigationHidden(!mobileNavigationHidden)}></div>
         </nav>
     );
 };

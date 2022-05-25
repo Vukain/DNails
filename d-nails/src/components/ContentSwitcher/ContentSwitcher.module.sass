@@ -9,23 +9,23 @@
         display: grid
 
     &__option
-        background-image: linear-gradient(45deg, var(--mainColor1), var(--mainColor2), var(--mainColor3))
+        background-image: linear-gradient(45deg, var(--main-color-1), var(--main-color-2), var(--main-color-3))
         background-size: 200% 100%
         background-position: 0%
         display: flex
         justify-content: center
         align-items: center
-        border-radius: var(--borderRadiusSmall) 0 0 0
-        font-size: var(--fontSizeBigger)
+        border-radius: var(--border-radius-small) 0 0 0
+        font-size: var(--font-size-bigger)
         font-weight: bold
-        color: var(--almostWhite)
+        color: var(--almost-white)
         transition: .4s
         text-transform: uppercase
         &:hover
             animation: bgc 2s infinite ease-in alternate
         &:nth-of-type(2)
             background-position: 100%
-            border-radius: 0 0 var(--borderRadiusSmall) 0
+            border-radius: 0 0 var(--border-radius-small) 0
             &:hover
                 animation-direction: alternate-reverse
 

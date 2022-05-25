@@ -21,16 +21,13 @@
     100%
         opacity: 1
         transform: translateX(0)
-        border-top: 2px solid var(--lightGray)
+        border-top: 2px solid var(--light-gray)
 
 .header
     position: relative
     grid-area: header
-    // background-color: var(--darkestGray)
     height: 100%
     width: 100vw
-    @media(orientation: portrait)
-        // background-image: var(--background-gradient)
 
     &__image
         position: absolute
@@ -38,7 +35,6 @@
         left: 0px
         height: 100%
         width: 100vw
-        // filter: drop-shadow(0 var(--shadowRadius) var(--shadowRadius) rgba(0, 0, 0, 0.2))
         @media(orientation: portrait)
             display: none
 
@@ -53,7 +49,7 @@
         // left: 24%
         top: 34%
         left: 23%
-        color: var(--lightestGray)
+        color: var(--lightest-gray)
         font-weight: 300
         transform: translate(-50%, -50%)
         @media(orientation: portrait)
@@ -64,7 +60,7 @@
         position: absolute
         bottom: 28%
         right: 24%
-        color: var(--lightestGray)
+        color: var(--lightest-gray)
         transform: translate(50%, 50%)
         @media(orientation: portrait)
             bottom: 20%
@@ -74,7 +70,7 @@
         &--main
             display: block
             font-family: 'satisfy'
-            font-size: var(--fontSizeHeaderMain)
+            font-size: var(--font-size-header-main)
             animation: moveInLeft .7s .2s ease-out backwards
             // font-weight: 300
             // letter-spacing: .1em
@@ -85,16 +81,16 @@
             text-align: center
             display: block
             text-transform: uppercase
-            font-size: var(--fontSizeHeaderSub)
+            font-size: var(--font-size-header-sub)
             // letter-spacing: .3em
             letter-spacing: .24em
             text-indent: .24em
             line-height: 1.8em
-            border-top: 2px solid var(--lightGray)
+            border-top: 2px solid var(--light-gray)
             color: transparent
             background-clip: text
             font-weight: 700
-            background-image: linear-gradient(90deg, var(--mainColor1), var(--mainColor2), var(--mainColor3))
+            background-image: var(--color-gradient)
             animation: moveInRight .7s .2s ease-out backwards
             @media(orientation: portrait)
                 line-height: 2em
@@ -107,7 +103,7 @@
 
         &--info
             font-weight: 700
-            font-size: calc(1.2 * var(--fontSizeHeaderSub))
+            font-size: calc(1.2 * var(--font-size-header-sub))
             letter-spacing: .24em
             margin-bottom: .2em
             animation: moveInLeft .7s .2s ease-out backwards
@@ -115,23 +111,23 @@
                 margin-bottom: .4em
 
         &--tel
-            color: var(--mainColor1)
+            color: var(--main-color-1)
 
         &--email
-            color: var(--mainColor3)
+            color: var(--main-color-3)
 
         &--data
             font-weight: 400
-            font-size: calc(1.2 * var(--fontSizeBig))
+            font-size: calc(1.2 * var(--font-size-big))
             line-height: 1.8em
-            border-top: 2px solid var(--lightGray)
+            border-top: 2px solid var(--light-gray)
             animation: moveInRight .7s .2s ease-out backwards
             @media(orientation: portrait)
                 line-height: 3em
 
         &--color
-            color: var(--mainColor2)
+            color: var(--main-color-2)
             // Background clip odcina kawałki liter w tym foncie 
             // color: transparent
             // background-clip: text
-            // background-image: linear-gradient(-45deg, var(--mainColor2), var(--mainColor3))
+            // background-image: linear-gradient(-45deg, var(--main-color-2), var(--main-color-3))

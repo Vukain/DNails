@@ -1,14 +1,30 @@
+@keyframes hide
+    100%
+        opacity: 0
+
+@keyframes show-delay
+    0%
+        opacity: 0
+    30%
+        opacity: 0
+    100%
+        opacity: 1
+
 .navigation_button
     position: relative
     flex-grow: 1
     flex-basis: 18%
     cursor: pointer
     border: none
-    transition: 2s
+    // transition: all 2s
     overflow: visible
     display: flex
     align-items: center
     justify-content: center
+    z-index: 999999
+    @media (orientation: portrait)
+        opacity: 0
+        animation: show-delay 2s ease forwards
 
     // &::before
     //     opacity: 0
@@ -17,9 +33,9 @@
     //     position: absolute
     //     width: 80%
     //     height: 5vh
-    //     border-radius: var(--borderRadiusBig) 0
+    //     border-radius: var(--border-radius-big) 0
     //     z-index: 1
-    //     background-image: linear-gradient(90deg, var(--mainColor1), var(--mainColor2), var(--mainColor3))
+    //     background-image: var(--gradient-color)
     //     background-size: 100vw 100%
     //     background-position-x: -400%
     //     transition: .3s linear
@@ -31,6 +47,10 @@
     //     &::before
     //         opacity: 1
     //         transform: skew(4deg, 1.5deg)
+
+    &--hidden_burger
+        @media (orientation: portrait)
+            animation: hide 1.6s ease forwards
 
     &--upper_level
         flex-grow: 0
@@ -61,10 +81,10 @@
         width: 80%
         height: 5vh
         color: white
-        font-size: var(--fontSizeBigger)
+        font-size: var(--font-size-bigger)
         border: none
         background-color: transparent
-        border-radius: var(--borderRadiusBig) 0
+        border-radius: var(--border-radius-big) 0
         cursor: pointer
         overflow: hidden
         display: flex
@@ -74,7 +94,7 @@
         @media (orientation: portrait)
             height: 100%
             width: 100%
-            font-size: var(--fontSizeBiggest)
+            font-size: var(--font-size-biggest)
 
         &::before
             position: absolute
@@ -85,12 +105,12 @@
             height: 5vh
             content: ""
             display: block
-            border-radius: var(--borderRadiusBig) 0
+            border-radius: var(--border-radius-big) 0
             // background-image: radial-gradient(circle at center, var(--mediumGray), var(--darkerGray))
             background-clip: padding-box
             @media (orientation: portrait)
                 height: 100%
-                border-radius: var(--borderRadiusBig)
+                border-radius: var(--border-radius-big)
                 background-image: unset
 
         &::after
@@ -105,12 +125,12 @@
             border-radius: 50%
             display: block
             transition: 0.5s
-            background-image: linear-gradient(90deg, var(--mainColor1), var(--mainColor2), var(--mainColor3))
+            background-image: var(--color-gradient)
             background-size: 100vw 100%
 
         &--active
             span
-                color: var(--almostWhite)
+                color: var(--almost-white)
             &::after
                 height: 40vh
                 width: 40vh
@@ -140,7 +160,7 @@
 
         &:hover
             span
-                color: var(--almostWhite)
+                color: var(--almost-white)
             &::after
                 height: 40vh
                 width: 40vh
@@ -150,13 +170,13 @@
 
         &--upper_level
             flex-grow: 0
-            background-image: linear-gradient(90deg, var(--mainColor1), var(--mainColor2), var(--mainColor3))
+            background-image: var(--color-gradient)
             background-clip: text
             color: transparent
             background-size: 100vw 100%
             &:hover
                 span
-                    color: var(--lightestGray)
+                    color: var(--lightest-gray)
             &::after, &::before
                 @media (orientation: landscape)
                     opacity: 0
@@ -165,7 +185,7 @@
             position: absolute
             display: block
             z-index: 30
-            background-image: linear-gradient(90deg, var(--mainColor1), var(--mainColor2), var(--mainColor3))
+            background-image: var(--color-gradient)
             background-clip: text
             color: transparent
             background-size: 100vw 100%

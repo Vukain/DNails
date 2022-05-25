@@ -13,7 +13,7 @@ const NavigationButton = (props) => {
     const { currentSection } = useContext(AppContext);
     const { currentLevel } = useContext(AppContext);
 
-    const overalStyle = { upper_level: currentLevel === 1 };
+    const overalStyle = { upper_level: currentLevel === 1, hidden_burger: props.hidden_burger };
     overalStyle[props.position] = true;
 
     const buttonStyle = { active: sectionNames[currentSection] === props.name && currentLevel === 2, upper_level: currentLevel === 1 }

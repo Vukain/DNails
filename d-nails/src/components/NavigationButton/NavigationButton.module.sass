@@ -1,5 +1,7 @@
 @keyframes hide
-    100%
+    0%
+        opacity: 1
+    50%
         opacity: 0
 
 @keyframes show-delay
@@ -16,7 +18,7 @@
     flex-basis: 18%
     cursor: pointer
     border: none
-    // transition: all 2s
+    transition: 2s
     overflow: visible
     display: flex
     align-items: center
@@ -24,11 +26,10 @@
     z-index: 999999
     @media (orientation: portrait)
         opacity: 0
-        animation: show-delay 2s ease forwards
-
+        animation: show-delay 2s .5s ease forwards
     // &::before
     //     opacity: 0
-    //     content: ""
+    //     content: "" 
     //     display: block
     //     position: absolute
     //     width: 80%
@@ -50,7 +51,8 @@
 
     &--hidden_burger
         @media (orientation: portrait)
-            animation: hide 1.6s ease forwards
+            opacity: 0
+            animation: hide 2s ease forwards
 
     &--upper_level
         flex-grow: 0

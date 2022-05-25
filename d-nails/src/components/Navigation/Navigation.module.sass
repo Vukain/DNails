@@ -7,6 +7,8 @@
         background-position: 0% 0%
 
 @keyframes hide
+    0%
+        opacity: 1
     50%
         opacity: 0
     99%
@@ -78,7 +80,7 @@
         width: 100%
         height: 100%
         background-color: var(--darkest-gray)
-        transition: 2s
+        transition: opacity 0s, all 2s
         @media (orientation: portrait)
             position: fixed
             border-radius: var(--border-radius-small) 0
@@ -110,7 +112,7 @@
                 transform: translate(50%, 50%) scale(1)
             &::after
                 opacity: 0
-                animation: hide 2s ease forwards
+                animation: none
                 // width: 5vh
                 // height: 5vh
                 // border-radius: 50%
@@ -119,6 +121,11 @@
                 // bottom: 7vh
                 // right: 7vh
                 // transform: translate(50%, 50%)
+
+    &--hidden.navigation--clicked
+        @media (orientation: portrait)
+            &::after
+                animation: hide 2s ease forwards
 
     &__hamburger
         @media (orientation: portrait)

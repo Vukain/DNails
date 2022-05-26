@@ -3,6 +3,8 @@
     grid-column: span 2
     position: relative
     backface-visibility: hidden
+    overflow: hidden
+    border-radius: var(--border-radius-small)
     @media (orientation: portrait)
         grid-row: span 1
         grid-column: span 1
@@ -13,9 +15,9 @@
                 grid-row: span 4
                 grid-column: span 4
 
-            &:nth-child(5)
-                grid-row: span 2
-                grid-column: span 4
+            // &:nth-child(5)
+            //     grid-row: span 2
+            //     grid-column: span 4
 
             &:nth-child(8)
                 grid-row: span 4
@@ -47,7 +49,7 @@
         object-position: center
         border-radius: var(--border-radius-small)
         cursor: pointer
-        transition: transform .4s, opacity .4s
+        transition: transform .5s cubic-bezier(0.68, -0.6, 0.32, 1.6), opacity .4s
         transform: scale(1)
         backface-visibility: hidden
 
@@ -73,8 +75,7 @@
 
     &:hover &__imag
         z-index: 99
-        transform: scale(1.08)
-
+        transform: scale(1.1) rotateZ(5deg)
         &--color
             opacity: 1
         &--active

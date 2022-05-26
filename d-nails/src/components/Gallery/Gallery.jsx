@@ -33,9 +33,8 @@ import nail_image_13 from '../../media/nails_13.jpg';
 import nail_image_13_bw from '../../media/nails_13_bw.jpg';
 import nail_image_14 from '../../media/nails_14.jpg';
 import nail_image_14_bw from '../../media/nails_14_bw.jpg';
-
-
-
+import nail_image_15 from '../../media/nails_15.jpg';
+import nail_image_15_bw from '../../media/nails_15_bw.jpg';
 
 const style = bemCssModules(GalleryStyles);
 
@@ -68,7 +67,7 @@ const Gallery = (props) => {
     const imageNames = [[nail_image_01_bw, nail_image_01], [nail_image_02_bw, nail_image_02], [nail_image_03_bw, nail_image_03], [nail_image_04_bw, nail_image_04],
     [nail_image_05_bw, nail_image_05], [nail_image_06_bw, nail_image_06], [nail_image_07_bw, nail_image_07], [nail_image_08_bw, nail_image_08],
     [nail_image_09_bw, nail_image_09], [nail_image_10_bw, nail_image_10], [nail_image_11_bw, nail_image_11], [nail_image_12_bw, nail_image_12],
-    [nail_image_13_bw, nail_image_13], [nail_image_14_bw, nail_image_14]];
+    [nail_image_13_bw, nail_image_13], [nail_image_14_bw, nail_image_14], [nail_image_15_bw, nail_image_15]];
     const topImages = [11, 12];
     const bottomImages = [0, 3, 4];
     const images = imageNames.map((el, idx) => <GalleryImage key={el + idx} image={el} index={idx} enlarge={false} active={currentlyEnlarged} changeActive={imageSwitcher} top={topImages.includes(idx)} bottom={bottomImages.includes(idx)} />)

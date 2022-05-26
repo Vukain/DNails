@@ -32,7 +32,7 @@
     justify-content: flex-end
     background-color: transparent
     transition: 2s
-    z-index: 9999
+    z-index: 9991
     @media (orientation: portrait)
         grid-area: unset
         position: fixed
@@ -59,15 +59,15 @@
         transition: 2s
         @media (orientation: portrait)
             position: fixed
-            width: 5vh
-            height: 5vh
+            width: 4vh
+            height: 4vh
             border-radius: 50%
             opacity: 1
-            bottom: 7vh
-            right: 7vh
+            bottom: 9vw
+            right: 9vw
             transition: 1s cubic-bezier(0.83, 0, 0.17, 1)
             background-image: linear-gradient(45deg, var(--main-color-1), var(--main-color-2), var(--main-color-3))
-            transform: translate(50%, 50%) scale(50)
+            transform: translate(50%, 50%) scale(55)
 
     &::after
         content: ""
@@ -93,10 +93,6 @@
             opacity: 1
             @media (orientation: portrait)
                 background-image: linear-gradient(45deg, var(--main-color-1), var(--main-color-2), var(--main-color-3))
-        &::after
-            @media (orientation: portrait)
-                // width: unset
-                // height: unset
 
     &--hidden
         @media (orientation: portrait)
@@ -109,14 +105,6 @@
                 opacity: 0
                 animation: none
                 visibility: hidden
-                // width: 5vh
-                // height: 5vh
-                // border-radius: 50%
-                // top: unset
-                // left: unset
-                // bottom: 7vh
-                // right: 7vh
-                // transform: translate(50%, 50%)
 
     &--hidden.navigation--clicked
         @media (orientation: portrait)
@@ -127,11 +115,11 @@
     &__hamburger
         @media (orientation: portrait)
             position: fixed
-            bottom: 7vh
-            right: 7vh
-            width: 6vh
-            height: 6vh
+            bottom: 9vw
+            right: 9vw
+            width: 5vh
+            height: 5vh
             border-radius: 50%
-            background-color: var(--light-gray)
-            z-index: 9999999999
+            background-color: var(--lightest-gray)
+            z-index: 9997
             transform: translate(50%, 50%)

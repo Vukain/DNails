@@ -16,16 +16,23 @@ const NavigationButton = (props) => {
     const overalStyle = { upper_level: currentLevel === 1, hidden_burger: props.hidden_burger };
     overalStyle[props.position] = true;
 
-    const buttonStyle = { active: sectionNames[currentSection] === props.name && currentLevel === 2, upper_level: currentLevel === 1 }
+    const buttonStyle = { active: sectionNames[currentSection] === props.name, upper_level: currentLevel === 1 }
     buttonStyle[props.position] = true;
 
     const textStyle = {};
     textStyle[props.position] = true;
     textStyle['hidden'] = props.name === 'header' && currentLevel === 1;
 
+    const onClickHandler = () => {
+        props.scroller(props.section, props.level);
+        setTimeout(() => {
+            props.hider(true);
+        }, 1200)
+    };
+
     return (
         <div className={style(overalStyle)}>
-            <button className={style('button', buttonStyle)} onClick={() => { props.scroller(props.section, props.level) }}>
+            <button className={style('button', buttonStyle)} onClick={onClickHandler}>
                 <span className={style('button_text', textStyle)}>{props.name}</span>
             </button>
         </div>

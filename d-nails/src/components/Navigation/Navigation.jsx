@@ -44,15 +44,15 @@ const Navigation = (props) => {
     const hamburgerHandler = () => {
         setMobileNavigationHidden(!mobileNavigationHidden);
         setMobileNavigationClicked(true);
-    }
+    };
 
     return (
         <nav className={style({ lower_level: currentLevel === 2, hidden: mobileNavigationHidden, clicked: mobileNavigationClicked })}>
-            <NavigationButton scroller={sectionScroller} hidden_burger={mobileNavigationHidden} name='header' position='first' section={0} level={1} />
-            <NavigationButton scroller={sectionScroller} hidden_burger={mobileNavigationHidden} name='usługi' position='second' section={1} level={2} />
-            <NavigationButton scroller={sectionScroller} hidden_burger={mobileNavigationHidden} name='kolory' position='third' section={2} level={2} />
-            <NavigationButton scroller={sectionScroller} hidden_burger={mobileNavigationHidden} name='wizyty' position='fourth' section={3} level={2} />
-            <NavigationButton scroller={sectionScroller} hidden_burger={mobileNavigationHidden} name='galeria' position='fifth' section={4} level={2} />
+            <NavigationButton scroller={sectionScroller} hidden_burger={mobileNavigationHidden} hider={setMobileNavigationHidden} name='header' position='first' section={0} level={1} />
+            <NavigationButton scroller={sectionScroller} hidden_burger={mobileNavigationHidden} hider={setMobileNavigationHidden} name='usługi' position='second' section={1} level={2} />
+            <NavigationButton scroller={sectionScroller} hidden_burger={mobileNavigationHidden} hider={setMobileNavigationHidden} name='kolory' position='third' section={2} level={2} />
+            <NavigationButton scroller={sectionScroller} hidden_burger={mobileNavigationHidden} hider={setMobileNavigationHidden} name='wizyty' position='fourth' section={3} level={2} />
+            <NavigationButton scroller={sectionScroller} hidden_burger={mobileNavigationHidden} hider={setMobileNavigationHidden} name='galeria' position='fifth' section={4} level={2} />
             <div className={style('hamburger')} onClick={hamburgerHandler}></div>
         </nav>
     );

@@ -9,15 +9,14 @@
     grid-template-rows: repeat(6, 1fr)
     grid-gap: var(--gap-big)
     z-index: 999
-
     @media (orientation: portrait)
         grid-template-columns: repeat(3, 1fr)
         grid-template-rows: repeat(5, 1fr)
+        z-index: 9990
 
     &--enlarged_mode
         grid-template-columns: 5fr 5fr
         grid-template-rows: 1fr
-
         @media (orientation: portrait)
             grid-template-columns: 1fr
             grid-template-rows: 6fr 4fr
@@ -35,6 +34,7 @@
         position: relative
         grid-row: span 1
         grid-column: span 1
+        z-index: 9998
         @media (orientation: portrait)
             position: fixed
             top: 0
@@ -100,7 +100,6 @@
         height: 25%
         transform: unset
         border-radius: 5px 5px 0 0
-        // box-shadow: 0 0 10px rgba(0, 0, 0, 0.6)
 
     &__arrow_second
         position: absolute

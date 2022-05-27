@@ -28,6 +28,9 @@
     grid-area: header
     height: 100%
     width: 100vw
+    background-image: radial-gradient(ellipse at 35% 15%,var(--darker-gray), var(--darkest-gray) 70%)
+    @media (orientation: portrait)
+        background-image: radial-gradient(ellipse at 35% 15%,var(--darker-gray), var(--darkest-gray) 70%)
 
     &__image
         position: absolute
@@ -35,6 +38,7 @@
         left: 0px
         height: 100%
         width: 100vw
+        // filter: drop-shadow(0 0 calc(var(--shadow-radius)*2) rgba(0, 0, 0, 0.1))
         @media(orientation: portrait)
             display: none
 

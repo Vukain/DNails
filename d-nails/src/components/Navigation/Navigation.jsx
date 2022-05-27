@@ -53,7 +53,7 @@ const Navigation = (props) => {
             <NavigationButton scroller={sectionScroller} hidden_burger={mobileNavigationHidden} hider={setMobileNavigationHidden} name='kolory' position='third' section={2} level={2} />
             <NavigationButton scroller={sectionScroller} hidden_burger={mobileNavigationHidden} hider={setMobileNavigationHidden} name='wizyty' position='fourth' section={3} level={2} />
             <NavigationButton scroller={sectionScroller} hidden_burger={mobileNavigationHidden} hider={setMobileNavigationHidden} name='galeria' position='fifth' section={4} level={2} />
-            <div className={style('hamburger')} onClick={hamburgerHandler}></div>
+            <div className={style('hamburger', { active: !mobileNavigationHidden })} onClick={hamburgerHandler}> <div className={style('hamburger_icon')}></div></div>
         </nav>
     );
 };

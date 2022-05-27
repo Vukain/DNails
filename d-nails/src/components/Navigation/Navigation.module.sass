@@ -9,8 +9,10 @@
 @keyframes hide
     0%
         opacity: 1
+        transform: scale(1)
     50%
         opacity: 0
+        transform: scale(0.3)
     100%
         visibility: hidden
 
@@ -20,8 +22,10 @@
         visibility: hidden
     30%
         opacity: 0
+        transform: scale(0.3)
     100%
         opacity: 1
+        transform: scale(1)
 
 .navigation
     position: sticky
@@ -40,10 +44,6 @@
         transition: 0s
         width: 100%
         height: 100%
-        // top: unset
-        // left: unset
-        // bottom: 0
-        // right: 0
         padding: calc(8vw + 2 * var(--color-border-width))
         gap: calc(4vw + var(--color-border-width))cd
 
@@ -59,8 +59,8 @@
         transition: 2s
         @media (orientation: portrait)
             position: fixed
-            width: 4vh
-            height: 4vh
+            width: 5vh
+            height: 5vh
             border-radius: 50%
             opacity: 1
             bottom: 9vw
@@ -68,6 +68,7 @@
             transition: 1s cubic-bezier(0.83, 0, 0.17, 1)
             background-image: linear-gradient(45deg, var(--main-color-1), var(--main-color-2), var(--main-color-3))
             transform: translate(50%, 50%) scale(55)
+            box-shadow: 0 0 var(--shadow-radius) rgba(0, 0, 0, 0.2)
 
     &::after
         content: ""
@@ -77,6 +78,8 @@
         height: 100%
         background-color: var(--darkest-gray)
         transition: all 2s
+        transform: scale(.3)
+        transform-origin: bottom right
         @media (orientation: portrait)
             position: fixed
             border-radius: var(--border-radius-small) 0
@@ -86,7 +89,7 @@
             left: unset
             right: calc(var(--color-border-width) + 4vw)
             bottom: calc(var(--color-border-width) + 4vw)
-            animation: show-delay 2s ease forwards
+            animation: show-delay 1.5s ease forwards
 
     &--lower_level
         &::before
@@ -110,16 +113,55 @@
         @media (orientation: portrait)
             &::after
                 visibility: visible
-                animation: hide 2s ease forwards
+                animation: hide 1.5s ease forwards
 
     &__hamburger
         @media (orientation: portrait)
             position: fixed
             bottom: 9vw
             right: 9vw
-            width: 5vh
-            height: 5vh
+            width: 4vh
+            height: 4vh
             border-radius: 50%
-            background-color: var(--lightest-gray)
+            background-color: var(--darkest-gray)
             z-index: 9997
             transform: translate(50%, 50%)
+
+            // &:hover .navigation__hamburger_icon
+                // &::before
+                //     left: 62%
+                // &::after
+                //     left: 38%
+
+            &--active .navigation__hamburger_icon
+                &::before
+                    top: 52%
+                    left: 52%
+                    transform: translate(-50%, -50%) rotateZ(45deg)
+                &::after
+                    top: 52%
+                    left: 52%
+                    transform: translate(-50%, -50%) rotateZ(-135deg)
+
+    &__hamburger_icon
+        @media (orientation: portrait)
+            &::before, &::after
+                display: block
+                content: ''
+                position: absolute
+                transform: translate(-50%, -50%)
+                width: 2vh
+                height: 2vh
+                transition: all .3s
+            &::before
+                top: 62%
+                left: 60%
+                border-radius: 0 3vh 3vh 0
+                border: 2px solid var(--lighter-gray)
+                border-left: none
+            &::after
+                top: 38%
+                left: 40%
+                border-radius: 3vh 0 0 3vh
+                border: 2px solid var(--lighter-gray)
+                border-right: none

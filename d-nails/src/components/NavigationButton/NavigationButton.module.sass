@@ -1,13 +1,11 @@
 @keyframes hide
     0%
         opacity: 1
-    50%
+    100%
         opacity: 0
 
 @keyframes show-delay
     0%
-        opacity: 0
-    30%
         opacity: 0
     100%
         opacity: 1
@@ -18,25 +16,25 @@
     flex-basis: 18%
     cursor: pointer
     border: none
-    transition: 2s
     overflow: visible
     display: flex
     align-items: center
     justify-content: center
     z-index: 999999
+    transition: 2s
     @media (orientation: portrait)
         opacity: 0
-        animation: show-delay 2s ease forwards
+        animation: show-delay 1s ease-in-out forwards
         &:nth-child(1)
-            animation-delay: .8s
+            animation-delay: 1.3s
         &:nth-child(2)
-            animation-delay: .7s
+            animation-delay: 1.15s
         &:nth-child(3)
-            animation-delay: .6s
+            animation-delay: 1s
         &:nth-child(4)
-            animation-delay: .5s
+            animation-delay: .85s
         &:nth-child(5)
-            animation-delay: .4s
+            animation-delay: .7s
 
     // &::before
     //     opacity: 0
@@ -90,21 +88,22 @@
             background-position-x: 100%
 
     &__button
+        display: flex
         position: absolute
-        padding: 0
         width: 80%
         height: 5vh
-        color: white
-        font-size: var(--font-size-bigger)
-        border: none
-        background-color: transparent
-        border-radius: var(--border-radius-big) 0
-        cursor: pointer
+        padding: 0
         overflow: hidden
-        display: flex
         justify-self: center
         justify-content: center
         align-items: center
+        color: white
+        font-size: var(--font-size-bigger)
+        border: none
+        border-radius: var(--border-radius-big) 0
+        background-color: transparent
+        cursor: pointer
+
         @media (orientation: portrait)
             height: 60%
             width: 80%
@@ -132,55 +131,51 @@
             z-index: 3
             top: -20vh
             left: 50%
-            transform: translateX(-50%)
-            width: 0vh
-            height: 0vh
+            transform: translateX(-50%) scale(1)
+            width: 20vh
+            height: 20vh
             border-radius: 50%
             display: block
-            transition: 0.5s
+            transition: .3s ease-in
             background-image: var(--color-gradient)
             background-size: 100vw 100%
+            @media (orientation: portrait)
+                top: -10vw
+                width: 10vw
+                height: 10vw
 
-        &--active
+        &--active, &:hover
             span
                 color: var(--almost-white)
             &::after
-                height: 40vh
-                width: 40vh
+                transform: translateX(-50%) scale(3)
                 @media (orientation: portrait)
-                    height: 60vh
-                    width: 60vh
+                    transition: .7s ease
+                    transform: translateX(-50%) scale(10)
 
         &--first
             &::after
                 background-position-x: 0%
-
+                @media (orientation: portrait)
+                    background-position-x: 100%
         &--second
             &::after
                 background-position-x: 25%
-
+                @media (orientation: portrait)
+                    background-position-x: 75%
         &--third
             &::after
                 background-position-x: 50%
-
         &--fourth
             &::after
                 background-position-x: 75%
-
+                @media (orientation: portrait)
+                    background-position-x: 25%
         &--fifth
             &::after
                 background-position-x: 100%
-
-        &:hover
-            span
-                color: var(--almost-white)
-            &::after
-                height: 40vh
-                width: 40vh
                 @media (orientation: portrait)
-                    height: 60vh
-                    width: 60vh
-
+                    background-position-x: 0%
         &--upper_level
             flex-grow: 0
             background-image: var(--color-gradient)
@@ -210,14 +205,22 @@
 
             &--first
                 background-position-x: 0%
+                @media (orientation: portrait)
+                    background-position-x: 100%
             &--second
                 background-position-x: 25%
+                @media (orientation: portrait)
+                    background-position-x: 75%
             &--third
                 background-position-x: 50%
             &--fourth
                 background-position-x: 75%
+                @media (orientation: portrait)
+                    background-position-x: 25%
             &--fifth
                 background-position-x: 100%
+                @media (orientation: portrait)
+                    background-position-x: 0%
             &--hidden
                 @media (orientation: landscape)
                     opacity: 0

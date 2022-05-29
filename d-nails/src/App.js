@@ -10,6 +10,7 @@ import Gallery from './components/Gallery/Gallery';
 import Section from './layout/Section/Section';
 import Appointment from './components/Appointment/Appointment';
 import NailPainter from './components/NailPainter/NailPainter';
+import Modal from './components/Modal/Modal';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
   const { setSectionRefs } = useContext(AppContext);
   const { setCurrentLevel } = useContext(AppContext);
   const { currentSectionRef } = useContext(AppContext);
+  const { showModal } = useContext(AppContext)
 
   // Access current state without update delays, no re-render
   // const [isThrottled, setIsThrottled] = useState(false);
@@ -130,6 +132,7 @@ function App() {
         <Gallery />
       </Section>
 
+      {showModal ? <Modal/> : null}
     </div>
   );
 };

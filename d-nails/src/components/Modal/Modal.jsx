@@ -1,24 +1,31 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import bemCssModules from 'bem-css-modules';
 
+import { AppContext } from '../../AppContext';
 import { default as ModalStyles } from './Modal.module.sass';
 
 import Button from '../Button/Button';
+import ContentCard from '../../layout/ContentCard/ContentCard';
 
 const style = bemCssModules(ModalStyles);
 
 const Modal = (props) => {
 
+    const { setShowModal } = useContext(AppContext);
+    const { modalMessage } = useContext(AppContext);
 
-    let message = 'Errraosrasrasrasrasrasra';
+    const closeModal = () => {
+        setShowModal(false);
+    };
 
     return (
         <div className={style()}>
-            <div className={style('content')}>
-                <p className={style('message')}>{message}</p>
-                <Button name='ok' clicker={props.clicker} />
-            </div>
-
+            <ContentCard>
+                <div className={style('content')}>
+                    <div className={style('message')}>{modalMessage}</div>
+                    <Button name='ok' clicker={closeModal} />
+                </div>
+            </ContentCard>
         </div>
     );
 }

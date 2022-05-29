@@ -8,11 +8,21 @@ const AppProvider = ({ children }) => {
     const [sectionNames] = useState(['header', 'usługi', 'kolory', 'wizyty', 'galeria'])
     const [currentLevel, setCurrentLevel] = useState(1);
     const [currentSection, setCurrentSection] = useState(0);
+    const [showModal, setShowModal] = useState(false);
+    const [modalMessage, setModalMessage] = useState(null);
     // Listener state freeze bypass, must be doubled with normal state for button styling
     const currentSectionRef = useRef(currentSection);
 
+    const context = {sectionRefs, setSectionRefs, 
+        currentLevel, setCurrentLevel, 
+        currentSection, setCurrentSection, 
+        showModal, setShowModal,
+        modalMessage, setModalMessage,
+        sectionNames, 
+        currentSectionRef};
+
     return (
-    <AppContext.Provider value={{sectionRefs, setSectionRefs, currentLevel, setCurrentLevel, currentSection, setCurrentSection, sectionNames, currentSectionRef}}>
+    <AppContext.Provider value={context}>
         {children}
     </AppContext.Provider>);
 } 

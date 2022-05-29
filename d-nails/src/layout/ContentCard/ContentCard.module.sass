@@ -9,13 +9,9 @@
         background-position: 0% 0%
 
 .wrapper
-    position: absolute
-    top: 17.5vh
-    bottom: 8vh
-    left: 8vh
-    right: 8vh
+    flex-grow: 1
     padding: var(--color-border-width)
-
+    position: relative
     &::before
         @include before-after
         top: 0px
@@ -41,16 +37,3 @@
         right: var(--color-border-width)
         border-radius: var(--border-radius-small) 0
         background: var(--darkest-gray)
-
-    @media (orientation: portrait)
-        // margin: 4vw 4vw 8vw 4vw
-        // height: calc(100vh - 12vw)
-        // width: 92vw
-
-        margin: 0
-        height: unset
-        width: unset
-        top: 4vw
-        bottom: 4vw
-        left: 4vw
-        right: 4vw

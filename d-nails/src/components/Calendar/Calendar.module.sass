@@ -1,3 +1,5 @@
+@import '../../sass/mixins'
+
 @keyframes bgc
     0%
         background-position: 0% 0%
@@ -27,7 +29,7 @@
             grid-column: span 7
 
     &__chosen_month
-        background-image: linear-gradient(45deg, var(--main-color-1), var(--main-color-2), var(--main-color-3))
+        @include gradient-color(45deg)
         background-size: 200% 100%
         background-position: 0%
         display: flex
@@ -113,12 +115,11 @@
         color: var(--dark-gray)
         z-index: 3
         &::after
+            @include before-after
             cursor: pointer
-            display: block
-            content: ""
             width: calc(100% - 2vh)
             height: calc(100% - 2vh)
-            position: absolute
+
             z-index: -1
             border-radius: var(--border-radius-small)
             background-color: var(--lightest-gray)
@@ -159,14 +160,11 @@
         &--not_empty
             cursor: pointer
             &::before
-                display: block
-                content: ""
+                @include before-after
                 width: calc(100% - 1vh)
                 height: calc(100% - 1vh)
-                position: absolute
                 z-index: -2
                 border-radius: var(--border-radius-medium)
-                // box-shadow: 0 0 15px rgba(0, 0, 0, 0.08)
                 transition: .5s
                 background-image: linear-gradient(45deg, var(--lighter-gray) 40%, var(--main-color-1), var(--main-color-2), var(--main-color-3))
                 background-size: 400% 100%
@@ -174,12 +172,10 @@
                     width: calc(100% - 1vw)
                     height: calc(100% - 1vw)
             &::after
+                @include before-after
                 cursor: pointer
-                display: block
-                content: ""
                 width: calc(100% - 2vh)
                 height: calc(100% - 2vh)
-                position: absolute
                 z-index: -1
                 border-radius: var(--border-radius-small)
                 background-color: var(--lightest-gray)

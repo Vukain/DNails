@@ -3,7 +3,7 @@ import bemCssModules from 'bem-css-modules';
 
 import { AppContext } from '../../AppContext';
 
-import NavigationButton from '../NavigationButton/NavigationButton';
+import NavigationButton from './NavigationButton/NavigationButton';
 
 import { default as NavigationStyles } from './Navigation.module.sass';
 

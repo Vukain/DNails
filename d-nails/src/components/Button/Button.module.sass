@@ -1,3 +1,5 @@
+@import '../../sass/mixins'
+
 .button
     position: relative
     border: none
@@ -27,22 +29,21 @@
         overflow: hidden
 
         &::before
-            position: absolute
+            @include before-after
             top: 0
             left: 0
-            z-index: 2
             width: 100%
             height: 100%
-            content: ""
-            display: block
-            transition: .2s linear
+            z-index: 2
+            border: 1px solid transparent
             border-radius: var(--border-radius-big) 0
             background-image: radial-gradient(circle at center, var(--medium-gray), var(--darker-gray))
             background-clip: padding-box
-            border: 1px solid transparent
+            transition: .2s linear
 
         &::after
-            position: absolute
+            @include before-after
+            @include gradient-color(45deg)
             z-index: 3
             top: -20vh
             left: 50%
@@ -50,10 +51,7 @@
             width: 0%
             height: 0%
             border-radius: 50%
-            content: ""
-            display: block
             transition: .5s
-            background-image: var(--color-gradient)
 
         &:hover
             span
@@ -63,11 +61,11 @@
                 width: 40vh
 
         &_text
+            @include gradient-color(45deg)
             position: absolute
             display: block
             z-index: 30
             color: transparent
-            background-image: var(--color-gradient)
             background-clip: text
             background-size: 100vw 100%
             background-position-x: -400%

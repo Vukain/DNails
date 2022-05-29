@@ -48,25 +48,42 @@
         position: absolute
         z-index: 9999
         cursor: pointer
-        filter: grayscale(1)
-        transition: .2s
+        transition: .2s ease-in-out
 
     &__next_image
-        right: 2%
         top: 50%
+        right: 2%
         transform: translateY(-50%) rotate(135deg)
         @media (orientation: portrait)
             right: 5%
+        &::before
+            @include before-after
+            @include gradient-color(45deg)
+            @include grey-trans
+            top: 0
+            left: 0
+            width: 100%
+            height: 25%
+            border-radius: 5px 5px 0 0
+        &::after
+            @extend ::before
+            @include gradient-color(180deg)
+            width: 25%
+            height: 100%
+            border-radius: 5px 0 0 5px
         &:hover
-            filter: grayscale(0) drop-shadow(4px -4px 4px rgba(0, 0, 0, 0.4))
+            filter: drop-shadow(4px -4px 4px rgba(0, 0, 0, 0.4))
             transform: translateY(-50%) rotate(135deg) scale(1.2)
         &:active
-            filter: grayscale(0) drop-shadow(3px -3px 3px rgba(0, 0, 0, 0.5))
+            filter: drop-shadow(3px -3px 3px rgba(0, 0, 0, 0.5))
             transform: translateY(-50%) rotate(135deg) scale(1.15)
+        &:hover, &:active
+            &::before, &::after
+                filter: grayscale(0)
 
     &__previous_image
+        @extend .gallery__next_image
         left: 2%
-        top: 50%
         transform: translateY(-50%) rotate(-45deg)
         @media (orientation: portrait)
             left: 5%
@@ -78,61 +95,35 @@
             transform: translateY(-50%) rotate(-45deg) scale(1.15)
 
     &__close_image
-        right: 1%
         top: 1%
+        right: 1%
         height: 6vh
         width: 6vh
         transform-origin: 50% 50%
         transform: translateY(0%) scale(1)
+        &::before
+            @include before-after
+            @include grey-trans
+            top: 50%
+            left: 0
+            width: 100%
+            height: 19%
+            background-image: linear-gradient(90deg, var(--main-color-3), var(--main-color-2), var(--main-color-1), var(--main-color-2), var(--main-color-3))
+            border-radius: 0 5px 0 5px
+            transform: translateY(-50%) rotate(-45deg)
+        &::after
+            @extend ::before
+            border-radius: 5px 0 5px 0
+            transform: translateY(-50%) rotate(45deg)
         &:hover
             filter: grayscale(0) drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.4))
             transform: translateY(0%) scale(1.2)
         &:active
             filter: grayscale(0) drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5))
             transform: translateY(0%) scale(1.15)
-
-    &__arrow_first
-        position: absolute
-        top: 0
-        left: 0
-        background-image: var(--color-gradient)
-        width: 100%
-        height: 25%
-        transform: unset
-        border-radius: 5px 5px 0 0
-
-    &__arrow_second
-        position: absolute
-        top: 0
-        left: 0
-        background-image: linear-gradient(180deg, var(--main-color-1), var(--main-color-2), var(--main-color-3))
-        width: 25%
-        height: 100%
-        transform: unset
-        border-radius: 5px 0 0 5px
-        // box-shadow: 0 0 10px rgba(0, 0, 0, 0.6)
-
-    &__cancel_first
-        position: absolute
-        top: 50%
-        left: 0
-        background-image: linear-gradient(90deg, var(--main-color-3), var(--main-color-2), var(--main-color-1), var(--main-color-2), var(--main-color-3))
-        width: 100%
-        height: 19%
-        transform: unset
-        border-radius: 0 5px 0 5px
-        transform: translateY(-50%) rotate(-45deg)
-
-    &__cancel_second
-        position: absolute
-        top: 50%
-        left: 0
-        background-image: linear-gradient(90deg, var(--main-color-3), var(--main-color-2), var(--main-color-1), var(--main-color-2), var(--main-color-3))
-        width: 100%
-        height: 19%
-        transform: unset
-        border-radius: 5px 0 5px 0
-        transform: translateY(-50%) rotate(45deg)
+        &:hover, &:active
+            &::before, &::after
+                filter: grayscale(0)
 
     &__wrapper
         width: 100%

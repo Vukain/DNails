@@ -4,15 +4,14 @@
   position: relative
   width: 400vw
   height: 200vh
+  box-sizing: border-box
   overflow: visible
-  background-color: var(--darkest-gray)
   text-align: center
   font-family: 'Lato', sans-serif
   display: grid
   grid-template-columns: repeat(4, 1fr)
   grid-template-rows: 92fr 8fr 100fr
   grid-template-areas: "header empty empty empty" "nav empty empty empty" "sec1 sec2 sec3 sec4"
-
   @media (orientation: portrait)
     width: 200vw
     height: 400%

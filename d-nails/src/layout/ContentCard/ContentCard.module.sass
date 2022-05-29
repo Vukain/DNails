@@ -1,3 +1,5 @@
+@import '../../sass/mixins'
+
 @keyframes bgc
     0%
         background-position: 0% 0%
@@ -15,9 +17,7 @@
     padding: var(--color-border-width)
 
     &::before
-        content: ""
-        display: block
-        position: absolute
+        @include before-after
         top: 0px
         bottom: 0px
         left: 0px
@@ -34,9 +34,7 @@
         // right: 10px
         // transform: skew(1.1deg, 0.5deg)
     &::after
-        content: ""
-        display: block
-        position: absolute
+        @include before-after
         top: var(--color-border-width)
         bottom: var(--color-border-width)
         left: var(--color-border-width)

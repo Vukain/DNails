@@ -4,7 +4,7 @@ import bemCssModules from 'bem-css-modules';
 import { default as AppointmentStyles } from './Appointment.module.sass';
 
 import Calendar from '../Calendar/Calendar';
-import AppointmentForm from '../AppointmentForm/AppointmentForm';
+import AppointmentForm from './AppointmentForm/AppointmentForm';
 import ContentSwitcher from '../ContentSwitcher/ContentSwitcher';
 
 const style = bemCssModules(AppointmentStyles);

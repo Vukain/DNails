@@ -1,16 +1,27 @@
+@mixin gradient-color($deg)
+    background-image: linear-gradient($deg, var(--main-color-1), var(--main-color-2), var(--main-color-3))
+
 @mixin title
+    @include gradient-color(45deg)
     position: relative
     border-radius: var(--border-radius-small) var(--border-radius-small) 0 0
-    background-image: linear-gradient(45deg, var(--main-color-1), var(--main-color-2), var(--main-color-3))
     text-transform: uppercase
     display: flex
     justify-content: center
     align-items: center
 
 @mixin title-text
-
     all: unset
     font-size: var(--font-size-bigger)
     letter-spacing: .14em
     font-weight: bold
     color: var(--almost-white)
+
+@mixin before-after
+    content: ""
+    display: block
+    position: absolute
+
+@mixin grey-trans
+    transition: filter .4s
+    filter: grayscale(1)

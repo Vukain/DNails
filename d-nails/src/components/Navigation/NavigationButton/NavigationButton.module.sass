@@ -1,3 +1,5 @@
+@import '../../../sass/mixins'
+
 @keyframes hide
     0%
         opacity: 1
@@ -6,8 +8,10 @@
 
 @keyframes show-delay
     0%
+        transform: translateY(8%)
         opacity: 0
     100%
+        transform: translateY(0)
         opacity: 1
 
 .navigation_button
@@ -23,8 +27,8 @@
     z-index: 999999
     transition: 2s
     @media (orientation: portrait)
-        opacity: 0
-        animation: show-delay 1s ease-in-out forwards
+        // opacity: 0
+        animation: show-delay 1s ease-in-out both
         &:nth-child(1)
             animation-delay: 1.3s
         &:nth-child(2)
@@ -103,21 +107,17 @@
         border-radius: var(--border-radius-big) 0
         background-color: transparent
         cursor: pointer
-
         @media (orientation: portrait)
             height: 60%
             width: 80%
             font-size: var(--font-size-biggest)
-
         &::before
-            position: absolute
+            @include before-after
             top: 0
             left: 0
             z-index: 2
             width: 100%
             height: 5vh
-            content: ""
-            display: block
             border-radius: var(--border-radius-big) 0
             background-clip: padding-box
             @media (orientation: portrait)
@@ -126,8 +126,8 @@
                 background-image: unset
 
         &::after
-            content: ""
-            position: absolute
+            @include gradient-color(45deg)
+            @include before-after
             z-index: 3
             top: -20vh
             left: 50%
@@ -135,9 +135,7 @@
             width: 20vh
             height: 20vh
             border-radius: 50%
-            display: block
             transition: .3s ease-in
-            background-image: var(--color-gradient)
             background-size: 100vw 100%
             @media (orientation: portrait)
                 top: -10vw
@@ -158,27 +156,32 @@
                 background-position-x: 0%
                 @media (orientation: portrait)
                     background-position-x: 100%
+
         &--second
             &::after
                 background-position-x: 25%
                 @media (orientation: portrait)
                     background-position-x: 75%
+
         &--third
             &::after
                 background-position-x: 50%
+
         &--fourth
             &::after
                 background-position-x: 75%
                 @media (orientation: portrait)
                     background-position-x: 25%
+
         &--fifth
             &::after
                 background-position-x: 100%
                 @media (orientation: portrait)
                     background-position-x: 0%
+
         &--upper_level
+            @include gradient-color(45deg)
             flex-grow: 0
-            background-image: var(--color-gradient)
             background-clip: text
             color: transparent
             background-size: 100vw 100%
@@ -190,10 +193,10 @@
                     opacity: 0
 
         &_text
+            @include gradient-color(45deg)
             position: absolute
             display: block
             z-index: 30
-            background-image: var(--color-gradient)
             background-clip: text
             color: transparent
             background-size: 100vw 100%
@@ -207,20 +210,25 @@
                 background-position-x: 0%
                 @media (orientation: portrait)
                     background-position-x: 100%
+
             &--second
                 background-position-x: 25%
                 @media (orientation: portrait)
                     background-position-x: 75%
+
             &--third
                 background-position-x: 50%
+
             &--fourth
                 background-position-x: 75%
                 @media (orientation: portrait)
                     background-position-x: 25%
+
             &--fifth
                 background-position-x: 100%
                 @media (orientation: portrait)
                     background-position-x: 0%
+
             &--hidden
                 @media (orientation: landscape)
                     opacity: 0

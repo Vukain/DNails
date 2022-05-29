@@ -1,15 +1,16 @@
+@import '../../sass/mixins'
+
 .content_switcher
     display: none
     grid-template-rows: 1fr
     grid-template-columns: 1fr 1fr
     cursor: pointer
     font-size: 0
-    // box-shadow: 0 0 30px rgba(0, 0, 0, 0.3)
     @media (orientation: portrait)
         display: grid
 
     &__option
-        background-image: linear-gradient(45deg, var(--main-color-1), var(--main-color-2), var(--main-color-3))
+        @include gradient-color(45deg)
         background-size: 200% 100%
         background-position: 0%
         display: flex

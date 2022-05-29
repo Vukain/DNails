@@ -2,7 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import bemCssModules from 'bem-css-modules';
 import moment from 'moment';
 
-import Button from '../Button/Button';
+import Button from '../../Button/Button';
+import Modal from '../../Modal/Modal';
 
 import { default as AppointmentFormStyles } from './AppointmentForm.module.sass';
 
@@ -22,9 +23,14 @@ const AppointmentForm = () => {
     const [messageInputValidity, setMessageInputValidity] = useState(false);
     const [formValidity, setFormValidity] = useState(false);
     const [touched, setTouched] = useState(false);
+    const [showModal, setShowModal] = useState(false);
 
     const inputValidator = (value) => {
         return (value.current.value.length > 0)
+    };
+
+    const closeModal = () => {
+        setShowModal(false);
     };
 
     const onBlurHandler = (ref, setter) => {
@@ -48,6 +54,8 @@ const AppointmentForm = () => {
             dateInputRef.current.value = null;
             messageInputRef.current.value = null;
         };
+        setShowModal(true);
+        setTimeout(() => { setShowModal(false) }, 2000)
     };
     const today = moment();
     const todayDate = `${today.year()}-${today.month() > 8 ? today.month() + 1 : '0' + (today.month() + 1)}-${today.date() > 9 ? today.date() : '0' + today.date()}T08:30`
@@ -67,6 +75,7 @@ const AppointmentForm = () => {
                 <textarea className={style('message', { invalid: !messageInputValidity && touched })} name="message" cols="30" rows="10" ref={messageInputRef} onBlur={() => onBlurHandler(messageInputRef, setMessageInputValidity)} onClick={() => { setTouched(true) }}></textarea>
                 <Button name='wyślij' clicker={onSubmitHandler} />
             </form>
+            {showModal ? <Modal clicker={closeModal} /> : null}
         </div>
     );
 };

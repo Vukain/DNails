@@ -1,0 +1,29 @@
+.modal
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    width: 100%
+    height: 100%
+    background-color: var(--light-gray)
+    transform: translate(-50%,-50%)
+    z-index: 99
+    border-radius: var(--border-radius-small)
+
+    &__content
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-50%)
+        width: 70%
+        height: 70%
+        background-color: var(--darkest-gray)
+        border-radius: var(--border-radius-small)
+        border: 4px solid var(--main-color-2)
+        display: grid
+        grid-template-rows: 1fr 5vh
+        padding: calc(var(--padding) / 2)
+
+    &__message
+        color: var(--almost-white)
+        font-size: var(--font-size-big)

@@ -13,15 +13,17 @@ const Modal = (props) => {
 
     const { setShowModal } = useContext(AppContext);
     const { modalMessage } = useContext(AppContext);
+    const { modalState, setModalState } = useContext(AppContext);
 
     const closeModal = () => {
-        setShowModal(false);
+        setModalState('hiding');
+        setTimeout(() => { setShowModal(false) }, 1000);
     };
 
     return (
-        <div className={style()}>
-            <ContentCard>
-                <div className={style('content')}>
+        <div className={style({ showing: modalState === 'showing', hiding: modalState === 'hiding' })}>
+            <ContentCard showing={modalState === 'showing'} modal={true}>
+                <div className={style('content', { showing: modalState === 'showing' })}>
                     <div className={style('message')}>{modalMessage}</div>
                     <Button name='ok' clicker={closeModal} />
                 </div>

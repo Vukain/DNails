@@ -13,6 +13,7 @@ const style = bemCssModules(AppointmentFormStyles);
 const AppointmentForm = () => {
     const { setShowModal } = useContext(AppContext);
     const { setModalMessage } = useContext(AppContext);
+    const { setModalState } = useContext(AppContext);
 
     const nameInputRef = useRef();
     const surnameInputRef = useRef();
@@ -58,7 +59,9 @@ const AppointmentForm = () => {
         };
 
         setShowModal(true);
-        setTimeout(() => { setShowModal(false) }, 2000);
+        setTimeout(() => { setModalState('showing') }, 50);
+        // setTimeout(() => { setModalState('hiding') }, 2000);
+        // setTimeout(() => { setShowModal(false) }, 3000);
     };
 
     const today = moment();

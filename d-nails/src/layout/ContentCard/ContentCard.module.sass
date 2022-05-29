@@ -8,6 +8,14 @@
     100%
         background-position: 0% 0%
 
+@keyframes showing
+    50%
+        transform: scale(.5)
+        opacity: 0
+    100%
+        opacity: 1
+        transform: scale(1)
+
 .wrapper
     flex-grow: 1
     padding: var(--color-border-width)
@@ -24,6 +32,7 @@
         background-size: 200% 100%
         background-position: 0% 0%
         animation: bgc 8s infinite ease-in
+
         // top: 10px
         // bottom: 10px
         // left: 10px
@@ -37,3 +46,13 @@
         right: var(--color-border-width)
         border-radius: var(--border-radius-small) 0
         background: var(--darkest-gray)
+
+    &--modal
+        transition: .5s
+        transform: scale(.5)
+        opacity: 0
+
+    &--showing
+        transition-delay: .5s
+        transform: scale(1)
+        opacity: 1

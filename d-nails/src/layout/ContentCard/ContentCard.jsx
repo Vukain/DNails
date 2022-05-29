@@ -8,7 +8,7 @@ const style = bemCssModules(ContentCardStyles);
 const ContentCard = (props) => {
 
     return (
-        <div className={style()}>
+        <div className={style({ modal: props.modal, showing: props.showing })}>
             {props.children}
         </div>
     );

@@ -1,3 +1,5 @@
+@import '../../sass/mixins'
+
 @keyframes shower
     0%
         opacity: 0
@@ -12,16 +14,28 @@
     height: 100%
     top: 0
     left: 0
-    background-color: rgba(0, 0, 0, 0.8)
     z-index: 9999999999
     border-radius: var(--border-radius-small)
     display: flex
     padding: 25vh 30vw
-    opacity: 0
-    animation: shower .6s ease forwards
-
     @media (orientation: portrait)
         padding: 35vh 10vw
+
+    &::before
+        @include before-after
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background-color: rgba(0, 0, 0, 0.8)
+        opacity: 0
+        transition: .5s
+        transition-delay: .5s
+
+    &--showing
+        &::before
+            transition-delay: 0s
+            opacity: 1
 
     &__content
         position: absolute

@@ -9,7 +9,7 @@ const AppProvider = ({ children }) => {
     const [currentLevel, setCurrentLevel] = useState(1);
     const [currentSection, setCurrentSection] = useState(0);
     const [showModal, setShowModal] = useState(false);
-    const [modalState, setModalState] = useState(null);
+    const [modalState, setModalState] = useState(false);
     const [modalMessage, setModalMessage] = useState(null);
 
     // Listener state freeze bypass, must be doubled with normal state for button styling

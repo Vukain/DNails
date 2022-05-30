@@ -12,7 +12,6 @@ const style = bemCssModules(NavigationStyles);
 const Navigation = (props) => {
 
     const [mobileNavigationHidden, setMobileNavigationHidden] = useState(true);
-    const [mobileNavigationClicked, setMobileNavigationClicked] = useState(false);
 
     const { currentLevel, setCurrentLevel } = useContext(AppContext);
     const { currentSection, setCurrentSection } = useContext(AppContext);
@@ -43,11 +42,10 @@ const Navigation = (props) => {
 
     const hamburgerHandler = () => {
         setMobileNavigationHidden(!mobileNavigationHidden);
-        setMobileNavigationClicked(true);
     };
 
     return (
-        <nav className={style({ lower_level: currentLevel === 2, hidden: mobileNavigationHidden, clicked: mobileNavigationClicked })}>
+        <nav className={style({ lower_level: currentLevel === 2, hidden: mobileNavigationHidden })}>
             <NavigationButton scroller={sectionScroller} hidden_burger={mobileNavigationHidden} hider={setMobileNavigationHidden} name='header' position='first' section={0} level={1} />
             <NavigationButton scroller={sectionScroller} hidden_burger={mobileNavigationHidden} hider={setMobileNavigationHidden} name='usługi' position='second' section={1} level={2} />
             <NavigationButton scroller={sectionScroller} hidden_burger={mobileNavigationHidden} hider={setMobileNavigationHidden} name='kolory' position='third' section={2} level={2} />

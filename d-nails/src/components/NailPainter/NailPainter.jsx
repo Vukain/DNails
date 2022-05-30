@@ -37,8 +37,9 @@ const NailPainter = () => {
 
         let widthRatioAdjust = 0;
         let heightRatioAdjust = 0;
+
         if (canvasSizing.offsetWidth > canvasSizing.offsetHeight) {
-            widthRatioAdjust = canvasSizing.offsetWidth - canvasSizing.offsetHeight
+            widthRatioAdjust = 1.1 * canvasSizing.offsetWidth - canvasSizing.offsetHeight
         } else {
             heightRatioAdjust = canvasSizing.offsetHeight - canvasSizing.offsetWidth - 2;
         };

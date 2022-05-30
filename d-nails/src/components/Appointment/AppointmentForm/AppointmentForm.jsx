@@ -59,9 +59,9 @@ const AppointmentForm = () => {
         };
 
         setShowModal(true);
-        setTimeout(() => { setModalState('showing') }, 50);
-        // setTimeout(() => { setModalState('hiding') }, 2000);
-        // setTimeout(() => { setShowModal(false) }, 3000);
+        setTimeout(() => { setModalState(true) }, 50);
+        setTimeout(() => { setModalState(false) }, 3000);
+        setTimeout(() => { setShowModal(false) }, 3650);
     };
 
     const today = moment();

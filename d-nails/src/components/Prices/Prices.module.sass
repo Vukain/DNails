@@ -1,0 +1,52 @@
+@import '../../sass/mixins'
+
+.prices
+    position: relative
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    z-index: 1
+    filter: drop-shadow(0 0 var(--shadow-radius) rgba(0, 0, 0, 0.2))
+    display: grid
+    grid-template-columns: 1fr
+    grid-template-rows: 1fr
+    gap: var(--gap-big)
+    padding: var(--padding)
+    z-index: 99
+    @media (orientation: portrait)
+        grid-template-columns: 1fr
+        grid-template-rows: 6vh 1fr
+
+    &__services
+        display: flex
+        gap: var(--gap-big)
+
+    &__service_group
+        // background-color: #fff
+        flex: 1 1 0
+        // display: flex
+        // flex-direction: column
+
+    &__service_title
+        @include gradient-color(45deg)
+        font-size: var(--font-size-bigger)
+        text-transform: uppercase
+        background-clip: text
+        color: transparent
+
+    &__service_items
+        // list-style: none
+
+    &__service_item
+        color: var(--lightest-gray)
+        font-size: var(--font-size-big)
+
+    &__title
+        @include title
+        z-index: 1
+        @media (orientation: landscape)
+            display: none
+
+    &__title_text
+        @include title-text

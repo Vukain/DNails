@@ -33,7 +33,7 @@ const NavigationButton = (props) => {
     return (
         <div className={style(overalStyle)}>
             <button className={style('button', buttonStyle)} onClick={onClickHandler}>
-                <span className={style('button_text', textStyle)}>{props.name}</span>
+                {props.name === 'header' ? <span className={style('button_text', textStyle)}><span className={style('color_span')}>D</span>ora <span className={style('color_span')}>N</span>ails</span> : <span className={style('button_text', textStyle)}>{props.name}</span>}
             </button>
         </div>
     );

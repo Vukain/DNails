@@ -8,6 +8,7 @@ import Header from './components/Header/Header';
 import Navigation from './components/Navigation/Navigation';
 import Gallery from './components/Gallery/Gallery';
 import Section from './layout/Section/Section';
+import Prices from './components/Prices/Prices';
 import Appointment from './components/Appointment/Appointment';
 import NailPainter from './components/NailPainter/NailPainter';
 import Modal from './components/Modal/Modal';
@@ -118,6 +119,7 @@ function App() {
       <Navigation/>
 
       <Section ref={firstSectionRef} position='first'>
+        <Prices />
       </Section>
 
       <Section ref={secondSectionRef} position='second'>

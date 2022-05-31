@@ -10,6 +10,8 @@
     overflow: visible
     grid-column: span 2
     justify-self: center
+    @media (orientation: portrait)
+        width: 50%
 
     &__button
         position: absolute
@@ -67,9 +69,9 @@
             z-index: 30
             color: transparent
             background-clip: text
-            background-size: 100vw 100%
-            background-position-x: -400%
+            background-size: 300% 100%
+            background-position-x: center
             font-weight: bold
-            letter-spacing: .06em
+            letter-spacing: var(--letter-spacing-normal)
             text-transform: uppercase
             transition: .5s

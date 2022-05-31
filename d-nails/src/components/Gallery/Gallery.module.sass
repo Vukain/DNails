@@ -5,13 +5,14 @@
     width: 100%
     height: 100%
     display: grid
-    grid-template-columns: repeat(14, 1fr)
-    grid-template-rows: repeat(6, 1fr)
+    grid-template-columns: 1fr
+    grid-template-rows: 1fr
     grid-gap: var(--gap-big)
+    padding: var(--padding)
     z-index: 999
     @media (orientation: portrait)
-        grid-template-columns: repeat(3, 1fr)
-        grid-template-rows: repeat(5, 1fr)
+        grid-template-columns: 1fr
+        grid-template-rows: 6vh 1fr
         z-index: 9990
 
     &--enlarged_mode
@@ -25,10 +26,16 @@
         height: 100%
         width: 100%
         display: grid
-        grid-template-columns: repeat(4, 1fr)
+        grid-template-columns: repeat(14, 1fr)
+        grid-template-rows: repeat(6, 1fr)
         grid-gap: var(--gap-big)
         @media (orientation: portrait)
-            display: none
+            grid-template-columns: repeat(3, 1fr)
+            grid-template-rows: repeat(5, 1fr)
+            z-index: 9990
+        &--mini
+            grid-template-columns: repeat(4, 1fr)
+            grid-template-rows: repeat(4, 1fr)
 
     &__enlarged_image
         position: relative
@@ -125,14 +132,14 @@
             &::before, &::after
                 filter: grayscale(0)
 
-    &__wrapper
-        width: 100%
-        height: 100%
-        padding: var(--padding)
-        @media (orientation: portrait)
-            display: grid
-            grid-template-rows: 6vh 1fr
-            gap: var(--gap-big)
+    // &__wrapper
+    //     width: 100%
+    //     height: 100%
+    //     padding: var(--padding)
+    //     @media (orientation: portrait)
+    //         display: grid
+    //         grid-template-rows: 6vh 1fr
+    //         gap: var(--gap-big)
 
     &__title
         @include title

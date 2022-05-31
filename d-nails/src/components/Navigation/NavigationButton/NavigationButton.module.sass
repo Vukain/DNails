@@ -4,7 +4,6 @@
     position: relative
     flex-grow: 1
     flex-basis: 18%
-    cursor: pointer
     border: none
     overflow: visible
     display: flex
@@ -134,6 +133,7 @@
         &--active, &:hover
             span
                 color: var(--almost-white)
+
             &::after
                 transform: translateX(-50%) scale(3)
                 @media (orientation: portrait)
@@ -141,7 +141,14 @@
                     transform: translateX(-50%) scale(10)
 
         &--first
+            overflow: visible
+            @media (orientation: portrait)
+                width: 100%
+            &:hover
+                span
+                    color: var(--main-color-1)
             &::after
+                visibility: hidden
                 background-position-x: 0%
                 @media (orientation: portrait)
                     background-position-x: 100%
@@ -191,14 +198,22 @@
             background-size: 100vw 100%
             background-position-x: -400%
             font-weight: bold
-            letter-spacing: .08em
-            transition: .5s
             text-transform: uppercase
+            letter-spacing: var(--letter-spacing-normal)
+            transition: .5s
 
             &--first
                 background-position-x: 0%
+                background-clip: none
+                background-image: none
+                color: white
+                text-transform: none
+                font-size: calc(1.8 * var(--font-size-bigger))
+                font-family: 'satisfy'
+                font-weight: 400
                 @media (orientation: portrait)
                     background-position-x: 100%
+                    font-size: calc(2.4 * var(--font-size-bigger))
 
             &--second
                 background-position-x: 25%
@@ -221,3 +236,7 @@
             &--hidden
                 @media (orientation: landscape)
                     opacity: 0
+
+    &__color_span
+        transition: .5s
+        color: var(--main-color-2)

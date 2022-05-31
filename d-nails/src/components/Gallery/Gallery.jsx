@@ -73,28 +73,25 @@ const Gallery = (props) => {
     const images = imageNames.map((el, idx) => <GalleryImage key={el + idx} image={el} index={idx} enlarge={false} active={currentlyEnlarged} changeActive={imageSwitcher} top={topImages.includes(idx)} bottom={bottomImages.includes(idx)} />)
 
     const enlargedImage = (
-
-        <div className={style('wrapper')}>
-            <div className={style({ enlarged_mode: currentlyEnlarged !== null })}>
-                <div className={style('enlarged_image')}>
-                    <GalleryImage image={imageNames[currentlyEnlarged]} index={currentlyEnlarged} enlarge={true} active={currentlyEnlarged} changeActive={imageSwitcher} top={topImages.includes(currentlyEnlarged)} bottom={bottomImages.includes(currentlyEnlarged)} />
-                    <div className={style('next_image')} onClick={() => { imageSwitcher('forward') }}></div>
-                    <div className={style('previous_image')} onClick={() => { imageSwitcher('backward') }}></div>
-                    <div className={style('close_image')} onClick={() => { imageSwitcher('close') }}></div>
-                </div>
-                <div className={style('miniatures')}>
-                    {images}
-                </div>
+        <div className={style({ enlarged_mode: currentlyEnlarged !== null })}>
+            <div className={style('enlarged_image')}>
+                <GalleryImage image={imageNames[currentlyEnlarged]} index={currentlyEnlarged} enlarge={true} active={currentlyEnlarged} changeActive={imageSwitcher} top={topImages.includes(currentlyEnlarged)} bottom={bottomImages.includes(currentlyEnlarged)} />
+                <div className={style('next_image')} onClick={() => { imageSwitcher('forward') }}></div>
+                <div className={style('previous_image')} onClick={() => { imageSwitcher('backward') }}></div>
+                <div className={style('close_image')} onClick={() => { imageSwitcher('close') }}></div>
+            </div>
+            <div className={style('miniatures', { mini: true })}>
+                {images}
             </div>
         </div>
     );
 
     const normalImages = (
-        <div className={style('wrapper')}>
+        <div className={style()}>
             <div className={style('title')}>
                 <h2 className={style('title_text')}>galeria</h2>
             </div>
-            <div className={style()}>
+            <div className={style('miniatures')}>
                 {images}
             </div>
         </div >

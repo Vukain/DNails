@@ -9,7 +9,7 @@ const Prices = (props) => {
     return (
         <div className={style()}>
             <div className={style('title')}>
-                <h2 className={style('title_text')}>cennik</h2>
+                <h2 className={style('title_text')}>usługi</h2>
             </div>
             <div className={style('services')}>
                 <div className={style('service_group')}>

@@ -43,11 +43,12 @@
         height: 100%
         object-fit: cover
         object-position: center
-        border-radius: var(--border-radius-small)
+
         cursor: pointer
-        // a nice shake effect on container due to negative values
-        transition: transform .5s cubic-bezier(0.68, -0.6, 0.32, 1.6), opacity .4s
-        // transition: transform .5s cubic-bezier(0.83, 0, 0.17, 1), opacity .4s
+        // a nice shake effect on container due to negative values, bugged in current chrome
+        // transition: transform .5s cubic-bezier(0.68, -0.6, 0.32, 1.6), opacity .4s
+        // border-radius: var(--border-radius-small)
+        transition: transform .4s cubic-bezier(0.65, 0, 0.35, 1), opacity .4s
         transform: scale(1)
         backface-visibility: hidden
 
@@ -73,7 +74,6 @@
 
     &:hover &__imag
         transform: scale(1.1) rotateZ(5deg)
-        // transform: scale(1.1)
         &--color
             opacity: 1
         &--active

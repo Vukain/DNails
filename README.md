@@ -2,7 +2,7 @@
 
 ## DNails
 
-
+In need of Your nails painted? You can now easily check available dates, colors or even test out color combinations using the color tester. Already know what You want? Simply book a visit and get your nails done the way You want it!
 
 ## Features
 

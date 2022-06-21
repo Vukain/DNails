@@ -2,7 +2,6 @@
 
 .appointment_form
     height: 100%
-    filter: drop-shadow(0 0 var(--shadow-radius) rgba(0, 0, 0, 0.3))
     &__form
         height: 100%
         gap: var(--gap)
@@ -33,7 +32,6 @@
         align-items: center
         transition: .4s
         border: 2px solid var(--dark-gray)
-
         @media (orientation: portrait)
             grid-column: span 2
 
@@ -46,10 +44,9 @@
             border-color: var(--main-color-2)
 
         &::-webkit-datetime-edit
+            @include flex-center
             font-size: var(--font-size-normal)
-            display: flex
             align-self: center
-            justify-content: center
             text-transform: uppercase
 
         &::-webkit-calendar-picker-indicator

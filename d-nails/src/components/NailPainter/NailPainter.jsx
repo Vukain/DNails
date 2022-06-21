@@ -115,7 +115,7 @@ const NailPainter = () => {
                 </div>
                 <div className={style('canvas_wrapper')} ref={wrapperRef}>
                     <canvas ref={canvasRef} className={style('canvas')}></canvas>
-                    <NailsImage className={style('nails_image')} />
+                    <NailsImage className={style('nails_image')} title='tester kolorów' />
                     <div ref={overlayRef} className={style('overlay')} onMouseDown={onMouseDownHandler} onTouchStart={(e) => onMouseDownHandler(e, 'touch')} onMouseMove={paintListener} onTouchMove={(e) => paintListener(e, 'touch')} onMouseUp={onMouseUpHandler} onTouchEnd={onMouseUpHandler} >
                     </div>
                 </div>

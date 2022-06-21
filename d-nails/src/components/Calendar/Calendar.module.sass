@@ -14,7 +14,7 @@
     grid-template-rows: 6vh 4vh 1fr
     grid-template-columns: repeat(8, 1fr)
     gap: var(--gap)
-    filter: drop-shadow(0 0 var(--shadow-radius) rgba(0, 0, 0, 0.3))
+    filter: var(--drop-shadow)
     @media (orientation: portrait)
         grid-template-rows: 6vh 5vh 1fr 5vh 8vh
         grid-template-columns: repeat(7, 1fr)
@@ -30,11 +30,9 @@
 
     &__chosen_month
         @include gradient-color(45deg)
+        @include flex-center
         background-size: 200% 100%
         background-position: 0%
-        display: flex
-        justify-content: center
-        align-items: center
         border-radius: var(--border-radius-small) 0 0 0px
         font-size: var(--font-size-bigger)
         letter-spacing: .14em
@@ -63,9 +61,7 @@
         // box-shadow: 0 0 var(--shadowRadius) rgba(0, 0, 0, 0.3)
 
     &__weekday
-        display: flex
-        justify-content: center
-        align-items: center
+        @include flex-center
         font-size: var(--font-size-big)
         font-weight: bold
         border-radius: var(--border-radius-small)
@@ -81,7 +77,6 @@
         background-color: var(--lighter-gray)
         display: flex
         flex-direction: column
-        // box-shadow: 0 0 var(--shadowRadius) rgba(0, 0, 0, 0.3)
         @media (orientation: portrait)
             flex-direction: row
             grid-column: 1 / 8
@@ -89,27 +84,23 @@
             border-radius: 0 0 var(--border-radius-small) var(--border-radius-small)
 
     &__hour_label
+        @include flex-center
         grid-row-start: 2
         grid-column-start: 8
         background-color: var(--almost-white)
-        display: flex
-        align-items: center
-        justify-content: center
         font-size: var(--font-size-big)
         font-weight: bold
         color: var(--dark-gray)
-        // box-shadow: 0 0 var(--shadowRadius) rgba(0, 0, 0, 0.3)
         @media (orientation: portrait)
             grid-row-start: 4
             grid-column: 1 / 8
 
     &__hour
+        @include flex-center
+        cursor: pointer
         position: relative
         flex-grow: 1
         background-color: var(--lighter-gray)
-        display: flex
-        align-items: center
-        justify-content: center
         font-size: var(--font-size-big)
         font-weight: bold
         color: var(--dark-gray)
@@ -144,10 +135,8 @@
             border-radius: 0
 
     &__day
-        display: flex
+        @include flex-center
         position: relative
-        justify-content: center
-        align-items: center
         font-size: var(--font-size-big)
         font-weight: bold
         color: var(--dark-gray)

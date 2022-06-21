@@ -1,14 +1,12 @@
 @import '../../../sass/mixins'
 
 .navigation_button
+    @include flex-center
     position: relative
     flex-grow: 1
     flex-basis: 18%
     border: none
     overflow: visible
-    display: flex
-    align-items: center
-    justify-content: center
     z-index: 999999
     transition: 2s
     @media (orientation: portrait)
@@ -80,15 +78,13 @@
             background-position-x: 100%
 
     &__button
-        display: flex
+        @include flex-center
         position: absolute
         width: 80%
         height: 5vh
         padding: 0
         overflow: hidden
         justify-self: center
-        justify-content: center
-        align-items: center
         font-size: var(--font-size-bigger)
         border: none
         border-radius: var(--border-radius-big) 0
@@ -129,10 +125,10 @@
                 width: 10vw
                 height: 10vw
 
-        &--active, &:hover
+        &--active, &:hover, &:focus
+            outline: none
             span
                 color: var(--almost-white)
-
             &::after
                 transform: translateX(-50%) scale(3)
                 @media (orientation: portrait)
@@ -143,7 +139,7 @@
             overflow: visible
             @media (orientation: portrait)
                 width: 100%
-            &:hover
+            &:hover, &:focus
                 span
                     color: var(--main-color-1)
             &::after
@@ -180,7 +176,7 @@
             background-clip: text
             color: transparent
             background-size: 100vw 100%
-            &:hover
+            &:hover, &:focus
                 span
                     color: var(--lightest-gray)
             &::after, &::before

@@ -14,15 +14,13 @@
         width: 50%
 
     &__button
+        @include flex-center
         position: absolute
         padding: 0
         width: 100%
         height: 100%
         top: 0
         left: 0
-        display: flex
-        justify-content: center
-        align-items: center
         font-size: var(--font-size-bigger)
         border: none
         border-radius: var(--border-radius-big) 0
@@ -49,18 +47,18 @@
             z-index: 3
             top: -20vh
             left: 50%
-            transform: translateX(-50%)
-            width: 0%
-            height: 0%
+            transform: translateX(-50%) scale(1)
+            width: 20vh
+            height: 20vh
             border-radius: 50%
-            transition: .5s
+            transition: .3s ease-in
 
-        &:hover
+        &:hover, &:focus
+            outline: none
             span
                 color: var(--almost-white)
             &::after
-                height: 40vh
-                width: 40vh
+                transform: translateX(-50%) scale(3)
 
         &_text
             @include gradient-color(45deg)

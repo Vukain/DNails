@@ -2,7 +2,7 @@
 
 ## DNails
 
-
+Your nails look dull and uninspiring? You can now easily check available dates, colors or even test out color combinations using the color tester. Still no clue? Check gallery of previously painted nails. Already know what You want? Simply book a visit, get your nails done the way You want it and add a bit of color into your style!
 
 ## Features
 

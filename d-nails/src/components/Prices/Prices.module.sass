@@ -22,14 +22,15 @@
         display: flex
         gap: var(--gap-big)
         flex-wrap: wrap
+        justify-content: space-evenly
 
-    &__service_group
-        flex: 1 1 0
+    &__group
+        flex: 0 0 0
         flex-basis: 30%
         @media (orientation: portrait)
             flex-basis: 40%
 
-    &__service_title
+    &__type
         @include gradient-color(45deg)
         font-size: var(--font-size-bigger)
         text-transform: uppercase
@@ -37,13 +38,18 @@
         letter-spacing: var(--letter-spacing-normal)
         color: transparent
 
-    &__service_items
+    &__items
         list-style: none
         padding: 0
 
-    &__service_item
+    &__item
+        width: 60%
+        margin: 1vh auto
         color: var(--lightest-gray)
         font-size: var(--font-size-big)
+        display: flex
+        justify-content: space-between
+        letter-spacing: var(--letter-spacing-small)
 
     &__title
         @include title
@@ -51,5 +57,5 @@
         @media (orientation: landscape)
             display: none
 
-    &__title_text
-        @include title-text
+        &_text
+            @include title-text

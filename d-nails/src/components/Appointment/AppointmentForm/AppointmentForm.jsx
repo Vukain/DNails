@@ -69,7 +69,7 @@ const AppointmentForm = () => {
             setModalMessage("Wiadomość wysłana!");
             console.log('sent');
         } else {
-            setModalMessage("Wypełnij wszystkie pola.")
+            setModalMessage("Wypełnij prawidłowo wszystkie pola.")
         };
 
         setShowModal(true);
@@ -83,7 +83,7 @@ const AppointmentForm = () => {
 
     useEffect(() => {
         setFormValidity([nameInputValidity, surnameInputValidity, emailInputValidity, dateInputValidity, messageInputValidity].every(bool => bool));
-    }, [nameInputValidity, surnameInputValidity, emailInputValidity, dateInputValidity, messageInputValidity])
+    }, [nameInputValidity, surnameInputValidity, emailInputValidity, dateInputValidity, messageInputValidity]);
 
     return (
         <div className={style()}>

@@ -48,7 +48,7 @@ function App() {
       };
     } else if (direction === 'down' && currentSectionRef.current < sections.length - 1) {
       currentSectionRef.current += 1;
-      setCurrentSection(currentSectionRef.current)
+      setCurrentSection(currentSectionRef.current);
       setCurrentLevel(2);
     };
 

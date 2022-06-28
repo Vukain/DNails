@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useCallback, useContext, useState } from 'react';
 import bemCssModules from 'bem-css-modules';
 
 import { AppContext } from '../../AppContext';
@@ -18,8 +18,7 @@ const Navigation = (props) => {
     const { sectionRefs } = useContext(AppContext);
     const { currentSectionRef } = useContext(AppContext);
 
-    const sectionScroller = (idx, level) => {
-
+    const sectionScroller = useCallback((idx, level) => {
         if (level === currentLevel) {
             sectionRefs[idx].scrollIntoView({ behavior: 'smooth', block: 'start' });
             setCurrentSection(idx);
@@ -38,7 +37,7 @@ const Navigation = (props) => {
                 sectionRefs[idx].scrollIntoView({ behavior: 'smooth', block: 'start' });
             }, 800);
         };
-    };
+    }, [currentLevel, currentSection, currentSectionRef, sectionRefs, setCurrentLevel, setCurrentSection]);
 
     const hamburgerHandler = () => {
         setMobileNavigationHidden(!mobileNavigationHidden);

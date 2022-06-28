@@ -45,11 +45,18 @@
     &__item
         width: 60%
         margin: 1vh auto
-        color: var(--lightest-gray)
         font-size: var(--font-size-big)
         display: flex
         justify-content: space-between
         letter-spacing: var(--letter-spacing-small)
+        @media (orientation: portrait)
+            width: 100%
+
+    &__service
+        color: var(--lightest-gray)
+
+    &__price
+        color: var(--lightest-gray)
 
     &__title
         @include title

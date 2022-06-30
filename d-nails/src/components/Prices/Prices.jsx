@@ -9,8 +9,8 @@ const SERICES_DATA = {
     "typ usługi 1": [{ service_name: 'usługa 1', service_price: 'cena 1' }, { service_name: 'usługa 2', service_price: 'cena 2' }, { service_name: 'usługa 3', service_price: 'cena 3' }],
     "typ usługi 2": [{ service_name: 'usługa 1', service_price: 'cena 1' }, { service_name: 'usługa 2', service_price: 'cena 2' }, { service_name: 'usługa 3', service_price: 'cena 3' }],
     "typ usługi 3": [{ service_name: 'usługa 1', service_price: 'cena 1' }, { service_name: 'usługa 2', service_price: 'cena 2' }, { service_name: 'usługa 3', service_price: 'cena 3' }],
-    "typ usługi 4": [{ service_name: 'usługa 1', service_price: 'cena 1' }, { service_name: 'usługa 2', service_price: 'cena 2' }, { service_name: 'usługa 3', service_price: 'cena 3' }],
-    "typ usługi 5": [{ service_name: 'usługa 1', service_price: 'cena 1' }, { service_name: 'usługa 2', service_price: 'cena 2' }, { service_name: 'usługa 3', service_price: 'cena 3' }]
+    // "typ usługi 4": [{ service_name: 'usługa 1', service_price: 'cena 1' }, { service_name: 'usługa 2', service_price: 'cena 2' }, { service_name: 'usługa 3', service_price: 'cena 3' }],
+    // "typ usługi 5": [{ service_name: 'usługa 1', service_price: 'cena 1' }, { service_name: 'usługa 2', service_price: 'cena 2' }, { service_name: 'usługa 3', service_price: 'cena 3' }]
 };
 
 const Prices = (props) => {

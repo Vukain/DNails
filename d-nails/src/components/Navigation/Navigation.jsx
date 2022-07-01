@@ -43,13 +43,18 @@ const Navigation = (props) => {
         setMobileNavigationHidden(!mobileNavigationHidden);
     };
 
+    const buttonsData = [{ name: 'header', position: 'first', section: 0, level: 1 }, { name: 'usługi', position: 'second', section: 1, level: 2 },
+    { name: 'kolory', position: 'third', section: 2, level: 2 }, { name: 'wizyty', position: 'fourth', section: 3, level: 2 }, { name: 'galeria', position: 'fifth', section: 4, level: 2 }]
+    const buttonsList = buttonsData.map((item, idx) => (<NavigationButton scroller={sectionScroller} hidden_burger={mobileNavigationHidden} hider={setMobileNavigationHidden} name={item.name} position={item.position} section={item.section} level={item.level} key={idx} />))
+
     return (
         <nav className={style({ lower_level: currentLevel === 2, hidden: mobileNavigationHidden })}>
-            <NavigationButton scroller={sectionScroller} hidden_burger={mobileNavigationHidden} hider={setMobileNavigationHidden} name='header' position='first' section={0} level={1} />
+            {/* <NavigationButton scroller={sectionScroller} hidden_burger={mobileNavigationHidden} hider={setMobileNavigationHidden} name='header' position='first' section={0} level={1} />
             <NavigationButton scroller={sectionScroller} hidden_burger={mobileNavigationHidden} hider={setMobileNavigationHidden} name='usługi' position='second' section={1} level={2} />
             <NavigationButton scroller={sectionScroller} hidden_burger={mobileNavigationHidden} hider={setMobileNavigationHidden} name='kolory' position='third' section={2} level={2} />
             <NavigationButton scroller={sectionScroller} hidden_burger={mobileNavigationHidden} hider={setMobileNavigationHidden} name='wizyty' position='fourth' section={3} level={2} />
-            <NavigationButton scroller={sectionScroller} hidden_burger={mobileNavigationHidden} hider={setMobileNavigationHidden} name='galeria' position='fifth' section={4} level={2} />
+            <NavigationButton scroller={sectionScroller} hidden_burger={mobileNavigationHidden} hider={setMobileNavigationHidden} name='galeria' position='fifth' section={4} level={2} /> */}
+            {buttonsList}
             <div className={style('hamburger', { active: !mobileNavigationHidden })} onClick={hamburgerHandler}> <div className={style('hamburger_icon')}></div></div>
         </nav>
     );

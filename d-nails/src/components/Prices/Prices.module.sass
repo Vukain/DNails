@@ -46,16 +46,23 @@
         margin: 1vh auto
         font-size: var(--font-size-big)
         display: flex
-        justify-content: space-between
+        gap: 1vh
+        // justify-content: space-between
         letter-spacing: var(--letter-spacing-small)
         @media (orientation: portrait)
             width: 100%
+            gap: 2vw
 
-    &__service
+    &__service, &__price
         color: var(--lightest-gray)
 
-    &__price
-        color: var(--lightest-gray)
+    &__separator
+        flex: 1 1 0
+        background-color: var(--dark-gray)
+        height: 2px
+        align-self: center
+        @media (orientation: portrait)
+            height: 1px
 
     &__title
         @include title

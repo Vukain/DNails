@@ -31,7 +31,7 @@ const NailPainter = () => {
 
     useEffect(() => {
         const canvas = canvasRef.current;
-        const canvasSizing = wrapperRef.current
+        const canvasSizing = wrapperRef.current;
 
         let widthRatioAdjust = 0;
         let heightRatioAdjust = 0;
@@ -64,7 +64,7 @@ const NailPainter = () => {
             });
         };
         setColors(fetchedColors);
-    }
+    };
 
     const colorChanger = (color) => {
         canvasContext.fillStyle = color;
@@ -80,7 +80,7 @@ const NailPainter = () => {
                 canvasContext.arc(e.targetTouches[0].clientX - cursorX, e.targetTouches[0].clientY - cursorY, 16, 0, 2 * Math.PI, false);
             } else {
                 canvasContext.arc(e.clientX - cursorX, e.clientY - cursorY, 16, 0, 2 * Math.PI, false);
-            }
+            };
             canvasContext.fill();
         };
     };
@@ -93,15 +93,15 @@ const NailPainter = () => {
             canvasContext.arc(e.targetTouches[0].clientX - cursorX, e.targetTouches[0].clientY - cursorY, 16, 0, 2 * Math.PI, false);
         } else {
             canvasContext.arc(e.clientX - cursorX, e.clientY - cursorY, 16, 0, 2 * Math.PI, false);
-        }
+        };
         canvasContext.fill();
         setIsPainting(true);
         // overlayRef.current.addEventListener("mousemove", paintListener)
     };
 
     const onMouseUpHandler = () => {
-        setIsPainting(false)
-        console.log('up')
+        setIsPainting(false);
+        // console.log('up');
         // overlayRef.current.removeEventListener("mousemove", paintListener)
     };
 

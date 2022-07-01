@@ -7,7 +7,7 @@ const style = bemCssModules(GalleryImageStyles);
 
 const GalleryImage = (props) => {
 
-    const imageGridStyle = style({ enlarged: props.enlarge, miniature: props.active !== null, normal: props.active === null });
+    const imageGridStyle = style({ enlarged: props.enlarge, miniature: Number.isInteger(props.active), normal: props.active === null });
 
     return (
         <div className={imageGridStyle} onClick={() => { props.changeActive(props.index) }}>

@@ -4,12 +4,12 @@ import bemCssModules from 'bem-css-modules';
 import { AppContext } from '../../AppContext';
 import { default as ModalStyles } from './Modal.module.sass';
 
-import Button from '../Button/Button';
-import ContentCard from '../../layout/ContentCard/ContentCard';
+import Button from '../../components/Button/Button';
+import ContentCard from '../ContentCard/ContentCard';
 
 const style = bemCssModules(ModalStyles);
 
-const Modal = (props) => {
+const Modal = () => {
 
     const { setShowModal } = useContext(AppContext);
     const { modalMessage } = useContext(AppContext);
@@ -30,6 +30,6 @@ const Modal = (props) => {
             </ContentCard>
         </div>
     );
-}
+};
 
 export default Modal;

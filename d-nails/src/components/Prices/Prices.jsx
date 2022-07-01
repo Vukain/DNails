@@ -6,11 +6,11 @@ import { default as PricesStyles } from './Prices.module.sass';
 const style = bemCssModules(PricesStyles);
 
 const SERICES_DATA = {
-    "typ usługi 1": [{ service_name: 'usługa 1', service_price: 'cena 1' }, { service_name: 'usługa 2', service_price: 'cena 2' }, { service_name: 'usługa 3', service_price: 'cena 3' }],
-    "typ usługi 2": [{ service_name: 'usługa 1', service_price: 'cena 1' }, { service_name: 'usługa 2', service_price: 'cena 2' }, { service_name: 'usługa 3', service_price: 'cena 3' }],
-    "typ usługi 3": [{ service_name: 'usługa 1', service_price: 'cena 1' }, { service_name: 'usługa 2', service_price: 'cena 2' }, { service_name: 'usługa 3', service_price: 'cena 3' }],
-    // "typ usługi 4": [{ service_name: 'usługa 1', service_price: 'cena 1' }, { service_name: 'usługa 2', service_price: 'cena 2' }, { service_name: 'usługa 3', service_price: 'cena 3' }],
-    // "typ usługi 5": [{ service_name: 'usługa 1', service_price: 'cena 1' }, { service_name: 'usługa 2', service_price: 'cena 2' }, { service_name: 'usługa 3', service_price: 'cena 3' }]
+    "typ usługi 1": [{ service_name: 'Usługa 1', service_price: 'XYZ zł' }, { service_name: 'Usługa 2', service_price: 'XYZ zł' }, { service_name: 'Usługa 3', service_price: 'XYZ zł' }],
+    "typ usługi 2": [{ service_name: 'Usługa 1', service_price: 'XYZ zł' }, { service_name: 'Usługa 2', service_price: 'XYZ zł' }, { service_name: 'Usługa 3', service_price: 'XYZ zł' }],
+    "typ usługi 3": [{ service_name: 'Usługa 1', service_price: 'XYZ zł' }, { service_name: 'Usługa 2', service_price: 'XYZ zł' }, { service_name: 'Usługa 3', service_price: 'XYZ zł' }],
+    // "typ usługi 4": [{ service_name: 'Usługa 1', service_price: 'XYZ zł' }, { service_name: 'Usługa 2', service_price: 'XYZ zł' }, { service_name: 'Usługa 3', service_price: 'XYZ zł' }],
+    // "typ usługi 5": [{ service_name: 'Usługa 1', service_price: 'XYZ zł' }, { service_name: 'Usługa 2', service_price: 'XYZ zł' }, { service_name: 'Usługa 3', service_price: 'XYZ zł' }]
 };
 
 const Prices = (props) => {
@@ -22,7 +22,7 @@ const Prices = (props) => {
             <div className={style('group')} key={idx}>
                 <h3 className={style('type')}>{group}</h3>
                 <ul className={style('items')}>
-                    {SERICES_DATA[group].map(({ service_name, service_price }, idx) => (<li className={style('item')} key={idx}><div className={style('service')}>{service_name}</div><div className={style('price')}>{service_price}</div></li>))}
+                    {SERICES_DATA[group].map(({ service_name, service_price }, idx) => (<li className={style('item')} key={idx}><div className={style('service')}>{service_name}</div><div className={style('separator')}></div><div className={style('price')}>{service_price}</div></li>))}
                 </ul>
             </div>)
         );

@@ -11,7 +11,7 @@ import Section from './layout/Section/Section';
 import Prices from './components/Prices/Prices';
 import Appointment from './components/Appointment/Appointment';
 import NailPainter from './components/NailPainter/NailPainter';
-import Modal from './components/Modal/Modal';
+import Modal from './layout/Modal/Modal';
 
 function App() {
 
@@ -77,11 +77,11 @@ function App() {
   const handleTouchStart = (e) => {
     setTouchStart(e.targetTouches[0].clientY);
     setTouchEnd(e.targetTouches[0].clientY);
-}
+  };
 
   const handleTouchMove = (e) => {
       setTouchEnd(e.targetTouches[0].clientY);
-  }
+  };
 
   const handleTouchEnd = () => {
       if (touchStart - touchEnd > 160) {
@@ -112,7 +112,7 @@ function App() {
   }, [setSectionRefs, keyDownHandler]);
 
   return (
-    <div className="App" onWheel={scrollHandler} onKeyDown={() => {}} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
+    <div className="App" onWheel={scrollHandler} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
 
       <Header ref={headerRef} />
 

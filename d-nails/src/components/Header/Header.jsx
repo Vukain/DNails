@@ -6,19 +6,14 @@ import { default as HeaderStyles } from './Header.module.sass';
 import HeaderImageLandscape from '../../media/header_nails_landscape.svg';
 import HeaderImagePortrait from '../../media/header_nails_portrait.svg';
 
-// import { ReactComponent as HeaderImageLandscape } from '../../media/header_nails_landscape.svg';
-
-
 const style = bemCssModules(HeaderStyles);
 
 const Header = forwardRef((props, ref) => {
 
-    // const HeaderImage = window.innerHeight < window.innerWidth ? HeaderImageLandscape : HeaderImagePort;
-
     return (
         <header className={style()} ref={ref}>
-            <HeaderImageLandscape name='a' className={style('image')} alt='header' preserveAspectRatio='none' />
-            <HeaderImagePortrait name='b' className={style('image', { port: true })} alt='header' preserveAspectRatio='none' />
+            <HeaderImageLandscape className={style('image')} alt='header image' preserveAspectRatio='none' />
+            <HeaderImagePortrait className={style('image', { port: true })} alt='header image' preserveAspectRatio='none' />
 
             <h1 className={style('hello')}>
                 <span className={style('heading', { main: true })}><span className={style('heading', { color: true })}>D</span>ora <span className={style('heading', { color: true })}>N</span>ails</span>

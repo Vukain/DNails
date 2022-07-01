@@ -9,7 +9,7 @@ import { default as NavigationStyles } from './Navigation.module.sass';
 
 const style = bemCssModules(NavigationStyles);
 
-const Navigation = (props) => {
+const Navigation = () => {
 
     const [mobileNavigationHidden, setMobileNavigationHidden] = useState(true);
 

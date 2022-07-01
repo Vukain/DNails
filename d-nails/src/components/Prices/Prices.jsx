@@ -13,7 +13,7 @@ const SERICES_DATA = {
     // "typ usługi 5": [{ service_name: 'Usługa 1', service_price: 'XYZ zł' }, { service_name: 'Usługa 2', service_price: 'XYZ zł' }, { service_name: 'Usługa 3', service_price: 'XYZ zł' }]
 };
 
-const Prices = (props) => {
+const Prices = () => {
 
     const [servicesList, setServicesListe] = useState([])
 

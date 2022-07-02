@@ -43,7 +43,6 @@ function App() {
       setCurrentSection(currentSectionRef.current);
       setCurrentLevel(2);
     };
-
     sections[currentSectionRef.current].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'start' });
   }, [currentSectionRef, setCurrentSection, setCurrentLevel]);
 
@@ -56,12 +55,12 @@ function App() {
         sectionChanger('down');
         // setTimeout(() => {
         //   sectionChanger('down');
-        // }, 100);
+        // }, 700);
       } else {
         sectionChanger('up');
         // setTimeout(() => {
         //   sectionChanger('up');
-        // }, 100);
+        // }, 700);
       };
 
       setTimeout(() => {

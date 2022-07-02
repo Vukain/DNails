@@ -7,15 +7,15 @@ import { default as SectionStyles } from './Section.module.sass';
 
 const style = bemCssModules(SectionStyles);
 
-const Section = forwardRef((props, ref) => {
+const Section = forwardRef(({ position, children }, ref) => {
 
     const sectionStyle = {};
-    sectionStyle[props.position] = true;
+    sectionStyle[position] = true;
 
     return (
         <section className={style(sectionStyle)} ref={ref}>
             <ContentCard >
-                {props.children}
+                {children}
             </ContentCard>
         </section>
     );

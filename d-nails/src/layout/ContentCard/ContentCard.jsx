@@ -5,11 +5,11 @@ import { default as ContentCardStyles } from './ContentCard.module.sass';
 
 const style = bemCssModules(ContentCardStyles);
 
-const ContentCard = (props) => {
+const ContentCard = ({ modal, showing, children }) => {
 
     return (
-        <div className={style({ modal: props.modal, showing: props.showing })}>
-            {props.children}
+        <div className={style({ modal: modal, showing: showing })}>
+            {children}
         </div>
     );
 }

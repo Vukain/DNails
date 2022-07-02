@@ -7,33 +7,33 @@ import { default as NavigationButtonStyles } from './NavigationButton.module.sas
 
 const style = bemCssModules(NavigationButtonStyles);
 
-const NavigationButton = (props) => {
+const NavigationButton = ({ position, section, name, level, hiddenBurger, scroller, hideNavigation }) => {
 
     const { sectionNames } = useContext(AppContext);
     const { currentSection } = useContext(AppContext);
     const { currentLevel } = useContext(AppContext);
 
-    const overalStyle = { upper_level: currentLevel === 1, hidden_burger: props.hidden_burger };
-    overalStyle[props.position] = true;
+    const overalStyle = { upper_level: currentLevel === 1, hidden_burger: hiddenBurger };
+    overalStyle[position] = true;
 
-    const buttonStyle = { active: sectionNames[currentSection] === props.name, upper_level: currentLevel === 1 }
-    buttonStyle[props.position] = true;
+    const buttonStyle = { active: sectionNames[currentSection] === name, upper_level: currentLevel === 1 }
+    buttonStyle[position] = true;
 
     const textStyle = {};
-    textStyle[props.position] = true;
-    textStyle['hidden'] = props.name === 'header' && currentLevel === 1;
+    textStyle[position] = true;
+    textStyle['hidden'] = name === 'header' && currentLevel === 1;
 
     const onClickHandler = () => {
-        props.scroller(props.section, props.level);
+        scroller(section, level);
         setTimeout(() => {
-            props.hider(true);
+            hideNavigation(true);
         }, 1200)
     };
 
     return (
         <div className={style(overalStyle)}>
             <button className={style('button', buttonStyle)} onClick={onClickHandler}>
-                {props.name === 'header' ? <span className={style('button_text', textStyle)}><span className={style('color_span')}>D</span>ora <span className={style('color_span')}>N</span>ails</span> : <span className={style('button_text', textStyle)}>{props.name}</span>}
+                {name === 'header' ? <span className={style('button_text', textStyle)}><span className={style('color_span')}>D</span>ora <span className={style('color_span')}>N</span>ails</span> : <span className={style('button_text', textStyle)}>{name}</span>}
             </button>
         </div>
     );

@@ -17,10 +17,7 @@ function App() {
 
   const { showModal, currentSectionRef, setCurrentSection, setSectionRefs, setCurrentLevel  } = useContext(AppContext);
 
-  // Access current state without update delays, no re-render
-  // const [isThrottled, setIsThrottled] = useState(false);
-  const throttledRef = useRef(false);
-  // throttledRef.current ->
+  const isThrottled = useRef(false);
 
   const headerRef = useRef(null);
   const firstSectionRef = useRef(null);
@@ -31,7 +28,6 @@ function App() {
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
 
-  let scrollThrotle = false;
 
   const sectionChanger = useCallback((direction) => {
     const sections = [headerRef.current, firstSectionRef.current, secondSectionRef.current, thirdSectionRef.current, fourthSectionRef.current];
@@ -52,10 +48,10 @@ function App() {
   }, [currentSectionRef, setCurrentSection, setCurrentLevel]);
 
   const scrollHandler = (e) => {
-    console.log(throttledRef.current);
-    if (!throttledRef.current) {
+    console.log(isThrottled.current);
+    if (!isThrottled.current) {
       console.log('Scrolling, setting scroll throttle')
-      throttledRef.current = true;
+      isThrottled.current = true;
       if (e.deltaY > 0) {
         sectionChanger('down');
         // setTimeout(() => {
@@ -69,7 +65,7 @@ function App() {
       };
 
       setTimeout(() => {
-        throttledRef.current = false;
+        isThrottled.current = false;
         console.log('Lifting scroll throttle')
       }, 1000);
     };

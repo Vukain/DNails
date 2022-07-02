@@ -11,9 +11,7 @@ import { default as AppointmentFormStyles } from './AppointmentForm.module.sass'
 const style = bemCssModules(AppointmentFormStyles);
 
 const AppointmentForm = () => {
-    const { setShowModal } = useContext(AppContext);
-    const { setModalMessage } = useContext(AppContext);
-    const { setModalState } = useContext(AppContext);
+    const { setShowModal, setModalMessage, setModalState } = useContext(AppContext);
 
     const nameInputRef = useRef();
     const surnameInputRef = useRef();

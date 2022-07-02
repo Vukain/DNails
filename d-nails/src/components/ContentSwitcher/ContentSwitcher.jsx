@@ -5,12 +5,12 @@ import { default as ContentSwitcherStyles } from './ContentSwitcher.module.sass'
 
 const style = bemCssModules(ContentSwitcherStyles);
 
-const ContentSwitcher = (props) => {
+const ContentSwitcher = ({ sectionChanger, current, firstOption, secondOption }) => {
 
     return (
         <div className={style()}>
-            <div onClick={() => props.sectionChanger(0)} className={style('option', { inactive: props.current !== 0 })}>{props.firstOption}</div>
-            <div onClick={() => props.sectionChanger(1)} className={style('option', { inactive: props.current !== 1 })}>{props.secondOption}</div>
+            <div onClick={() => sectionChanger(0)} className={style('option', { inactive: current !== 0 })}>{firstOption}</div>
+            <div onClick={() => sectionChanger(1)} className={style('option', { inactive: current !== 1 })}>{secondOption}</div>
         </div>
     );
 };

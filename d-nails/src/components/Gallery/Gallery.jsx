@@ -15,7 +15,7 @@ import {
 
 const style = bemCssModules(GalleryStyles);
 
-const Gallery = (props) => {
+const Gallery = () => {
 
     const [currentlyEnlarged, setCurrentlyEnlarged] = useState(null);
 

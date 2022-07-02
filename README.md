@@ -6,7 +6,8 @@ Your nails look dull and uninspiring? You can now easily check available dates, 
 
 ## Features
 
-Nail painting made via canvas with colors fetched from database (currently Firebase), calendar for current and next month with available visit dates (currently randomly generated) with a form sending data to database (Firebase), a custom image gallery. React with SASS.
+Nail painting made via canvas with colors fetched from database (currently Firebase), calendar for current and next month with available visit dates (currently randomly generated) with a form sending data to database (Firebase) and a custom image gallery. React with SASS.
+Slider navigation is also supported via mouse scroll, UP/DOWN arrows on keyboard and UP/DOWN touch swipe gestures.
 
 ## Live version
 

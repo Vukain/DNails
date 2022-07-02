@@ -14,7 +14,7 @@
     padding: var(--padding)
     z-index: 99
     filter: var(--drop-shadow)
-    @media (orientation: portrait)
+    @media (orientation: portrait), (max-width: 600px)
         grid-template-columns: 1fr
         grid-template-rows: 6vh 1fr
 
@@ -26,7 +26,7 @@
 
     &__group
         flex: 0 0 30%
-        @media (orientation: portrait)
+        @media (orientation: portrait), (max-width: 600px)
             flex-basis: 90%
 
     &__type
@@ -49,7 +49,7 @@
         gap: 1vh
         // justify-content: space-between
         letter-spacing: var(--letter-spacing-small)
-        @media (orientation: portrait)
+        @media (orientation: portrait), (max-width: 600px)
             width: 100%
             gap: 2vw
 
@@ -61,7 +61,7 @@
         background-color: var(--dark-gray)
         height: 2px
         align-self: center
-        @media (orientation: portrait)
+        @media (orientation: portrait), (max-width: 600px)
             height: 1px
 
     &__title

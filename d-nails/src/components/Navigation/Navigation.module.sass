@@ -39,7 +39,7 @@
     background-color: transparent
     transition: 2s
     z-index: 9991
-    @media (orientation: portrait)
+    @media (orientation: portrait), (max-width: 600px)
         grid-area: unset
         position: fixed
         flex-direction: column
@@ -57,7 +57,7 @@
         opacity: 0
         box-shadow: 0 var(--shadow-radius) var(--shadow-radius) rgba(0, 0, 0, 0.2)
         transition: 2s
-        @media (orientation: portrait)
+        @media (orientation: portrait), (max-width: 600px)
             position: fixed
             opacity: 1
             width: 5vh
@@ -74,7 +74,7 @@
         width: 100%
         height: 100%
         background-color: var(--darkest-gray)
-        @media (orientation: portrait)
+        @media (orientation: portrait), (max-width: 600px)
             position: fixed
             width: calc(100% - 2*var(--color-border-width) - 8vw)
             height: calc(100% - 2*var(--color-border-width) - 8vw)
@@ -91,11 +91,11 @@
     &--lower_level
         &::before
             opacity: 1
-            @media (orientation: portrait)
+            @media (orientation: portrait), (max-width: 600px)
                 @include gradient-color(45deg)
 
     &--hidden
-        @media (orientation: portrait)
+        @media (orientation: portrait), (max-width: 600px)
             padding: 0
             height: 100%
             width: 0%
@@ -109,7 +109,7 @@
                 visibility: hidden
 
     &__hamburger
-        @media (orientation: portrait)
+        @media (orientation: portrait), (max-width: 600px)
             position: fixed
             bottom: 9vw
             right: 9vw
@@ -137,7 +137,7 @@
                     transform: translate(-50%, -50%) rotateZ(-135deg)
 
     &__hamburger_icon
-        @media (orientation: portrait)
+        @media (orientation: portrait), (max-width: 600px)
             &::before, &::after
                 @include before-after
                 transform: translate(-50%, -50%)

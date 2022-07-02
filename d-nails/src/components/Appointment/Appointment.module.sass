@@ -11,21 +11,21 @@
     padding: var(--padding)
     gap: var(--padding)
     filter: var(--drop-shadow)
-    @media (orientation: portrait)
+    @media (orientation: portrait), (max-width: 600px)
         grid-template-columns: 1fr
         grid-template-rows: 1fr 5vh
 
     &__calendar
         display: block
         &--hidden
-            @media (orientation: portrait)
+            @media (orientation: portrait), (max-width: 600px)
                 display: none
         // flex-shrink: 0
 
     &__contact
         display: block
         &--hidden
-            @media (orientation: portrait)
+            @media (orientation: portrait), (max-width: 600px)
                 display: none
 
         // flex-shrink: 0

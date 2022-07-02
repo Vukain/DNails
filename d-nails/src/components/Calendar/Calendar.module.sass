@@ -14,7 +14,7 @@
     grid-template-rows: 6vh 4vh 1fr
     grid-template-columns: repeat(8, 1fr)
     gap: var(--gap)
-    @media (orientation: portrait)
+    @media (orientation: portrait), (max-width: 600px)
         grid-template-rows: 6vh 5vh 1fr 5vh 8vh
         grid-template-columns: repeat(7, 1fr)
 
@@ -24,7 +24,7 @@
         grid-template-rows: 1fr
         grid-template-columns: 1fr 1fr
         cursor: pointer
-        @media (orientation: portrait)
+        @media (orientation: portrait), (max-width: 600px)
             grid-column: span 7
 
     &__chosen_month
@@ -76,7 +76,7 @@
         background-color: var(--lighter-gray)
         display: flex
         flex-direction: column
-        @media (orientation: portrait)
+        @media (orientation: portrait), (max-width: 600px)
             flex-direction: row
             grid-column: 1 / 8
             grid-row: 5
@@ -90,7 +90,7 @@
         font-size: var(--font-size-big)
         font-weight: bold
         color: var(--dark-gray)
-        @media (orientation: portrait)
+        @media (orientation: portrait), (max-width: 600px)
             grid-row-start: 4
             grid-column: 1 / 8
 
@@ -113,7 +113,7 @@
             z-index: -1
             border-radius: var(--border-radius-small)
             background-color: var(--lightest-gray)
-            @media (orientation: portrait)
+            @media (orientation: portrait), (max-width: 600px)
                 width: calc(100% - 3vw)
                 height: calc(100% - 3vw)
 
@@ -130,7 +130,7 @@
         grid-template-columns: repeat(7, 1fr)
         z-index: 1
         border-radius: 0 0 0 var(--border-radius-small)
-        @media (orientation: portrait)
+        @media (orientation: portrait), (max-width: 600px)
             border-radius: 0
 
     &__day
@@ -143,7 +143,7 @@
         overflow: visible
         margin: 1vh
         z-index: 3
-        @media (orientation: portrait)
+        @media (orientation: portrait), (max-width: 600px)
             margin: 0.5vw
         &--not_empty
             cursor: pointer
@@ -156,7 +156,7 @@
                 transition: .5s
                 background-image: linear-gradient(45deg, var(--lighter-gray) 40%, var(--main-color-1), var(--main-color-2), var(--main-color-3))
                 background-size: 400% 100%
-                @media (orientation: portrait)
+                @media (orientation: portrait), (max-width: 600px)
                     background-size: 500% 100%
                     width: calc(100% - 1vw)
                     height: calc(100% - 1vw)
@@ -168,7 +168,7 @@
                 z-index: -1
                 border-radius: var(--border-radius-small)
                 background-color: var(--lightest-gray)
-                @media (orientation: portrait)
+                @media (orientation: portrait), (max-width: 600px)
                     width: calc(100% - 3vw)
                     height: calc(100% - 3vw)
 

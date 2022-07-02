@@ -18,7 +18,7 @@
     border-radius: var(--border-radius-small)
     display: flex
     padding: 25vh 30vw
-    @media (orientation: portrait)
+    @media (orientation: portrait), (max-width: 600px)
         padding: 35vh 10vw
 
     &::before
@@ -50,7 +50,7 @@
         grid-template-columns: 1fr
         padding: calc(var(--padding) / 2)
         z-index: 9
-        @media (orientation: portrait)
+        @media (orientation: portrait), (max-width: 600px)
             padding: var(--padding)
 
     &__message

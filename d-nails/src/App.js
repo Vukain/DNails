@@ -15,15 +15,11 @@ import Modal from './layout/Modal/Modal';
 
 function App() {
 
-  const { setCurrentSection } = useContext(AppContext);
-  const { setSectionRefs } = useContext(AppContext);
-  const { setCurrentLevel } = useContext(AppContext);
-  const { currentSectionRef } = useContext(AppContext);
-  const { showModal } = useContext(AppContext)
+  const { showModal, currentSectionRef, setCurrentSection, setSectionRefs, setCurrentLevel  } = useContext(AppContext);
 
   // Access current state without update delays, no re-render
   // const [isThrottled, setIsThrottled] = useState(false);
-  // const throttledRef = useRef(isThrottled);
+  const throttledRef = useRef(false);
   // throttledRef.current ->
 
   const headerRef = useRef(null);
@@ -56,21 +52,26 @@ function App() {
   }, [currentSectionRef, setCurrentSection, setCurrentLevel]);
 
   const scrollHandler = (e) => {
-    if (!scrollThrotle) {
-      scrollThrotle = true;
+    console.log(throttledRef.current);
+    if (!throttledRef.current) {
+      console.log('Scrolling, setting scroll throttle')
+      throttledRef.current = true;
       if (e.deltaY > 0) {
+        // sectionChanger('down');
         setTimeout(() => {
           sectionChanger('down');
-        }, 800);
+        }, 100);
       } else {
+        // sectionChanger('up');
         setTimeout(() => {
           sectionChanger('up');
-        }, 800);
+        }, 100);
       };
 
       setTimeout(() => {
-        scrollThrotle = false;
-      }, 800);
+        throttledRef.current = false;
+        console.log('Lifting scroll throttle')
+      }, 2000);
     };
   };
 

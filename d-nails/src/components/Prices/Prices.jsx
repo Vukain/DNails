@@ -18,6 +18,7 @@ const Prices = () => {
     const [servicesList, setServicesListe] = useState([])
 
     useEffect(() => {
+        //data will be fetched from database thus mapped in useEffect
         const services = Object.keys(SERICES_DATA).map((group, idx) => (
             <div className={style('group')} key={idx}>
                 <h3 className={style('type')}>{group}</h3>

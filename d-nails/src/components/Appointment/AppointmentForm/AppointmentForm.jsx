@@ -94,7 +94,7 @@ const AppointmentForm = () => {
                 <input className={style('input', { invalid: !emailInputValidity && touched })} aria-label="email" type="email" placeholder='EMAIL' name='email' ref={emailInputRef} onBlur={() => onBlurHandler(emailInputRef, setEmailInputValidity, 'email')} onClick={() => { setTouched(true) }} />
                 <input className={style('input', { invalid: !dateInputValidity && touched })} aria-label="data" type="datetime-local" placeholder='DATA' name='data' ref={dateInputRef} onBlur={() => onBlurHandler(dateInputRef, setDateInputValidity)} onClick={() => { setTouched(true) }} defaultValue={todayDate} min={todayDate} />
                 <textarea className={style('message', { invalid: !messageInputValidity && touched })} aria-label="wiadomość" name="message" cols="30" rows="10" ref={messageInputRef} onBlur={() => onBlurHandler(messageInputRef, setMessageInputValidity)} onClick={() => { setTouched(true) }}></textarea>
-                <Button name='wyślij' clicker={onSubmitHandler} />
+                <Button name='wyślij' clickHandler={onSubmitHandler} />
             </form>
 
         </div>

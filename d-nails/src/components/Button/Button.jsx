@@ -5,12 +5,12 @@ import { default as ButtonStyles } from './Button.module.sass';
 
 const style = bemCssModules(ButtonStyles);
 
-const Button = (props) => {
+const Button = ({ name, clickHandler }) => {
 
     return (
         <div className={style()}>
-            <button className={style('button')} onClick={props.clicker}>
-                <span className={style('button_text')}>{props.name}</span>
+            <button className={style('button')} onClick={clickHandler}>
+                <span className={style('button_text')}>{name}</span>
             </button>
         </div>
     );

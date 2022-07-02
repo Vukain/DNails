@@ -22,9 +22,9 @@ const Header = forwardRef((props, ref) => {
 
             <h2 className={style('contact')}>
                 <span className={style('heading', { contact: true, info: true, tel: true })}>telefon</span>
-                <span className={style('heading', { contact: true, data: true })}>+48 123456789</span>
+                <a href="tel:+48 123456789" className={style('action')}><span className={style('heading', { contact: true, data: true })}>+48 123456789</span></a>
                 <span className={style('heading', { contact: true, info: true, email: true })}>email</span>
-                <span className={style('heading', { contact: true, data: true })}>dora.nails@dnails.pl</span>
+                <a href="mailto: dora.nails@dnails.pl" className={style('action')}><span className={style('heading', { contact: true, data: true })}>dora.nails@dnails.pl</span></a>
             </h2>
 
         </header >

@@ -71,7 +71,7 @@ function App() {
       setTimeout(() => {
         throttledRef.current = false;
         console.log('Lifting scroll throttle')
-      }, 2000);
+      }, 1000);
     };
   };
 

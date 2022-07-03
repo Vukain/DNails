@@ -52,15 +52,15 @@ function App() {
       console.log('Scrolling, setting scroll throttle')
       isThrottled.current = true;
       if (e.deltaY > 0) {
-        sectionChanger('down');
-        // setTimeout(() => {
-        //   sectionChanger('down');
-        // }, 700);
+        // sectionChanger('down');
+        setTimeout(() => {
+          sectionChanger('down');
+        }, 700);
       } else {
-        sectionChanger('up');
-        // setTimeout(() => {
-        //   sectionChanger('up');
-        // }, 700);
+        // sectionChanger('up');
+        setTimeout(() => {
+          sectionChanger('up');
+        }, 700);
       };
 
       setTimeout(() => {

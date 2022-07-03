@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import bemCssModules from 'bem-css-modules';
 
 import { AppContext } from '../../AppContext';
@@ -17,6 +17,16 @@ const Modal = () => {
         setModalState(false);
         setTimeout(() => { setShowModal(false) }, 650);
     };
+
+    useEffect(() => {
+        const timeoutState = setTimeout(() => { setModalState(false) }, 3000);
+        const timeoutShow = setTimeout(() => { setShowModal(false) }, 3650);
+
+        return () => {
+            clearTimeout(timeoutState);
+            clearTimeout(timeoutShow);
+        }
+    }, [setModalState, setShowModal])
 
     return (
         <div className={style({ showing: modalState })}>

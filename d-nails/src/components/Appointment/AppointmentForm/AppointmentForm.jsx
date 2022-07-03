@@ -49,19 +49,8 @@ const AppointmentForm = () => {
         };
     };
 
-    const modalCloseDelayer = () => {
-        setModalState(false);
-    };
-
-    const modalCloser = () => {
-        setShowModal(false);
-    };
-
     const onSubmitHandler = (e) => {
         e.preventDefault()
-        clearTimeout(modalCloseDelayer);
-        clearTimeout(modalCloser);
-
         if (formValidity) {
             fetch('https://dnails-ab48e-default-rtdb.firebaseio.com/visits.json', {
                 method: 'POST',
@@ -83,9 +72,6 @@ const AppointmentForm = () => {
 
         setShowModal(true);
         setTimeout(() => { setModalState(true) }, 50);
-
-        setTimeout(modalCloseDelayer, 3000);
-        setTimeout(modalCloser, 3650);
     };
 
     const today = moment();

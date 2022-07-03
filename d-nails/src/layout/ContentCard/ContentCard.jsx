@@ -1,7 +1,7 @@
 import React from 'react';
 import bemCssModules from 'bem-css-modules';
 
-import { default as ContentCardStyles } from './ContentCard.module.sass';
+import ContentCardStyles from './ContentCard.module.sass';
 
 const style = bemCssModules(ContentCardStyles);
 

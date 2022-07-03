@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import bemCssModules from 'bem-css-modules';
 
 import { AppContext } from '../../AppContext';
-import { default as ModalStyles } from './Modal.module.sass';
+import ModalStyles from './Modal.module.sass';
 
 import Button from '../../components/Button/Button';
 import ContentCard from '../ContentCard/ContentCard';

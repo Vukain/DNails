@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import bemCssModules from 'bem-css-modules';
 
-import { default as PricesStyles } from './Prices.module.sass';
+import PricesStyles from './Prices.module.sass';
 
 const style = bemCssModules(PricesStyles);
 

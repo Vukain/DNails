@@ -5,7 +5,7 @@ import { AppContext } from '../../AppContext';
 
 import NavigationButton from './NavigationButton/NavigationButton';
 
-import { default as NavigationStyles } from './Navigation.module.sass';
+import NavigationStyles from './Navigation.module.sass';
 
 const style = bemCssModules(NavigationStyles);
 

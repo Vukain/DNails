@@ -1,7 +1,7 @@
 import React from 'react';
 import bemCssModules from 'bem-css-modules';
 
-import { default as ButtonStyles } from './Button.module.sass';
+import ButtonStyles from './Button.module.sass';
 
 const style = bemCssModules(ButtonStyles);
 

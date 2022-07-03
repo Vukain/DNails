@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 import bemCssModules from 'bem-css-modules';
 
-import { default as HeaderStyles } from './Header.module.sass';
+import HeaderStyles from './Header.module.sass';
 
 import HeaderImageLandscape from '../../media/header_nails_landscape.svg';
 import HeaderImagePortrait from '../../media/header_nails_portrait.svg';

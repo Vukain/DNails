@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import bemCssModules from 'bem-css-modules';
 
-import { default as NailPainterStyles } from './NailPainter.module.sass';
+import NailPainterStyles from './NailPainter.module.sass';
 
 import NailsImage from '../../media/nails-test.svg';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import bemCssModules from 'bem-css-modules';
 
-import { default as ContentSwitcherStyles } from './ContentSwitcher.module.sass';
+import ContentSwitcherStyles from './ContentSwitcher.module.sass';
 
 const style = bemCssModules(ContentSwitcherStyles);
 

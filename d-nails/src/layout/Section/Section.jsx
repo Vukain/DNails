@@ -3,7 +3,7 @@ import bemCssModules from 'bem-css-modules';
 
 import ContentCard from '../ContentCard/ContentCard';
 
-import { default as SectionStyles } from './Section.module.sass';
+import SectionStyles from './Section.module.sass';
 
 const style = bemCssModules(SectionStyles);
 

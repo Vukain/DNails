@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import bemCssModules from 'bem-css-modules';
 
-import { default as GalleryStyles } from './Gallery.module.sass';
+import GalleryStyles from './Gallery.module.sass';
 
 import GalleryImage from './GalleryImage/GalleryImage';
 

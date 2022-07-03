@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import moment from 'moment';
 import bemCssModules from 'bem-css-modules';
 
-import { default as CalendarStyles } from './Calendar.module.sass';
+import CalendarStyles from './Calendar.module.sass';
 
 const style = bemCssModules(CalendarStyles);
 

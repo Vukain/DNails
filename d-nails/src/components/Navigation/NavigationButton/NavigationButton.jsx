@@ -3,7 +3,7 @@ import bemCssModules from 'bem-css-modules';
 
 import { AppContext } from '../../../AppContext';
 
-import { default as NavigationButtonStyles } from './NavigationButton.module.sass';
+import NavigationButtonStyles from './NavigationButton.module.sass';
 
 const style = bemCssModules(NavigationButtonStyles);
 

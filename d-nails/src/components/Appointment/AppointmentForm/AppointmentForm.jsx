@@ -6,7 +6,7 @@ import { AppContext } from '../../../AppContext';
 
 import Button from '../../Button/Button';
 
-import { default as AppointmentFormStyles } from './AppointmentForm.module.sass';
+import AppointmentFormStyles from './AppointmentForm.module.sass';
 
 const style = bemCssModules(AppointmentFormStyles);
 

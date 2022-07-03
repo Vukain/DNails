@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import bemCssModules from 'bem-css-modules';
 
-import { default as AppointmentStyles } from './Appointment.module.sass';
+import AppointmentStyles from './Appointment.module.sass';
 
 import Calendar from '../Calendar/Calendar';
 import AppointmentForm from './AppointmentForm/AppointmentForm';

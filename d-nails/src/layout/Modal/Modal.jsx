@@ -11,9 +11,7 @@ const style = bemCssModules(ModalStyles);
 
 const Modal = () => {
 
-    const { setShowModal } = useContext(AppContext);
-    const { modalMessage } = useContext(AppContext);
-    const { modalState, setModalState } = useContext(AppContext);
+    const { modalMessage, setShowModal, modalState, setModalState } = useContext(AppContext);
 
     const closeModal = () => {
         setModalState(false);

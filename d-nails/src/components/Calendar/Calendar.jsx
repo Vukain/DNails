@@ -42,14 +42,14 @@ const Calendar = () => {
     }, [DUMMY_DAYS_CURRENT, DUMMY_DAYS_NEXT, currentMonth, nextMonth]);
 
     useEffect(() => {
-        const daysCurrentMapped = DUMMY_DAYS_CURRENT.current.map((day, i) => <div key={i} onClick={() => selectDayHandler(i, 'this')} className={style('day', { not_empty: true, selected: i + 1 === selectedDay, passed: i + 1 < moment().date(), busy: day['hours'].length > 1, unavailable: day['hours'].length > 3 })}> {i + 1} </div >);
-        const daysNextMapped = DUMMY_DAYS_NEXT.current.map((day, i) => <div key={i} onClick={() => selectDayHandler(i)} className={style('day', { not_empty: true, selected: i + 1 === selectedDay, busy: day['hours'].length > 1, unavailable: day['hours'].length > 3 })}>{i + 1}</div>);
+        const daysCurrentMapped = DUMMY_DAYS_CURRENT.current.map((day, idx) => <div key={idx} onClick={() => selectDayHandler(idx, 'this')} className={style('day', { not_empty: true, selected: idx + 1 === selectedDay, passed: idx + 1 < moment().date(), busy: day['hours'].length > 1, unavailable: day['hours'].length > 3 })}> {idx + 1} </div >);
+        const daysNextMapped = DUMMY_DAYS_NEXT.current.map((day, idx) => <div key={idx} onClick={() => selectDayHandler(idx)} className={style('day', { not_empty: true, selected: idx + 1 === selectedDay, busy: day['hours'].length > 1, unavailable: day['hours'].length > 3 })}>{idx + 1}</div>);
         setDaysCurrent(daysCurrentMapped);
         setDaysNext(daysNextMapped);
     }, [selectedDay]);
 
     const displayedDays = activeMonth === 0 ? [...emptyDaysCurrent, ...daysCurrent] : [...emptyDaysNext, ...daysNext];
-    const hours = [8, 10, 12, 14, 16, 18].map((hour, i) => <div key={i} className={style('hour', { unavailable: activeMonth === 0 ? DUMMY_DAYS_CURRENT.current.length > 0 ? DUMMY_DAYS_CURRENT.current[selectedDay - 1]['hours'].includes(hour) : false : DUMMY_DAYS_CURRENT.current.length > 0 ? DUMMY_DAYS_NEXT.current[selectedDay - 1]['hours'].includes(hour) : false })}>{hour}</div>);
+    const hours = [8, 10, 12, 14, 16, 18].map((hour, idx) => <div key={idx} className={style('hour', { unavailable: activeMonth === 0 ? DUMMY_DAYS_CURRENT.current.length > 0 ? DUMMY_DAYS_CURRENT.current[selectedDay - 1]['hours'].includes(hour) : false : DUMMY_DAYS_CURRENT.current.length > 0 ? DUMMY_DAYS_NEXT.current[selectedDay - 1]['hours'].includes(hour) : false })}>{hour}</div>);
 
     const monthHandler = (mth) => {
         setActiveMonth(mth);

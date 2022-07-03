@@ -26,8 +26,8 @@ const NailPainter = () => {
     // { type: 'standard', color: '#FF6F91' }, { type: 'standard', color: '#FF9671' }, { type: 'standard', color: '#FFC75F' }, { type: 'standard', color: '#F9F871' }, { type: 'standard', color: '#DD2E5D' }, { type: 'standard', color: '#BA3A80' }, { type: 'standard', color: '#894990' },
     // { type: 'standard', color: '#58518B' }, { type: 'standard', color: '#354F75' }, { type: 'standard', color: '#2F4858' }, { type: 'metallic', color: '#D8C56F' }, { type: 'metallic', color: '#939393' }, { type: 'metallic', color: '#C3644A' }, { type: 'pearl', color: '#D9DE9F' }, { type: 'pearl', color: '#D8A1B8' }, { type: 'pearl', color: '#C1AAD5' }];
 
-    const filteredColors = colors.filter(e => e.type === lacquerType);
-    const colorSquares = filteredColors.map((e, i) => <div key={i} className={style('color_select', { selected: e.color === lacquerColor })} style={{ backgroundColor: e.color }} onClick={() => colorChanger(e.color)}></div>)
+    const filteredColors = colors.filter(element => element.type === lacquerType);
+    const colorSquares = filteredColors.map((element, idx) => <div key={idx} className={style('color_select', { selected: element.color === lacquerColor })} style={{ backgroundColor: element.color }} onClick={() => colorChanger(element.color)}></div>)
 
     useEffect(() => {
         const canvas = canvasRef.current;

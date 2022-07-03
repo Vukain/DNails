@@ -49,7 +49,7 @@ const Gallery = () => {
     ];
     const topImages = [11, 12];
     const bottomImages = [0, 3, 4];
-    const images = imageNames.map((el, idx) => <GalleryImage key={el + idx} image={el} index={idx} enlarge={false} active={currentlyEnlarged} changeActive={imageSwitcher} top={topImages.includes(idx)} bottom={bottomImages.includes(idx)} />)
+    const images = imageNames.map((element, idx) => <GalleryImage key={element + idx} image={element} index={idx} enlarge={false} active={currentlyEnlarged} changeActive={imageSwitcher} top={topImages.includes(idx)} bottom={bottomImages.includes(idx)} />)
 
     const enlargedImage = (
         <div className={style({ enlarged_mode: currentlyEnlarged !== null })}>

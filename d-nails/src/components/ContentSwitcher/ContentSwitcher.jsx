@@ -7,10 +7,11 @@ const style = bemCssModules(ContentSwitcherStyles);
 
 const ContentSwitcher = ({ sectionChanger, current, options }) => {
 
+    const optionButtons = options.map((option, idx) => (<div key={idx} onClick={() => sectionChanger(idx)} className={style('option', { inactive: current !== idx })}>{option}</div>))
+
     return (
         <div className={style()}>
-            <div onClick={() => sectionChanger(0)} className={style('option', { inactive: current !== 0 })}>{options[0]}</div>
-            <div onClick={() => sectionChanger(1)} className={style('option', { inactive: current !== 1 })}>{options[1]}</div>
+            {optionButtons}
         </div>
     );
 };

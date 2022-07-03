@@ -70,6 +70,8 @@ const Calendar = () => {
         };
     };
 
+    const weekDays = ['PON', 'WTO', 'ŚRO', 'CZW', 'PIĄ', 'SOB', 'NIE'].map((day, idx) => (<div key={idx} className={style('weekday')}>{day}</div>))
+
     return (
         <div className={style()}>
 
@@ -79,13 +81,7 @@ const Calendar = () => {
             </div>
 
             <div className={style('week_labels')}>
-                <div className={style('weekday')}>PON</div>
-                <div className={style('weekday')}>WTO</div>
-                <div className={style('weekday')}>ŚRO</div>
-                <div className={style('weekday')}>CZW</div>
-                <div className={style('weekday')}>PIĄ</div>
-                <div className={style('weekday')}>SOB</div>
-                <div className={style('weekday')}>NIE</div>
+                {weekDays}
             </div>
 
             <div className={style('days')}>

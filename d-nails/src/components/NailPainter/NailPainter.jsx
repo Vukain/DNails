@@ -27,7 +27,7 @@ const NailPainter = () => {
     // { type: 'standard', color: '#58518B' }, { type: 'standard', color: '#354F75' }, { type: 'standard', color: '#2F4858' }, { type: 'metallic', color: '#D8C56F' }, { type: 'metallic', color: '#939393' }, { type: 'metallic', color: '#C3644A' }, { type: 'pearl', color: '#D9DE9F' }, { type: 'pearl', color: '#D8A1B8' }, { type: 'pearl', color: '#C1AAD5' }];
 
     const filteredColors = colors.filter(e => e.type === lacquerType);
-    const squaries = filteredColors.map((e, i) => <div key={i} className={style('color_select', { selected: e.color === lacquerColor })} style={{ backgroundColor: e.color }} onClick={() => colorChanger(e.color)}></div>)
+    const colorSquares = filteredColors.map((e, i) => <div key={i} className={style('color_select', { selected: e.color === lacquerColor })} style={{ backgroundColor: e.color }} onClick={() => colorChanger(e.color)}></div>)
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -130,11 +130,11 @@ const NailPainter = () => {
                     <div className={style('color_filter_option', { active: lacquerType === 'pearl' })} onClick={() => setLacquerType('pearl')}><h3 className={style('option_text')}>PERŁOWE</h3></div>
                 </div>
                 <div className={style('color_selector')}>
-                    {squaries}
+                    {colorSquares}
                 </div>
             </div>
 
-            <ContentSwitcher firstOption='kolory' secondOption='tester' current={currentMobileSection} sectionChanger={setCurrentMobileSection} />
+            <ContentSwitcher options={['kolory', 'tester']} current={currentMobileSection} sectionChanger={setCurrentMobileSection} />
 
         </section>
     );

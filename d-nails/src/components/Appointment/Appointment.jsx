@@ -21,7 +21,7 @@ const Appointment = () => {
             <div className={style('contact', { hidden: currentMobileSection === 1 })}>
                 <AppointmentForm />
             </div>
-            <ContentSwitcher firstOption='kontakt' secondOption='terminarz' current={currentMobileSection} sectionChanger={setCurrentMobileSection} />
+            <ContentSwitcher options={['kontakt', 'terminarz']} current={currentMobileSection} sectionChanger={setCurrentMobileSection} />
         </div>
     );
 }

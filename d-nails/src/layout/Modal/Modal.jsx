@@ -25,7 +25,7 @@ const Modal = () => {
             <ContentCard showing={modalState} modal={true}>
                 <div className={style('content')}>
                     <div className={style('message')}>{modalMessage}</div>
-                    <Button name='ok' clicker={closeModal} />
+                    <Button name='ok' clickHandler={closeModal} />
                 </div>
             </ContentCard>
         </div>

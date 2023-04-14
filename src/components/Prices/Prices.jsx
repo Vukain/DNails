@@ -13,7 +13,7 @@ const SERICES_DATA = {
     // "typ usługi 5": [{ serviceName: 'Usługa 1', servicePrice: 'XYZ zł' }, { serviceName: 'Usługa 2', servicePrice: 'XYZ zł' }, { serviceName: 'Usługa 3', servicePrice: 'XYZ zł' }]
 };
 
-const Prices = () => {
+export const Prices = () => {
 
     const [servicesList, setServicesListe] = useState([])
 
@@ -40,6 +40,4 @@ const Prices = () => {
             </div>
         </div>
     );
-}
-
-export default Prices;
+};

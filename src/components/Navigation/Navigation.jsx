@@ -1,15 +1,14 @@
 import React, { useCallback, useContext, useState } from 'react';
 import bemCssModules from 'bem-css-modules';
 
-import { AppContext } from '../../AppContext';
-
-import NavigationButton from './NavigationButton/NavigationButton';
-
 import NavigationStyles from './Navigation.module.sass';
+
+import { AppContext } from '../../store/AppContext';
+import { NavigationButton } from './NavigationButton/NavigationButton';
 
 const style = bemCssModules(NavigationStyles);
 
-const Navigation = () => {
+export const Navigation = () => {
 
     const [mobileNavigationHidden, setMobileNavigationHidden] = useState(true);
 
@@ -54,5 +53,3 @@ const Navigation = () => {
         </nav>
     );
 };
-
-export default Navigation;

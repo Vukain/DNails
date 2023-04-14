@@ -5,7 +5,7 @@ import GalleryImageStyles from './GalleryImage.module.sass';
 
 const style = bemCssModules(GalleryImageStyles);
 
-const GalleryImage = ({ enlarge, active, image, index, changeActive, top, bottom }) => {
+export const GalleryImage = ({ enlarge, active, image, index, changeActive, top, bottom }) => {
 
     const imageGridStyle = style({ enlarged: enlarge, miniature: Number.isInteger(active), normal: active === null });
 
@@ -22,5 +22,3 @@ const GalleryImage = ({ enlarge, active, image, index, changeActive, top, bottom
         </div>
     );
 };
-
-export default GalleryImage;

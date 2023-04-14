@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
 import bemCssModules from 'bem-css-modules';
 
-import { AppContext } from '../../../AppContext';
-
 import NavigationButtonStyles from './NavigationButton.module.sass';
+
+import { AppContext } from '../../../store/AppContext';
 
 const style = bemCssModules(NavigationButtonStyles);
 
-const NavigationButton = ({ position, section, name, level, hiddenBurger, scroller, hideNavigation }) => {
+export const NavigationButton = ({ position, section, name, level, hiddenBurger, scroller, hideNavigation }) => {
 
     const { sectionNames } = useContext(AppContext);
     const { currentSection } = useContext(AppContext);
@@ -38,5 +38,3 @@ const NavigationButton = ({ position, section, name, level, hiddenBurger, scroll
         </div>
     );
 };
-
-export default NavigationButton;

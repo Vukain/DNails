@@ -6,7 +6,7 @@ import CalendarStyles from './Calendar.module.sass';
 
 const style = bemCssModules(CalendarStyles);
 
-const Calendar = () => {
+export const Calendar = () => {
 
     const [activeMonth, setActiveMonth] = useState(0);
     const [currentMonth] = useState(moment());
@@ -22,7 +22,6 @@ const Calendar = () => {
     const DUMMY_DAYS_NEXT = useRef([]);
 
     useEffect(() => {
-
         for (let day = 0; day < currentMonth.daysInMonth(); day++) {
             DUMMY_DAYS_CURRENT.current.push({ hours: [8, 10, 12, 14, 16, 18].filter(() => Math.random() > 0.7) });
         };
@@ -70,7 +69,7 @@ const Calendar = () => {
         };
     };
 
-    const weekDays = ['PON', 'WTO', 'ŚRO', 'CZW', 'PIĄ', 'SOB', 'NIE'].map((day, idx) => (<div key={idx} className={style('weekday')}>{day}</div>))
+    const weekDays = ['PON', 'WTO', 'ŚRO', 'CZW', 'PIĄ', 'SOB', 'NIE'].map((day, idx) => (<div key={idx} className={style('weekday')}>{day}</div>));
 
     return (
         <div className={style()}>
@@ -96,5 +95,3 @@ const Calendar = () => {
         </div >
     );
 };
-
-export default Calendar;

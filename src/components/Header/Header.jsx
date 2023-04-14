@@ -8,8 +8,7 @@ import HeaderImagePortrait from '../../media/header_nails_portrait.svg';
 
 const style = bemCssModules(HeaderStyles);
 
-const Header = forwardRef((props, ref) => {
-
+export const Header = forwardRef((props, ref) => {
     return (
         <header className={style()} ref={ref}>
             <HeaderImageLandscape className={style('image')} alt='header image' preserveAspectRatio='none' />
@@ -29,6 +28,4 @@ const Header = forwardRef((props, ref) => {
 
         </header >
     );
-})
-
-export default Header;
+});

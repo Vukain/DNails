@@ -2,15 +2,14 @@ import React, { useEffect, useRef, useState, useContext } from 'react';
 import bemCssModules from 'bem-css-modules';
 import moment from 'moment';
 
-import { AppContext } from '../../../AppContext';
-
-import Button from '../../Button/Button';
-
 import AppointmentFormStyles from './AppointmentForm.module.sass';
+
+import { AppContext } from '../../../store/AppContext';
+import { Button } from '../../../ui/Button/Button';
 
 const style = bemCssModules(AppointmentFormStyles);
 
-const AppointmentForm = () => {
+export const AppointmentForm = () => {
     const { setShowModal, setModalMessage, setModalState } = useContext(AppContext);
 
     const nameInputRef = useRef();
@@ -45,7 +44,7 @@ const AppointmentForm = () => {
                 setter(emailValidator(ref));
                 break;
             default:
-                console.log('errrroooorrrr')
+                console.log('Validator error!')
         };
     };
 

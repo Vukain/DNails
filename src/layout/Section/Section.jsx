@@ -1,13 +1,13 @@
 import React, { forwardRef } from 'react';
 import bemCssModules from 'bem-css-modules';
 
-import ContentCard from '../ContentCard/ContentCard';
-
 import SectionStyles from './Section.module.sass';
+
+import { ContentCard } from '../ContentCard/ContentCard';
 
 const style = bemCssModules(SectionStyles);
 
-const Section = forwardRef(({ position, children }, ref) => {
+export const Section = forwardRef(({ position, children }, ref) => {
 
     const sectionStyle = {};
     sectionStyle[position] = true;
@@ -19,6 +19,4 @@ const Section = forwardRef(({ position, children }, ref) => {
             </ContentCard>
         </section>
     );
-})
-
-export default Section;
+});

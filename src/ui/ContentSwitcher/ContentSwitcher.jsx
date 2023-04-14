@@ -5,7 +5,7 @@ import ContentSwitcherStyles from './ContentSwitcher.module.sass';
 
 const style = bemCssModules(ContentSwitcherStyles);
 
-const ContentSwitcher = ({ sectionChanger, current, options }) => {
+export const ContentSwitcher = ({ sectionChanger, current, options }) => {
 
     const optionButtons = options.map((option, idx) => (<div key={idx} onClick={() => sectionChanger(idx)} className={style('option', { inactive: current !== idx })}>{option}</div>))
 
@@ -15,5 +15,3 @@ const ContentSwitcher = ({ sectionChanger, current, options }) => {
         </div>
     );
 };
-
-export default ContentSwitcher;

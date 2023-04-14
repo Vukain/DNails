@@ -4,8 +4,8 @@ import ReactDOM from 'react-dom';
 import 'normalize.css';
 import './index.sass';
 
-import AppProvider from './AppContext';
-import App from './App';
+import AppProvider from './store/AppContext';
+import { App } from './App';
 
 // const block = require('bem-css-modules');
 // block.default.setSettings({ modifierDelimiter: '--' })

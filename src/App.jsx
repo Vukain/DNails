@@ -2,23 +2,22 @@ import { useEffect, useRef, useState, useContext, useCallback } from 'react';
 
 import './App.sass';
 
-import { AppContext } from './AppContext';
+import { AppContext } from './store/AppContext';
 
-import Header from './components/Header/Header';
-import Navigation from './components/Navigation/Navigation';
-import Gallery from './components/Gallery/Gallery';
-import Section from './layout/Section/Section';
-import Prices from './components/Prices/Prices';
-import Appointment from './components/Appointment/Appointment';
-import NailPainter from './components/NailPainter/NailPainter';
-import Modal from './layout/Modal/Modal';
+import { Header } from './components/Header/Header';
+import { Navigation } from './components/Navigation/Navigation';
+import { Gallery } from './components/Gallery/Gallery';
+import { Section } from './layout/Section/Section';
+import { Prices } from './components/Prices/Prices';
+import { Appointment } from './components/Appointment/Appointment';
+import { NailPainter } from './components/NailPainter/NailPainter';
+import { Modal } from './layout/Modal/Modal';
 
-function App() {
+export const App = () => {
 
   const { showModal, currentSectionRef, setCurrentSection, setSectionRefs, setCurrentLevel } = useContext(AppContext);
 
   const isThrottled = useRef(false);
-
   const headerRef = useRef(null);
   const firstSectionRef = useRef(null);
   const secondSectionRef = useRef(null);
@@ -29,7 +28,6 @@ function App() {
   const [touchEndY, setTouchEndY] = useState(0);
   const [touchStartX, setTouchStartX] = useState(0);
   const [touchEndX, setTouchEndX] = useState(0);
-
 
   const sectionChanger = useCallback((direction) => {
     const sections = [headerRef.current, firstSectionRef.current, secondSectionRef.current, thirdSectionRef.current, fourthSectionRef.current];
@@ -124,13 +122,13 @@ function App() {
 
   useEffect(() => {
     setSectionRefs([headerRef.current, firstSectionRef.current, secondSectionRef.current, thirdSectionRef.current, fourthSectionRef.current]);
-    // document.addEventListener('wheel', scroller);
     document.addEventListener('keydown', keyDownHandler);
   }, [setSectionRefs, keyDownHandler]);
 
   useEffect(() => {
+    // Disable normal scroll, as it interferes with scrollIntoView
     window.addEventListener('wheel', (e) => { e.preventDefault() }, { passive: false });
-  }, [])
+  }, []);
 
   return (
     <div className="App" onWheel={scrollHandler} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
@@ -159,5 +157,3 @@ function App() {
     </div>
   );
 };
-
-export default App;

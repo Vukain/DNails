@@ -1,15 +1,15 @@
 import React, { useContext, useEffect } from 'react';
 import bemCssModules from 'bem-css-modules';
 
-import { AppContext } from '../../AppContext';
 import ModalStyles from './Modal.module.sass';
 
-import Button from '../../components/Button/Button';
-import ContentCard from '../ContentCard/ContentCard';
+import { AppContext } from '../../store/AppContext';
+import { Button } from '../../ui/Button/Button';
+import { ContentCard } from '../ContentCard/ContentCard';
 
 const style = bemCssModules(ModalStyles);
 
-const Modal = () => {
+export const Modal = () => {
 
     const { modalMessage, setShowModal, modalState, setModalState } = useContext(AppContext);
 
@@ -39,5 +39,3 @@ const Modal = () => {
         </div>
     );
 };
-
-export default Modal;

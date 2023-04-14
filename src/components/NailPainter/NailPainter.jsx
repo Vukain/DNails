@@ -3,13 +3,12 @@ import bemCssModules from 'bem-css-modules';
 
 import NailPainterStyles from './NailPainter.module.sass';
 
+import { ContentSwitcher } from '../../ui/ContentSwitcher/ContentSwitcher';
 import NailsImage from '../../media/nails-test.svg';
-
-import ContentSwitcher from '../ContentSwitcher/ContentSwitcher';
 
 const style = bemCssModules(NailPainterStyles);
 
-const NailPainter = () => {
+export const NailPainter = () => {
 
     const canvasRef = useRef(null);
     const wrapperRef = useRef(null);
@@ -21,10 +20,6 @@ const NailPainter = () => {
     const [isPainting, setIsPainting] = useState(false);
     const [currentMobileSection, setCurrentMobileSection] = useState(1);
     const [colors, setColors] = useState([]);
-
-    // const colors = [{ type: 'standard', color: '#95285b' }, { type: 'standard', color: '#b11335' }, { type: 'standard', color: '#d75641' }, { type: 'standard', color: '#8ab9d7' }, { type: 'standard', color: '#d9f6a6' }, { type: 'standard', color: '#845EC2' }, { type: 'standard', color: '#D65DB1' },
-    // { type: 'standard', color: '#FF6F91' }, { type: 'standard', color: '#FF9671' }, { type: 'standard', color: '#FFC75F' }, { type: 'standard', color: '#F9F871' }, { type: 'standard', color: '#DD2E5D' }, { type: 'standard', color: '#BA3A80' }, { type: 'standard', color: '#894990' },
-    // { type: 'standard', color: '#58518B' }, { type: 'standard', color: '#354F75' }, { type: 'standard', color: '#2F4858' }, { type: 'metallic', color: '#D8C56F' }, { type: 'metallic', color: '#939393' }, { type: 'metallic', color: '#C3644A' }, { type: 'pearl', color: '#D9DE9F' }, { type: 'pearl', color: '#D8A1B8' }, { type: 'pearl', color: '#C1AAD5' }];
 
     const filteredColors = colors.filter(element => element.type === lacquerType);
     const colorSquares = filteredColors.map((element, idx) => <div key={idx} className={style('color_select', { selected: element.color === lacquerColor })} style={{ backgroundColor: element.color }} onClick={() => colorChanger(element.color)}></div>)
@@ -101,7 +96,6 @@ const NailPainter = () => {
 
     const onMouseUpHandler = () => {
         setIsPainting(false);
-        // console.log('up');
         // overlayRef.current.removeEventListener("mousemove", paintListener)
     };
 
@@ -139,5 +133,3 @@ const NailPainter = () => {
         </section>
     );
 };
-
-export default NailPainter;

@@ -3,7 +3,7 @@ import bemCssModules from 'bem-css-modules';
 
 import GalleryStyles from './Gallery.module.sass';
 
-import GalleryImage from './GalleryImage/GalleryImage';
+import { GalleryImage } from './GalleryImage/GalleryImage';
 
 import {
     nail_image_01, nail_image_01_big, nail_image_01_medium, nail_image_01_small, nail_image_01_mini, nail_image_01_mini_bw,
@@ -25,7 +25,7 @@ import {
 
 const style = bemCssModules(GalleryStyles);
 
-const Gallery = () => {
+export const Gallery = () => {
 
     const [currentlyEnlarged, setCurrentlyEnlarged] = useState(null);
 
@@ -50,7 +50,6 @@ const Gallery = () => {
         };
     };
 
-    // const imageNames = new Array(14).fill([nail_image_01_bw, nail_image_01])
     const imageNames = [{ full: nail_image_01, big: nail_image_01_big, medium: nail_image_01_medium, small: nail_image_01_small, mini: nail_image_01_mini, mini_bw: nail_image_01_mini_bw },
     { full: nail_image_02, big: nail_image_02_big, medium: nail_image_02_medium, small: nail_image_02_small, mini: nail_image_02_mini, mini_bw: nail_image_02_mini_bw },
     { full: nail_image_03, big: nail_image_03_big, medium: nail_image_03_medium, small: nail_image_03_small, mini: nail_image_03_mini, mini_bw: nail_image_03_mini_bw },
@@ -101,5 +100,3 @@ const Gallery = () => {
         currentlyEnlarged !== null ? enlargedImage : normalImages
     );
 };
-
-export default Gallery;

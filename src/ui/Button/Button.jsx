@@ -5,8 +5,7 @@ import ButtonStyles from './Button.module.sass';
 
 const style = bemCssModules(ButtonStyles);
 
-const Button = ({ name, clickHandler }) => {
-
+export const Button = ({ name, clickHandler }) => {
     return (
         <div className={style()}>
             <button className={style('button')} onClick={clickHandler}>
@@ -14,6 +13,4 @@ const Button = ({ name, clickHandler }) => {
             </button>
         </div>
     );
-}
-
-export default Button;
+};

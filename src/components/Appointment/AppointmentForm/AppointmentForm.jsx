@@ -51,7 +51,7 @@ export const AppointmentForm = () => {
     const onSubmitHandler = (e) => {
         e.preventDefault()
         if (formValidity) {
-            fetch('https://dnails-ab48e-default-rtdb.firebaseio.com/visits.json', {
+            fetch(`https://${process.env.REACT_APP_PROJECT}.firebaseio.com/visits.json`, {
                 method: 'POST',
                 body: JSON.stringify({ name: nameInputRef.current.value, surname: surnameInputRef.current.value, email: emailInputRef.current.value, date: dateInputRef.current.value, message: messageInputRef.current.value }),
                 headers: {
@@ -95,5 +95,3 @@ export const AppointmentForm = () => {
         </div>
     );
 };
-
-export default AppointmentForm;

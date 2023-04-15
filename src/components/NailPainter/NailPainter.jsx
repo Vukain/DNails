@@ -5,6 +5,7 @@ import NailPainterStyles from './NailPainter.module.sass';
 
 import { ContentSwitcher } from '../../ui/ContentSwitcher/ContentSwitcher';
 import NailsImage from '../../media/nails-test.svg';
+import { fetchColors } from '../../utils/fetchColors';
 
 const style = bemCssModules(NailPainterStyles);
 
@@ -44,22 +45,10 @@ export const NailPainter = () => {
         context.fillStyle = '#95285b';
         setCanvasContext(context);
 
-        colorFetcher();
+        fetchColors(setColors);
         setCurrentMobileSection(0);
     }, []);
 
-    const colorFetcher = async () => {
-        let response = await fetch('https://dnails-ab48e-default-rtdb.firebaseio.com/colors.json')
-        response = await response.json()
-        const fetchedColors = [];
-        for (const key in response) {
-            fetchedColors.push({
-                type: response[key].type,
-                color: response[key].color
-            });
-        };
-        setColors(fetchedColors);
-    };
 
     const colorChanger = (color) => {
         canvasContext.fillStyle = color;

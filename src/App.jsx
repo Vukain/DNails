@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, useContext, useCallback } from 'react';
+// import block from 'bem-css-modules';
 
 import './App.sass';
 
@@ -13,8 +14,14 @@ import { Appointment } from './components/Appointment/Appointment';
 import { NailPainter } from './components/NailPainter/NailPainter';
 import { Modal } from './layout/Modal/Modal';
 
-export const App = () => {
+// const block = require('bem-css-modules');
+// block.default.setSettings({
+//   throwOnError: false,
+//   elementDelimiter: '__',
+//   modifierDelimiter: '--'
+// })
 
+export const App = () => {
   const { showModal, currentSectionRef, setCurrentSection, setSectionRefs, setCurrentLevel } = useContext(AppContext);
 
   const isThrottled = useRef(false);
@@ -29,25 +36,33 @@ export const App = () => {
   const [touchStartX, setTouchStartX] = useState(0);
   const [touchEndX, setTouchEndX] = useState(0);
 
-  const sectionChanger = useCallback((direction) => {
-    const sections = [headerRef.current, firstSectionRef.current, secondSectionRef.current, thirdSectionRef.current, fourthSectionRef.current];
+  const sectionChanger = useCallback(
+    (direction) => {
+      const sections = [
+        headerRef.current,
+        firstSectionRef.current,
+        secondSectionRef.current,
+        thirdSectionRef.current,
+        fourthSectionRef.current,
+      ];
 
-    if (direction === 'up' && currentSectionRef.current > 0) {
-      currentSectionRef.current -= 1;
-      isThrottled.current = true;
-      setCurrentSection(currentSectionRef.current);
-      if (currentSectionRef.current === 0) {
-        setCurrentLevel(1);
-      };
-    } else if (direction === 'down' && currentSectionRef.current < sections.length - 1) {
-      currentSectionRef.current += 1;
-      isThrottled.current = true;
-      setCurrentSection(currentSectionRef.current);
-      setCurrentLevel(2);
-    };
-    sections[currentSectionRef.current].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'start' });
-
-  }, [currentSectionRef, setCurrentSection, setCurrentLevel]);
+      if (direction === 'up' && currentSectionRef.current > 0) {
+        currentSectionRef.current -= 1;
+        isThrottled.current = true;
+        setCurrentSection(currentSectionRef.current);
+        if (currentSectionRef.current === 0) {
+          setCurrentLevel(1);
+        }
+      } else if (direction === 'down' && currentSectionRef.current < sections.length - 1) {
+        currentSectionRef.current += 1;
+        isThrottled.current = true;
+        setCurrentSection(currentSectionRef.current);
+        setCurrentLevel(2);
+      }
+      sections[currentSectionRef.current].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'start' });
+    },
+    [currentSectionRef, setCurrentSection, setCurrentLevel],
+  );
 
   const scrollHandler = (e) => {
     if (!isThrottled.current) {
@@ -55,12 +70,12 @@ export const App = () => {
         sectionChanger('down');
       } else {
         sectionChanger('up');
-      };
+      }
 
       setTimeout(() => {
         isThrottled.current = false;
       }, 800);
-    };
+    }
   };
 
   const handleTouchStart = (e) => {
@@ -76,7 +91,6 @@ export const App = () => {
   };
 
   const handleTouchEnd = () => {
-
     const yDistance = Math.abs(touchStartY - touchEndY);
     const xDistance = Math.abs(touchStartX - touchEndX);
 
@@ -85,8 +99,8 @@ export const App = () => {
     const distanceTresholdX = window.innerWidth / 10;
 
     // Set touch direction according to screen orientation and prevent accidental scrolls
-    if (window.matchMedia("(orientation: portrait)").matches) {
-      if ((yDistance > 3 * xDistance) && (yDistance > distanceTresholdY)) {
+    if (window.matchMedia('(orientation: portrait)').matches) {
+      if (yDistance > 3 * xDistance && yDistance > distanceTresholdY) {
         if (touchStartY > touchEndY) {
           setTimeout(() => {
             sectionChanger('down');
@@ -95,10 +109,10 @@ export const App = () => {
           setTimeout(() => {
             sectionChanger('up');
           }, 100);
-        };
-      };
+        }
+      }
     } else {
-      if ((xDistance > 3 * yDistance) && (xDistance > distanceTresholdX)) {
+      if (xDistance > 3 * yDistance && xDistance > distanceTresholdX) {
         if (touchStartX > touchEndX) {
           setTimeout(() => {
             sectionChanger('down');
@@ -107,49 +121,69 @@ export const App = () => {
           setTimeout(() => {
             sectionChanger('up');
           }, 100);
-        };
-      };
-    };
+        }
+      }
+    }
   };
 
-  const keyDownHandler = useCallback((e) => {
-    if (e.key === 'ArrowDown') {
-      sectionChanger('down');
-    } else if (e.key === 'ArrowUp') {
-      sectionChanger('up');
-    };
-  }, [sectionChanger]);
+  const keyDownHandler = useCallback(
+    (e) => {
+      if (e.key === 'ArrowDown') {
+        sectionChanger('down');
+      } else if (e.key === 'ArrowUp') {
+        sectionChanger('up');
+      }
+    },
+    [sectionChanger],
+  );
 
   useEffect(() => {
-    setSectionRefs([headerRef.current, firstSectionRef.current, secondSectionRef.current, thirdSectionRef.current, fourthSectionRef.current]);
+    setSectionRefs([
+      headerRef.current,
+      firstSectionRef.current,
+      secondSectionRef.current,
+      thirdSectionRef.current,
+      fourthSectionRef.current,
+    ]);
     document.addEventListener('keydown', keyDownHandler);
   }, [setSectionRefs, keyDownHandler]);
 
   useEffect(() => {
     // Disable normal scroll, as it interferes with scrollIntoView
-    window.addEventListener('wheel', (e) => { e.preventDefault() }, { passive: false });
+    window.addEventListener(
+      'wheel',
+      (e) => {
+        e.preventDefault();
+      },
+      { passive: false },
+    );
   }, []);
 
   return (
-    <div className="App" onWheel={scrollHandler} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
-
+    <div
+      className="App"
+      onWheel={scrollHandler}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
       <Header ref={headerRef} />
 
       <Navigation />
 
-      <Section ref={firstSectionRef} position='first'>
+      <Section ref={firstSectionRef} position="first">
         <Prices />
       </Section>
 
-      <Section ref={secondSectionRef} position='second'>
+      <Section ref={secondSectionRef} position="second">
         <NailPainter />
       </Section>
 
-      <Section ref={thirdSectionRef} position='third'>
+      <Section ref={thirdSectionRef} position="third">
         <Appointment />
       </Section>
 
-      <Section ref={fourthSectionRef} position='fourth'>
+      <Section ref={fourthSectionRef} position="fourth">
         <Gallery />
       </Section>
 

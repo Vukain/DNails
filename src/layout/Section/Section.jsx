@@ -8,15 +8,12 @@ import { ContentCard } from '../ContentCard/ContentCard';
 const style = bemCssModules(SectionStyles);
 
 export const Section = forwardRef(({ position, children }, ref) => {
+  const sectionStyle = {};
+  sectionStyle[position] = true;
 
-    const sectionStyle = {};
-    sectionStyle[position] = true;
-
-    return (
-        <section className={style(sectionStyle)} ref={ref}>
-            <ContentCard >
-                {children}
-            </ContentCard>
-        </section>
-    );
+  return (
+    <section className={style(sectionStyle)} ref={ref}>
+      <ContentCard>{children}</ContentCard>
+    </section>
+  );
 });
